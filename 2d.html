@@ -1,0 +1,1300 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Animation &amp; Art Services | COMICAL STUDIO</title>
+    <meta name="description" content="COMICAL STUDIO - 2D Animation & Art Services Portfolio. High-quality animation, frame-by-frame reels, and puppet animation.">
+
+    <!-- Immediate Theme Initialization to Prevent Flash of Unstyled Content -->
+    <script>
+        (function() {
+            try {
+                var theme = localStorage.getItem('comical_theme');
+                if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <!-- Tailwind CSS with Dark Mode Class Support -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Fredoka', 'sans-serif'],
+                    },
+                    colors: {
+                        comical: {
+                            blue: '#1174B5',
+                            blueDark: '#0B5384',
+                            blueLight: '#E6F4FC',
+                            hair: '#141320',
+                            accent: '#F59E0B',
+                        }
+                    },
+                    boxShadow: {
+                        'comic': '4px 4px 0px 0px #141320',
+                        'comic-lg': '8px 8px 0px 0px #141320',
+                        'comic-sm': '2px 2px 0px 0px #141320',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        html, body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+        .comic-border {
+            border: 3px solid #141320;
+        }
+        .comic-border-thin {
+            border: 2px solid #141320;
+        }
+        .dark .comic-border {
+            border: 3px solid #334155;
+        }
+        .dark .comic-border-thin {
+            border: 2px solid #334155;
+        }
+        .bg-halftone {
+            background-color: #F8FAFC;
+            background-image: radial-gradient(#CBD5E1 1.5px, transparent 1.5px);
+            background-size: 20px 20px;
+        }
+        .dark .bg-halftone {
+            background-color: #0F172A;
+            background-image: radial-gradient(#334155 1.5px, transparent 1.5px);
+            background-size: 20px 20px;
+        }
+        /* Custom Mouse Cursor */
+        @media (pointer: fine) {
+            body {
+                cursor: none !important;
+            }
+            a, button, input, select, textarea, [onclick], .cursor-pointer {
+                cursor: none !important;
+            }
+        }
+        .custom-cursor {
+            pointer-events: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            z-index: 99999;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.2s;
+        }
+        #custom-cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #F59E0B;
+            transition: transform 0.05s linear, background-color 0.2s;
+        }
+        .dark #custom-cursor-dot {
+            background-color: #FBBF24;
+        }
+        #custom-cursor-ring {
+            width: 28px;
+            height: 28px;
+            border: 2px solid #F59E0B;
+            transition: width 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                        height 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                        border-color 0.2s, 
+                        transform 0.08s ease-out;
+        }
+        .dark #custom-cursor-ring {
+            border-color: #FBBF24;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 font-sans selection:bg-amber-300 selection:text-comical-hair transition-colors duration-200">
+
+    <!-- Custom Cursor -->
+    <div id="custom-cursor-dot" class="custom-cursor hidden md:block"></div>
+    <div id="custom-cursor-ring" class="custom-cursor hidden md:block"></div>
+
+    <!-- ==================== MAIN HEADER NAVIGATION ==================== -->
+    <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b-3 border-comical-hair dark:border-slate-700 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand / Logo -->
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-300 comic-border-thin shadow-comic-sm flex items-center justify-center text-comical-hair font-display text-2xl group-hover:-rotate-6 transition-transform">
+                        C!
+                    </div>
+                    <div>
+                        <span class="font-display font-bold text-2xl tracking-wide text-comical-hair dark:text-white block leading-none">COMICAL</span>
+                        <span class="text-[10px] font-bold tracking-widest text-amber-600 dark:text-amber-400 uppercase">2D Animation &amp; Art</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links (Requirement 4: Balanced, Cleanly Spaced 2D, 3D, Illustration) -->
+                <nav class="hidden md:flex items-center gap-2 lg:gap-3 font-semibold text-sm">
+                    <!-- 1. 2D Work (Active) -->
+                    <a href="2d.html" class="px-4 py-2 rounded-xl bg-amber-400 text-comical-hair ring-2 ring-amber-500 comic-border-thin shadow-comic-sm font-display font-bold flex items-center gap-1.5">
+                        <i class="fa-solid fa-paintbrush text-comical-hair"></i> 2D Work
+                    </a>
+                    <!-- 2. 3D Work -->
+                    <a href="3d.html" class="px-4 py-2 rounded-xl bg-sky-100 dark:bg-sky-950/40 text-comical-blue dark:text-sky-300 hover:bg-sky-200 dark:hover:bg-sky-900/60 comic-border-thin shadow-comic-sm transition font-display font-bold flex items-center gap-1.5">
+                        <i class="fa-solid fa-cube text-sky-600 dark:text-sky-400"></i> 3D Work
+                    </a>
+                    <!-- 3. Illustration -->
+                    <a href="illustration.html" class="px-4 py-2 rounded-xl bg-purple-100 dark:bg-purple-950/40 text-purple-900 dark:text-purple-200 hover:bg-purple-300 dark:hover:bg-purple-900/60 comic-border-thin shadow-comic-sm transition font-display font-bold flex items-center gap-1.5">
+                        <i class="fa-solid fa-palette text-purple-600"></i> Illustration
+                    </a>
+
+                    <a href="index.html#section-services" class="px-3.5 py-2 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-comical-blueLight dark:hover:bg-slate-800 hover:text-comical-blue dark:hover:text-sky-400 transition">What We Offer</a>
+                    <a href="index.html#section-process" class="px-3.5 py-2 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-comical-blueLight dark:hover:bg-slate-800 hover:text-comical-blue dark:hover:text-sky-400 transition">Animation Process</a>
+                    <a href="index.html#section-work" class="px-3.5 py-2 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-comical-blueLight dark:hover:bg-slate-800 hover:text-comical-blue dark:hover:text-sky-400 transition">Work With Me</a>
+                    <a href="index.html#section-contact" class="px-4 py-2 rounded-xl bg-comical-hair dark:bg-sky-500 text-white dark:text-slate-950 comic-border-thin shadow-comic-sm hover:bg-comical-blueDark dark:hover:bg-sky-400 transition font-display font-bold">Say Hi!</a>
+
+                    <!-- Dark Mode Toggle Button -->
+                    <button id="theme-toggle-btn" onclick="toggleTheme()" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-amber-300 comic-border-thin shadow-comic-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+                        <i id="theme-icon" class="fa-solid fa-moon text-base"></i>
+                    </button>
+
+                    <!-- Sound / Mute Toggle Button -->
+                    <button id="sound-toggle-btn" onclick="toggleSound()" title="Toggle Sound / Mute" aria-label="Toggle Sound / Mute" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-emerald-600 dark:text-emerald-400 comic-border-thin shadow-comic-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+                        <i id="sound-icon" class="fa-solid fa-volume-high text-base"></i>
+                    </button>
+                </nav>
+
+                <!-- Mobile Menu Button & Controls -->
+                <div class="flex items-center gap-2 md:hidden">
+                    <button onclick="toggleTheme()" aria-label="Toggle Dark Mode" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-amber-300 comic-border-thin">
+                        <i id="theme-icon-mobile" class="fa-solid fa-moon text-sm"></i>
+                    </button>
+                    <button onclick="toggleSound()" aria-label="Toggle Sound" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-emerald-600 dark:text-emerald-400 comic-border-thin">
+                        <i id="sound-icon-mobile" class="fa-solid fa-volume-high text-sm"></i>
+                    </button>
+                    <button id="mobile-menu-btn" aria-label="Toggle Menu" class="p-3 rounded-xl bg-amber-100 dark:bg-slate-800 text-comical-hair dark:text-white comic-border-thin">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-900 border-t-2 border-comical-hair dark:border-slate-700 px-4 pt-3 pb-6 space-y-2">
+            <a href="2d.html" class="flex items-center gap-2 px-4 py-3 rounded-xl font-bold bg-amber-400 text-comical-hair comic-border-thin ring-2 ring-amber-500">
+                <i class="fa-solid fa-paintbrush text-comical-hair"></i> 1. 2D Work (Active)
+            </a>
+            <a href="3d.html" class="flex items-center gap-2 px-4 py-3 rounded-xl font-bold bg-sky-100 dark:bg-sky-950/40 text-comical-blue dark:text-sky-300 comic-border-thin">
+                <i class="fa-solid fa-cube text-comical-blue dark:text-sky-400"></i> 2. 3D Work
+            </a>
+            <a href="illustration.html" class="flex items-center gap-2 px-4 py-3 rounded-xl font-bold bg-purple-100 dark:bg-purple-950/40 text-purple-900 dark:text-purple-200 comic-border-thin">
+                <i class="fa-solid fa-palette text-purple-600"></i> 3. Illustration
+            </a>
+            <a href="index.html#section-services" class="block px-4 py-2 text-slate-700 dark:text-slate-200 font-semibold">What We Offer</a>
+            <a href="index.html#section-process" class="block px-4 py-2 text-slate-700 dark:text-slate-200 font-semibold">Animation Process</a>
+            <a href="index.html#section-work" class="block px-4 py-2 text-slate-700 dark:text-slate-200 font-semibold">Work With Me</a>
+            <a href="index.html#section-contact" class="block text-center mt-3 px-4 py-3 rounded-xl font-bold bg-comical-hair dark:bg-sky-500 text-white dark:text-slate-950 comic-border-thin">Say Hi!</a>
+        </div>
+    </header>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="relative pt-10 pb-14 lg:pt-14 lg:pb-16 bg-gradient-to-b from-amber-100 via-amber-50 to-white dark:from-slate-900 dark:via-slate-900 dark:to-slate-900 border-b-3 border-comical-hair dark:border-slate-700 overflow-hidden transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="space-y-4 max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-200 dark:bg-amber-900/60 border-2 border-amber-400 text-amber-900 dark:text-amber-200 font-bold text-xs uppercase tracking-wider shadow-comic-sm">
+                    <i class="fa-solid fa-paintbrush text-amber-700 dark:text-amber-400"></i> Frame-by-Frame, High Quality &amp; Puppet Animation
+                </div>
+                <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl text-comical-hair dark:text-white tracking-wide leading-tight">
+                    2D Animation &amp; Art Services
+                </h1>
+                <p class="text-slate-700 dark:text-slate-300 text-base sm:text-lg leading-relaxed">
+                    Hand-drawn character performances, frame-by-frame acting, fluid puppet rig animation, and character turnaround blueprints.
+                </p>
+                <div class="flex flex-wrap items-center gap-3 pt-2">
+                    <span class="px-3 py-1 rounded-xl bg-white dark:bg-slate-800 comic-border-thin text-xs font-bold text-slate-700 dark:text-slate-300 shadow-comic-sm">
+                        <i class="fa-solid fa-check text-amber-500 mr-1"></i> Traditional 2s &amp; 1s
+                    </span>
+                    <span class="px-3 py-1 rounded-xl bg-white dark:bg-slate-800 comic-border-thin text-xs font-bold text-slate-700 dark:text-slate-300 shadow-comic-sm">
+                        <i class="fa-solid fa-check text-amber-500 mr-1"></i> Clip Studio &amp; Toon Boom
+                    </span>
+                    <span class="px-3 py-1 rounded-xl bg-white dark:bg-slate-800 comic-border-thin text-xs font-bold text-slate-700 dark:text-slate-300 shadow-comic-sm">
+                        <i class="fa-solid fa-check text-amber-500 mr-1"></i> High-Energy Comedy
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== REQUIREMENT 5: RESTORED 2D FILTERS (ALL SELECTED BY DEFAULT, NO ISOLATE) ==================== -->
+    <section class="py-12 lg:py-16 bg-slate-50 dark:bg-slate-900 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="mb-10 pb-6 border-b-2 border-slate-200 dark:border-slate-700">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                    <div class="flex flex-wrap items-center gap-2.5" id="filter-container-2d">
+                        
+                        <!-- 1. All 2D Work (Selected by Default) -->
+                        <button onclick="setFilter2D('all')" id="filter-btn-all" class="filter-btn-2d px-4 py-2.5 rounded-xl font-display font-bold text-sm bg-amber-400 text-comical-hair comic-border-thin shadow-comic-sm transition">
+                            🎬 All 2D Work
+                        </button>
+
+                        <!-- 2. High-Quality Animation -->
+                        <button onclick="setFilter2D('high-quality')" id="filter-btn-high-quality" class="filter-btn-2d px-4 py-2.5 rounded-xl font-display font-bold text-sm bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 comic-border-thin shadow-comic-sm hover:bg-slate-100 dark:hover:bg-slate-700 transition">
+                            ✨ High-Quality Animation
+                        </button>
+
+                        <!-- 3. Frame-by-Frame Animation -->
+                        <button onclick="setFilter2D('frame-by-frame')" id="filter-btn-frame-by-frame" class="filter-btn-2d px-4 py-2.5 rounded-xl font-display font-bold text-sm bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 comic-border-thin shadow-comic-sm hover:bg-slate-100 dark:hover:bg-slate-700 transition">
+                            🎞️ Frame-by-Frame Animation
+                        </button>
+
+                        <!-- 4. Puppet Animation -->
+                        <button onclick="setFilter2D('puppet')" id="filter-btn-puppet" class="filter-btn-2d px-4 py-2.5 rounded-xl font-display font-bold text-sm bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 comic-border-thin shadow-comic-sm hover:bg-slate-100 dark:hover:bg-slate-700 transition">
+                            🎭 Puppet Animation
+                        </button>
+
+                        <!-- 5. 2D Animation (Model Sheets) -->
+                        <button onclick="setFilter2D('2d-animation')" id="filter-btn-2d-animation" class="filter-btn-2d px-4 py-2.5 rounded-xl font-display font-bold text-sm bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 comic-border-thin shadow-comic-sm hover:bg-slate-100 dark:hover:bg-slate-700 transition">
+                            ✏️ 2D Animation &amp; Sheets
+                        </button>
+
+                    </div>
+
+                    <span id="project-counter-2d" class="text-xs font-mono font-bold text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 px-3.5 py-2 rounded-xl comic-border-thin shadow-comic-sm shrink-0 self-start lg:self-auto">
+                        Showing 26 Projects
+                    </span>
+                </div>
+            </div>
+
+            <!-- 2D PROJECT GALLERY GRID -->
+            <div id="grid-2d" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card: 15 AUG MODDDI -->
+                <article data-categories="high-quality" class="project-card-2d group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
+                    <div onclick="openVideoPlayer('./2d%20videos/High%20quality%20animation/15%20AUG%20MODDDI.mp4', '15 AUG MODDDI', 'High-Quality Animation', 'video')" class="relative aspect-square bg-slate-950 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
+                        <video src="./2d%20videos/High%20quality%20animation/15%20AUG%20MODDDI.mp4" preload="metadata" muted playsinline class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300"></video>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-full bg-amber-400 text-comical-hair comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+                                <i class="fa-solid fa-play text-xl ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-amber-500 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            High-Quality Animation
+                        </span>
+                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            9:16
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
+                        <div>
+                            <span class="text-xs font-bold text-comical-blue dark:text-sky-400 uppercase tracking-wider block mb-1">High-Quality Animation</span>
+                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">15 AUG MODDDI</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Full-color production 2D animation with dynamic camera moves, cel shading, and polished comedic acting.</p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-play"></i> Watch Animation</span>
+                            <span class="text-slate-400 dark:text-slate-500 font-normal">Original Ratio</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card: Female crocs2d -->
+                <article data-categories="high-quality" class="project-card-2d group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
+                    <div onclick="openVideoPlayer('./2d%20videos/High%20quality%20animation/Female%20crocs2d.mp4', 'Female crocs2d', 'High-Quality Animation', 'video')" class="relative aspect-square bg-slate-950 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
+                        <video src="./2d%20videos/High%20quality%20animation/Female%20crocs2d.mp4" preload="metadata" muted playsinline class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300"></video>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-full bg-amber-400 text-comical-hair comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+                                <i class="fa-solid fa-play text-xl ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-amber-500 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            High-Quality Animation
+                        </span>
+                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            9:16
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
+                        <div>
+                            <span class="text-xs font-bold text-comical-blue dark:text-sky-400 uppercase tracking-wider block mb-1">High-Quality Animation</span>
+                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">Female crocs2d</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Full-color production 2D animation with dynamic camera moves, cel shading, and polished comedic acting.</p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-play"></i> Watch Animation</span>
+                            <span class="text-slate-400 dark:text-slate-500 font-normal">Original Ratio</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card: Festive Celebration Short Reel -->
+                <article data-categories="high-quality" class="project-card-2d group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
+                    <div onclick="openVideoPlayer('./2d%20videos/High%20quality%20animation/happy%20diwali%20guys%20%E2%9D%A4%EF%B8%8F%F0%9F%98%8Anext%20reel%20christmas%20ka%20new%20year%20k%20din%20%23rpcomical%20%23iamcomical%20%23krishnartoon.mp4', 'Festive Celebration Short Reel', 'High-Quality Animation', 'video')" class="relative aspect-square bg-slate-950 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
+                        <video src="./2d%20videos/High%20quality%20animation/happy%20diwali%20guys%20%E2%9D%A4%EF%B8%8F%F0%9F%98%8Anext%20reel%20christmas%20ka%20new%20year%20k%20din%20%23rpcomical%20%23iamcomical%20%23krishnartoon.mp4" preload="metadata" muted playsinline class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300"></video>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-full bg-amber-400 text-comical-hair comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+                                <i class="fa-solid fa-play text-xl ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-amber-500 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            High-Quality Animation
+                        </span>
+                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            9:16
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
+                        <div>
+                            <span class="text-xs font-bold text-comical-blue dark:text-sky-400 uppercase tracking-wider block mb-1">High-Quality Animation</span>
+                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">Festive Celebration Short Reel</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Expressive hand-drawn character acting with festive lighting and lively party dynamics.</p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-play"></i> Watch Animation</span>
+                            <span class="text-slate-400 dark:text-slate-500 font-normal">Original Ratio</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card: Janmashtami Sacred Short Reel -->
+                <article data-categories="high-quality" class="project-card-2d group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
+                    <div onclick="openVideoPlayer('./2d%20videos/High%20quality%20animation/Happy%20janmashtami%20%E2%9D%A4%EF%B8%8F%F0%9F%A7%BF%23iamcomical%20%23rpcomical%20%23kriahna%20%23kriahnalove%E2%99%A5%EF%B8%8F%20%23janmashtami%20%23janmashtami%20%23.mp4', 'Janmashtami Sacred Short Reel', 'High-Quality Animation', 'video')" class="relative aspect-square bg-slate-950 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
+                        <video src="./2d%20videos/High%20quality%20animation/Happy%20janmashtami%20%E2%9D%A4%EF%B8%8F%F0%9F%A7%BF%23iamcomical%20%23rpcomical%20%23kriahna%20%23kriahnalove%E2%99%A5%EF%B8%8F%20%23janmashtami%20%23janmashtami%20%23.mp4" preload="metadata" muted playsinline class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300"></video>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-full bg-amber-400 text-comical-hair comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+                                <i class="fa-solid fa-play text-xl ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-amber-500 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            High-Quality Animation
+                        </span>
+                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            9:16
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
+                        <div>
+                            <span class="text-xs font-bold text-comical-blue dark:text-sky-400 uppercase tracking-wider block mb-1">High-Quality Animation</span>
+                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">Janmashtami Sacred Short Reel</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Vibrant animated visual tribute with fluid character posing and traditional styling.</p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-play"></i> Watch Animation</span>
+                            <span class="text-slate-400 dark:text-slate-500 font-normal">Original Ratio</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card: Dussehra Festival Comedy Short -->
+                <article data-categories="high-quality" class="project-card-2d group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
+                    <div onclick="openVideoPlayer('./2d%20videos/High%20quality%20animation/i%20know%20kafi%20late%20hogya%20lekin%20fir%20bhi%20dekh%20lo%20%F0%9F%A7%97%20Happy%20dussehra%20GUYSSSSSS%E2%9D%A4%EF%B8%8F%23RPComical%20%2C%20%23rpcomica.mp4', 'Dussehra Festival Comedy Short', 'High-Quality Animation', 'video')" class="relative aspect-square bg-slate-950 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
+                        <video src="./2d%20videos/High%20quality%20animation/i%20know%20kafi%20late%20hogya%20lekin%20fir%20bhi%20dekh%20lo%20%F0%9F%A7%97%20Happy%20dussehra%20GUYSSSSSS%E2%9D%A4%EF%B8%8F%23RPComical%20%2C%20%23rpcomica.mp4" preload="metadata" muted playsinline class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300"></video>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-full bg-amber-400 text-comical-hair comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+                                <i class="fa-solid fa-play text-xl ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-amber-500 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            High-Quality Animation
+                        </span>
+                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            9:16
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
+                        <div>
+                            <span class="text-xs font-bold text-comical-blue dark:text-sky-400 uppercase tracking-wider block mb-1">High-Quality Animation</span>
+                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">Dussehra Festival Comedy Short</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Snappy timing, humorous comedic takes, and rich festival background elements.</p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-play"></i> Watch Animation</span>
+                            <span class="text-slate-400 dark:text-slate-500 font-normal">Original Ratio</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card: Dhongi Baba Satirical Comedy Reel -->
+                <article data-categories="high-quality" class="project-card-2d group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
+                    <div onclick="openVideoPlayer('./2d%20videos/High%20quality%20animation/OnYT%E2%9D%A4%EF%B8%8Fhttps---youtu.be-LwglxQbEiZ8%23iamcomical%20%23dhongibaba%20%23babamemes%20%23comicalhuvai%20%23funnyvideos.mp4', 'Dhongi Baba Satirical Comedy Reel', 'High-Quality Animation', 'video')" class="relative aspect-square bg-slate-950 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
+                        <video src="./2d%20videos/High%20quality%20animation/OnYT%E2%9D%A4%EF%B8%8Fhttps---youtu.be-LwglxQbEiZ8%23iamcomical%20%23dhongibaba%20%23babamemes%20%23comicalhuvai%20%23funnyvideos.mp4" preload="metadata" muted playsinline class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300"></video>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-full bg-amber-400 text-comical-hair comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+                                <i class="fa-solid fa-play text-xl ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-amber-500 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            High-Quality Animation
+                        </span>
+                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            9:16
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
+                        <div>
+                            <span class="text-xs font-bold text-comical-blue dark:text-sky-400 uppercase tracking-wider block mb-1">High-Quality Animation</span>
+                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">Dhongi Baba Satirical Comedy Reel</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Viral character sketch with expressive mouth shapes, comedic pauses, and voice syncing.</p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-play"></i> Watch Animation</span>
+                            <span class="text-slate-400 dark:text-slate-500 font-normal">Original Ratio</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card: re upload godiprotest -->
+                <article data-categories="high-quality" class="project-card-2d group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
+                    <div onclick="openVideoPlayer('./2d%20videos/High%20quality%20animation/re%20upload%20godiprotest.mp4', 're upload godiprotest', 'High-Quality Animation', 'video')" class="relative aspect-square bg-slate-950 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
+                        <video src="./2d%20videos/High%20quality%20animation/re%20upload%20godiprotest.mp4" preload="metadata" muted playsinline class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300"></video>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-full bg-amber-400 text-comical-hair comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+                                <i class="fa-solid fa-play text-xl ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-amber-500 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            High-Quality Animation
+                        </span>
+                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            9:16
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
+                        <div>
+                            <span class="text-xs font-bold text-comical-blue dark:text-sky-400 uppercase tracking-wider block mb-1">High-Quality Animation</span>
+                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">re upload godiprotest</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Full-color production 2D animation with dynamic camera moves, cel shading, and polished comedic acting.</p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-play"></i> Watch Animation</span>
+                            <span class="text-slate-400 dark:text-slate-500 font-normal">Original Ratio</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card: Bakduko Dynamic Combat Reel -->
+                <article data-categories="frame-by-frame 2d-animation" class="project-card-2d group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
+                    <div onclick="openVideoPlayer('./2d%20videos/Frame%20by%20frame%20animation/bakduko2%20reel%20feb_1.mp4', 'Bakduko Dynamic Combat Reel', 'Frame-by-Frame Animation', 'video')" class="relative aspect-square bg-slate-950 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
+                        <video src="./2d%20videos/Frame%20by%20frame%20animation/bakduko2%20reel%20feb_1.mp4" preload="metadata" muted playsinline class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300"></video>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-full bg-amber-400 text-comical-hair comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+                                <i class="fa-solid fa-play text-xl ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-blue-600 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            Frame-by-Frame Animation
+                        </span>
+                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            9:16
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
+                        <div>
+                            <span class="text-xs font-bold text-comical-blue dark:text-sky-400 uppercase tracking-wider block mb-1">Frame-by-Frame Animation</span>
+                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">Bakduko Dynamic Combat Reel</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Rapid hand-drawn martial arts flurry with dynamic camera shaking and impact frames.</p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-play"></i> Watch Animation</span>
+                            <span class="text-slate-400 dark:text-slate-500 font-normal">Original Ratio</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card: Feline Movement & Locomotion -->
+                <article data-categories="frame-by-frame 2d-animation" class="project-card-2d group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
+                    <div onclick="openVideoPlayer('./2d%20videos/Frame%20by%20frame%20animation/catreel2_2_1.mp4', 'Feline Movement & Locomotion', 'Frame-by-Frame Animation', 'video')" class="relative aspect-square bg-slate-950 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
+                        <video src="./2d%20videos/Frame%20by%20frame%20animation/catreel2_2_1.mp4" preload="metadata" muted playsinline class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300"></video>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-full bg-amber-400 text-comical-hair comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+                                <i class="fa-solid fa-play text-xl ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-blue-600 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            Frame-by-Frame Animation
+                        </span>
+                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            9:16
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
+                        <div>
+                            <span class="text-xs font-bold text-comical-blue dark:text-sky-400 uppercase tracking-wider block mb-1">Frame-by-Frame Animation</span>
+                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">Feline Movement & Locomotion</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Quadruped cat locomotion study capturing organic spine flexibility and tail counter-balance.</p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-play"></i> Watch Animation</span>
+                            <span class="text-slate-400 dark:text-slate-500 font-normal">Original Ratio</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card: Cat Coat Transformation Take -->
+                <article data-categories="frame-by-frame 2d-animation" class="project-card-2d group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
+                    <div onclick="openVideoPlayer('./2d%20videos/Frame%20by%20frame%20animation/coatJobCAT_1.mp4', 'Cat Coat Transformation Take', 'Frame-by-Frame Animation', 'video')" class="relative aspect-square bg-slate-950 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
+                        <video src="./2d%20videos/Frame%20by%20frame%20animation/coatJobCAT_1.mp4" preload="metadata" muted playsinline class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300"></video>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-full bg-amber-400 text-comical-hair comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+                                <i class="fa-solid fa-play text-xl ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-blue-600 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            Frame-by-Frame Animation
+                        </span>
+                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            9:16
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
+                        <div>
+                            <span class="text-xs font-bold text-comical-blue dark:text-sky-400 uppercase tracking-wider block mb-1">Frame-by-Frame Animation</span>
+                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">Cat Coat Transformation Take</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Humorous anthropomorphic character animation exploring clothing interaction and comic acting.</p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-play"></i> Watch Animation</span>
+                            <span class="text-slate-400 dark:text-slate-500 font-normal">Original Ratio</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card: Comical Short Narrative Beat 11 -->
+                <article data-categories="frame-by-frame 2d-animation" class="project-card-2d group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
+                    <div onclick="openVideoPlayer('./2d%20videos/Frame%20by%20frame%20animation/COM11.mp4', 'Comical Short Narrative Beat 11', 'Frame-by-Frame Animation', 'video')" class="relative aspect-square bg-slate-950 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
+                        <video src="./2d%20videos/Frame%20by%20frame%20animation/COM11.mp4" preload="metadata" muted playsinline class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300"></video>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-full bg-amber-400 text-comical-hair comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+                                <i class="fa-solid fa-play text-xl ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-blue-600 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            Frame-by-Frame Animation
+                        </span>
+                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            9:16
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
+                        <div>
+                            <span class="text-xs font-bold text-comical-blue dark:text-sky-400 uppercase tracking-wider block mb-1">Frame-by-Frame Animation</span>
+                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">Comical Short Narrative Beat 11</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Fast comedic reaction shot with exaggerated pupil dilation and comical head turn.</p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-play"></i> Watch Animation</span>
+                            <span class="text-slate-400 dark:text-slate-500 font-normal">Original Ratio</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card: Comp 1_1 -->
+                <article data-categories="frame-by-frame 2d-animation" class="project-card-2d group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
+                    <div onclick="openVideoPlayer('./2d%20videos/Frame%20by%20frame%20animation/Comp%201_1.mp4', 'Comp 1_1', 'Frame-by-Frame Animation', 'video')" class="relative aspect-square bg-slate-950 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
+                        <video src="./2d%20videos/Frame%20by%20frame%20animation/Comp%201_1.mp4" preload="metadata" muted playsinline class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300"></video>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-full bg-amber-400 text-comical-hair comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+                                <i class="fa-solid fa-play text-xl ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-blue-600 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            Frame-by-Frame Animation
+                        </span>
+                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            9:16
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
+                        <div>
+                            <span class="text-xs font-bold text-comical-blue dark:text-sky-400 uppercase tracking-wider block mb-1">Frame-by-Frame Animation</span>
+                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">Comp 1_1</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Traditional frame-by-frame hand-drawn keys exploring weight, arcs, and snappy holds on 2s.</p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-play"></i> Watch Animation</span>
+                            <span class="text-slate-400 dark:text-slate-500 font-normal">Original Ratio</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card: jorden1 -->
+                <article data-categories="frame-by-frame 2d-animation" class="project-card-2d group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
+                    <div onclick="openVideoPlayer('./2d%20videos/Frame%20by%20frame%20animation/jorden1.mp4', 'jorden1', 'Frame-by-Frame Animation', 'video')" class="relative aspect-square bg-slate-950 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
+                        <video src="./2d%20videos/Frame%20by%20frame%20animation/jorden1.mp4" preload="metadata" muted playsinline class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300"></video>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-full bg-amber-400 text-comical-hair comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+                                <i class="fa-solid fa-play text-xl ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-blue-600 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            Frame-by-Frame Animation
+                        </span>
+                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            9:16
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
+                        <div>
+                            <span class="text-xs font-bold text-comical-blue dark:text-sky-400 uppercase tracking-wider block mb-1">Frame-by-Frame Animation</span>
+                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">jorden1</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Traditional frame-by-frame hand-drawn keys exploring weight, arcs, and snappy holds on 2s.</p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-play"></i> Watch Animation</span>
+                            <span class="text-slate-400 dark:text-slate-500 font-normal">Original Ratio</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card: moneybut -->
+                <article data-categories="frame-by-frame 2d-animation" class="project-card-2d group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
+                    <div onclick="openVideoPlayer('./2d%20videos/Frame%20by%20frame%20animation/moneybut.mp4', 'moneybut', 'Frame-by-Frame Animation', 'video')" class="relative aspect-square bg-slate-950 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
+                        <video src="./2d%20videos/Frame%20by%20frame%20animation/moneybut.mp4" preload="metadata" muted playsinline class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300"></video>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-full bg-amber-400 text-comical-hair comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+                                <i class="fa-solid fa-play text-xl ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-blue-600 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            Frame-by-Frame Animation
+                        </span>
+                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            9:16
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
+                        <div>
+                            <span class="text-xs font-bold text-comical-blue dark:text-sky-400 uppercase tracking-wider block mb-1">Frame-by-Frame Animation</span>
+                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">moneybut</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Traditional frame-by-frame hand-drawn keys exploring weight, arcs, and snappy holds on 2s.</p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-play"></i> Watch Animation</span>
+                            <span class="text-slate-400 dark:text-slate-500 font-normal">Original Ratio</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card: reel 3dukofebb -->
+                <article data-categories="frame-by-frame 2d-animation" class="project-card-2d group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
+                    <div onclick="openVideoPlayer('./2d%20videos/Frame%20by%20frame%20animation/reel%203dukofebb.mp4', 'reel 3dukofebb', 'Frame-by-Frame Animation', 'video')" class="relative aspect-square bg-slate-950 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
+                        <video src="./2d%20videos/Frame%20by%20frame%20animation/reel%203dukofebb.mp4" preload="metadata" muted playsinline class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300"></video>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-full bg-amber-400 text-comical-hair comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+                                <i class="fa-solid fa-play text-xl ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-blue-600 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            Frame-by-Frame Animation
+                        </span>
+                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            9:16
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
+                        <div>
+                            <span class="text-xs font-bold text-comical-blue dark:text-sky-400 uppercase tracking-wider block mb-1">Frame-by-Frame Animation</span>
+                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">reel 3dukofebb</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Traditional frame-by-frame hand-drawn keys exploring weight, arcs, and snappy holds on 2s.</p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-play"></i> Watch Animation</span>
+                            <span class="text-slate-400 dark:text-slate-500 font-normal">Original Ratio</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card: reel 4duko feb -->
+                <article data-categories="frame-by-frame 2d-animation" class="project-card-2d group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
+                    <div onclick="openVideoPlayer('./2d%20videos/Frame%20by%20frame%20animation/reel%204duko%20feb.mp4', 'reel 4duko feb', 'Frame-by-Frame Animation', 'video')" class="relative aspect-square bg-slate-950 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
+                        <video src="./2d%20videos/Frame%20by%20frame%20animation/reel%204duko%20feb.mp4" preload="metadata" muted playsinline class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300"></video>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-full bg-amber-400 text-comical-hair comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+                                <i class="fa-solid fa-play text-xl ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-blue-600 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            Frame-by-Frame Animation
+                        </span>
+                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            9:16
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
+                        <div>
+                            <span class="text-xs font-bold text-comical-blue dark:text-sky-400 uppercase tracking-wider block mb-1">Frame-by-Frame Animation</span>
+                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">reel 4duko feb</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Traditional frame-by-frame hand-drawn keys exploring weight, arcs, and snappy holds on 2s.</p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-play"></i> Watch Animation</span>
+                            <span class="text-slate-400 dark:text-slate-500 font-normal">Original Ratio</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card: reel 5 duko -->
+                <article data-categories="frame-by-frame 2d-animation" class="project-card-2d group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
+                    <div onclick="openVideoPlayer('./2d%20videos/Frame%20by%20frame%20animation/reel%205%20duko.mp4', 'reel 5 duko', 'Frame-by-Frame Animation', 'video')" class="relative aspect-square bg-slate-950 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
+                        <video src="./2d%20videos/Frame%20by%20frame%20animation/reel%205%20duko.mp4" preload="metadata" muted playsinline class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300"></video>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-full bg-amber-400 text-comical-hair comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+                                <i class="fa-solid fa-play text-xl ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-blue-600 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            Frame-by-Frame Animation
+                        </span>
+                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            9:16
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
+                        <div>
+                            <span class="text-xs font-bold text-comical-blue dark:text-sky-400 uppercase tracking-wider block mb-1">Frame-by-Frame Animation</span>
+                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">reel 5 duko</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Traditional frame-by-frame hand-drawn keys exploring weight, arcs, and snappy holds on 2s.</p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-play"></i> Watch Animation</span>
+                            <span class="text-slate-400 dark:text-slate-500 font-normal">Original Ratio</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card: reel1 dukop -->
+                <article data-categories="frame-by-frame 2d-animation" class="project-card-2d group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
+                    <div onclick="openVideoPlayer('./2d%20videos/Frame%20by%20frame%20animation/reel1%20dukop.mp4', 'reel1 dukop', 'Frame-by-Frame Animation', 'video')" class="relative aspect-square bg-slate-950 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
+                        <video src="./2d%20videos/Frame%20by%20frame%20animation/reel1%20dukop.mp4" preload="metadata" muted playsinline class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300"></video>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-full bg-amber-400 text-comical-hair comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+                                <i class="fa-solid fa-play text-xl ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-blue-600 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            Frame-by-Frame Animation
+                        </span>
+                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            9:16
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
+                        <div>
+                            <span class="text-xs font-bold text-comical-blue dark:text-sky-400 uppercase tracking-wider block mb-1">Frame-by-Frame Animation</span>
+                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">reel1 dukop</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Traditional frame-by-frame hand-drawn keys exploring weight, arcs, and snappy holds on 2s.</p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-play"></i> Watch Animation</span>
+                            <span class="text-slate-400 dark:text-slate-500 font-normal">Original Ratio</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card: rrreel2_1 -->
+                <article data-categories="frame-by-frame 2d-animation" class="project-card-2d group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
+                    <div onclick="openVideoPlayer('./2d%20videos/Frame%20by%20frame%20animation/rrreel2_1.mp4', 'rrreel2_1', 'Frame-by-Frame Animation', 'video')" class="relative aspect-square bg-slate-950 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
+                        <video src="./2d%20videos/Frame%20by%20frame%20animation/rrreel2_1.mp4" preload="metadata" muted playsinline class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300"></video>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-full bg-amber-400 text-comical-hair comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+                                <i class="fa-solid fa-play text-xl ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-blue-600 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            Frame-by-Frame Animation
+                        </span>
+                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            9:16
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
+                        <div>
+                            <span class="text-xs font-bold text-comical-blue dark:text-sky-400 uppercase tracking-wider block mb-1">Frame-by-Frame Animation</span>
+                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">rrreel2_1</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Traditional frame-by-frame hand-drawn keys exploring weight, arcs, and snappy holds on 2s.</p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-play"></i> Watch Animation</span>
+                            <span class="text-slate-400 dark:text-slate-500 font-normal">Original Ratio</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card: stick man_1 -->
+                <article data-categories="frame-by-frame 2d-animation" class="project-card-2d group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
+                    <div onclick="openVideoPlayer('./2d%20videos/Frame%20by%20frame%20animation/stick%20man_1.mp4', 'stick man_1', 'Frame-by-Frame Animation', 'video')" class="relative aspect-square bg-slate-950 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
+                        <video src="./2d%20videos/Frame%20by%20frame%20animation/stick%20man_1.mp4" preload="metadata" muted playsinline class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300"></video>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-full bg-amber-400 text-comical-hair comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+                                <i class="fa-solid fa-play text-xl ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-blue-600 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            Frame-by-Frame Animation
+                        </span>
+                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            9:16
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
+                        <div>
+                            <span class="text-xs font-bold text-comical-blue dark:text-sky-400 uppercase tracking-wider block mb-1">Frame-by-Frame Animation</span>
+                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">stick man_1</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Traditional frame-by-frame hand-drawn keys exploring weight, arcs, and snappy holds on 2s.</p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-play"></i> Watch Animation</span>
+                            <span class="text-slate-400 dark:text-slate-500 font-normal">Original Ratio</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card: test 2 -->
+                <article data-categories="frame-by-frame 2d-animation" class="project-card-2d group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
+                    <div onclick="openVideoPlayer('./2d%20videos/Frame%20by%20frame%20animation/test%202.mp4', 'test 2', 'Frame-by-Frame Animation', 'video')" class="relative aspect-square bg-slate-950 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
+                        <video src="./2d%20videos/Frame%20by%20frame%20animation/test%202.mp4" preload="metadata" muted playsinline class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300"></video>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-full bg-amber-400 text-comical-hair comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+                                <i class="fa-solid fa-play text-xl ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-blue-600 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            Frame-by-Frame Animation
+                        </span>
+                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            9:16
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
+                        <div>
+                            <span class="text-xs font-bold text-comical-blue dark:text-sky-400 uppercase tracking-wider block mb-1">Frame-by-Frame Animation</span>
+                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">test 2</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Traditional frame-by-frame hand-drawn keys exploring weight, arcs, and snappy holds on 2s.</p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-play"></i> Watch Animation</span>
+                            <span class="text-slate-400 dark:text-slate-500 font-normal">Original Ratio</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card: Timeline 1 -->
+                <article data-categories="2d-animation frame-by-frame" class="project-card-2d group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
+                    <div onclick="openLightbox('Timeline 1', 'Traditional frame-by-frame hand-drawn keys exploring weight, arcs, and snappy holds on 2s.', '2D Animation', './2d%20videos/Frame%20by%20frame%20animation/Timeline%201.mov')" class="relative aspect-square bg-slate-950 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
+                        <img src="./2d%20videos/Frame%20by%20frame%20animation/Timeline%201.mov" alt="Timeline 1" loading="lazy" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-black/30 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-full bg-amber-400 text-comical-hair comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+                                <i class="fa-solid fa-expand text-xl"></i>
+                            </div>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-purple-600 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            2D Animation
+                        </span>
+                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            MODEL SHEET
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
+                        <div>
+                            <span class="text-xs font-bold text-comical-blue dark:text-sky-400 uppercase tracking-wider block mb-1">2D Animation</span>
+                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">Timeline 1</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Traditional frame-by-frame hand-drawn keys exploring weight, arcs, and snappy holds on 2s.</p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-image"></i> Inspect Sheet</span>
+                            <span class="text-slate-400 dark:text-slate-500 font-normal">Full Resolution</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card: Final tribe -->
+                <article data-categories="puppet" class="project-card-2d group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
+                    <div onclick="openVideoPlayer('./2d%20videos/puppet%20animation/Final%20tribe.mp4', 'Final tribe', 'Puppet Animation', 'video')" class="relative aspect-square bg-slate-950 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
+                        <video src="./2d%20videos/puppet%20animation/Final%20tribe.mp4" preload="metadata" muted playsinline class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300"></video>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-full bg-amber-400 text-comical-hair comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+                                <i class="fa-solid fa-play text-xl ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-emerald-600 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            Puppet Animation
+                        </span>
+                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            16:9
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
+                        <div>
+                            <span class="text-xs font-bold text-comical-blue dark:text-sky-400 uppercase tracking-wider block mb-1">Puppet Animation</span>
+                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">Final tribe</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Digital cutout puppet rig animation with smooth interpolated arcs and responsive bone hierarchies.</p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-play"></i> Watch Animation</span>
+                            <span class="text-slate-400 dark:text-slate-500 font-normal">Original Ratio</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card: Mani Office -->
+                <article data-categories="puppet" class="project-card-2d group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
+                    <div onclick="openVideoPlayer('./2d%20videos/puppet%20animation/Mani%20Office.mp4', 'Mani Office', 'Puppet Animation', 'video')" class="relative aspect-square bg-slate-950 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
+                        <video src="./2d%20videos/puppet%20animation/Mani%20Office.mp4" preload="metadata" muted playsinline class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300"></video>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-full bg-amber-400 text-comical-hair comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+                                <i class="fa-solid fa-play text-xl ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-emerald-600 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            Puppet Animation
+                        </span>
+                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            16:9
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
+                        <div>
+                            <span class="text-xs font-bold text-comical-blue dark:text-sky-400 uppercase tracking-wider block mb-1">Puppet Animation</span>
+                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">Mani Office</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Digital cutout puppet rig animation with smooth interpolated arcs and responsive bone hierarchies.</p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-play"></i> Watch Animation</span>
+                            <span class="text-slate-400 dark:text-slate-500 font-normal">Original Ratio</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card: mani space -->
+                <article data-categories="puppet" class="project-card-2d group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
+                    <div onclick="openVideoPlayer('./2d%20videos/puppet%20animation/mani%20space.mp4', 'mani space', 'Puppet Animation', 'video')" class="relative aspect-square bg-slate-950 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
+                        <video src="./2d%20videos/puppet%20animation/mani%20space.mp4" preload="metadata" muted playsinline class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300"></video>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-full bg-amber-400 text-comical-hair comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+                                <i class="fa-solid fa-play text-xl ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-emerald-600 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            Puppet Animation
+                        </span>
+                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            16:9
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
+                        <div>
+                            <span class="text-xs font-bold text-comical-blue dark:text-sky-400 uppercase tracking-wider block mb-1">Puppet Animation</span>
+                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">mani space</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Digital cutout puppet rig animation with smooth interpolated arcs and responsive bone hierarchies.</p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-play"></i> Watch Animation</span>
+                            <span class="text-slate-400 dark:text-slate-500 font-normal">Original Ratio</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card: Most famous Thug -->
+                <article data-categories="puppet" class="project-card-2d group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
+                    <div onclick="openVideoPlayer('./2d%20videos/puppet%20animation/Most%20famous%20Thug.mp4', 'Most famous Thug', 'Puppet Animation', 'video')" class="relative aspect-square bg-slate-950 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
+                        <video src="./2d%20videos/puppet%20animation/Most%20famous%20Thug.mp4" preload="metadata" muted playsinline class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300"></video>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-full bg-amber-400 text-comical-hair comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+                                <i class="fa-solid fa-play text-xl ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-emerald-600 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            Puppet Animation
+                        </span>
+                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            16:9
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
+                        <div>
+                            <span class="text-xs font-bold text-comical-blue dark:text-sky-400 uppercase tracking-wider block mb-1">Puppet Animation</span>
+                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">Most famous Thug</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Digital cutout puppet rig animation with smooth interpolated arcs and responsive bone hierarchies.</p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-play"></i> Watch Animation</span>
+                            <span class="text-slate-400 dark:text-slate-500 font-normal">Original Ratio</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Modal Player -->
+    <div id="video-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex-col items-center justify-center p-4">
+        <div class="relative max-w-4xl w-full flex flex-col items-center">
+            <div class="w-full flex justify-between items-center text-white mb-3 px-2">
+                <div>
+                    <span id="vid-badge" class="px-2.5 py-1 rounded-lg bg-amber-400 text-comical-hair font-bold text-xs uppercase mr-2 comic-border-thin">2D VIDEO</span>
+                    <h3 id="vid-title" class="inline font-display text-2xl tracking-wide">Video Player</h3>
+                </div>
+                <button onclick="closeVideoPlayer()" class="text-slate-400 hover:text-white text-3xl font-bold p-2 transition">&times;</button>
+            </div>
+            <div class="relative bg-black rounded-2xl comic-border overflow-hidden w-full max-h-[75vh] flex items-center justify-center shadow-comic-lg">
+                <video id="player-video" controls autoplay playsinline class="max-h-[75vh] w-auto max-w-full"></video>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal for Model Sheets -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex-col items-center justify-center p-4">
+        <div class="relative max-w-5xl w-full flex flex-col items-center">
+            <div class="w-full flex justify-between items-center text-white mb-3 px-2">
+                <div>
+                    <span id="lb-badge" class="px-2.5 py-1 rounded-lg bg-amber-400 text-comical-hair font-bold text-xs uppercase mr-2 comic-border-thin">MODEL SHEET</span>
+                    <h3 id="lb-title" class="inline font-display text-2xl tracking-wide">Image Preview</h3>
+                </div>
+                <button onclick="closeLightbox()" class="text-slate-400 hover:text-white text-3xl font-bold p-2 transition">&times;</button>
+            </div>
+            <div class="relative bg-black rounded-2xl comic-border overflow-hidden max-h-[75vh] flex items-center justify-center shadow-comic-lg">
+                <img id="lb-image" src="" alt="Model sheet preview" class="max-h-[75vh] w-auto max-w-full object-contain">
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="py-12 bg-comical-hair text-white border-t-3 border-comical-hair">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-700">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-amber-300 text-comical-hair comic-border-thin flex items-center justify-center font-display text-xl">
+                        C!
+                    </div>
+                    <span class="font-display font-bold text-2xl tracking-wide">COMICAL</span>
+                </div>
+
+                <div class="flex items-center gap-4 text-sm font-semibold">
+                    <a href="index.html" class="hover:text-amber-300 transition">Home</a>
+                    <span>&bull;</span>
+                    <a href="2d.html" class="text-amber-300 font-bold">2D Work</a>
+                    <span>&bull;</span>
+                    <a href="3d.html" class="hover:text-sky-300 transition">3D Work</a>
+                    <span>&bull;</span>
+                    <a href="illustration.html" class="hover:text-purple-300 transition">Illustration</a>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <a href="https://www.youtube.com/@iamcomical5050" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-rose-600 flex items-center justify-center text-white transition">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a href="https://www.instagram.com/rp.comical/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-pink-600 flex items-center justify-center text-white transition">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="mailto:backupu795@gmail.com" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-amber-400 hover:text-slate-900 flex items-center justify-center text-white transition">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+                <p>&copy; 2026 COMICAL STUDIO. 2D Animation Portfolio.</p>
+                <p>Email: <a href="mailto:backupu795@gmail.com" class="hover:text-amber-300 font-semibold underline">backupu795@gmail.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== JAVASCRIPT CONTROLLERS ==================== -->
+    <script>
+        // ==================== DARK MODE TOGGLE CONTROLLER ====================
+        function initTheme() {
+            var theme = localStorage.getItem('comical_theme');
+            var isDark = theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            applyTheme(isDark);
+        }
+
+        function applyTheme(isDark) {
+            if (isDark) {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('comical_theme', 'dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('comical_theme', 'light');
+            }
+            var icon = document.getElementById('theme-icon');
+            var iconMob = document.getElementById('theme-icon-mobile');
+            if (icon) icon.className = isDark ? 'fa-solid fa-sun text-base text-amber-400' : 'fa-solid fa-moon text-base';
+            if (iconMob) iconMob.className = isDark ? 'fa-solid fa-sun text-sm text-amber-400' : 'fa-solid fa-moon text-sm';
+        }
+
+        function toggleTheme() {
+            var isDark = document.documentElement.classList.contains('dark');
+            applyTheme(!isDark);
+        }
+
+        // ==================== SOUND CONTROLLER ====================
+        window.isSoundMuted = function() {
+            return localStorage.getItem('comical_sound_muted') === 'true';
+        };
+
+        function initSound() {
+            var muted = window.isSoundMuted();
+            var icon = document.getElementById('sound-icon');
+            var iconMob = document.getElementById('sound-icon-mobile');
+            if (icon) icon.className = muted ? 'fa-solid fa-volume-xmark text-base text-rose-500' : 'fa-solid fa-volume-high text-base text-emerald-600 dark:text-emerald-400';
+            if (iconMob) iconMob.className = muted ? 'fa-solid fa-volume-xmark text-sm text-rose-500' : 'fa-solid fa-volume-high text-sm text-emerald-600 dark:text-emerald-400';
+        }
+
+        function toggleSound() {
+            var muted = !window.isSoundMuted();
+            localStorage.setItem('comical_sound_muted', muted ? 'true' : 'false');
+            initSound();
+        }
+
+        // ==================== CUSTOM MOUSE CURSOR ====================
+        var cursorDot = document.getElementById('custom-cursor-dot');
+        var cursorRing = document.getElementById('custom-cursor-ring');
+        var mouseX = -100, mouseY = -100;
+        var ringX = -100, ringY = -100;
+
+        window.addEventListener('mousemove', function(e) {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            if (cursorDot) {
+                cursorDot.style.left = mouseX + 'px';
+                cursorDot.style.top = mouseY + 'px';
+            }
+        });
+
+        function renderCursorRing() {
+            ringX += (mouseX - ringX) * 0.22;
+            ringY += (mouseY - ringY) * 0.22;
+            if (cursorRing) {
+                cursorRing.style.left = ringX + 'px';
+                cursorRing.style.top = ringY + 'px';
+            }
+            requestAnimationFrame(renderCursorRing);
+        }
+        requestAnimationFrame(renderCursorRing);
+
+        document.querySelectorAll('a, button, [onclick], .cursor-pointer').forEach(function(el) {
+            el.addEventListener('mouseenter', function() {
+                if (cursorRing) {
+                    cursorRing.style.width = '44px';
+                    cursorRing.style.height = '44px';
+                    cursorRing.style.backgroundColor = 'rgba(245, 158, 11, 0.15)';
+                }
+            });
+            el.addEventListener('mouseleave', function() {
+                if (cursorRing) {
+                    cursorRing.style.width = '28px';
+                    cursorRing.style.height = '28px';
+                    cursorRing.style.backgroundColor = 'transparent';
+                }
+            });
+        });
+
+        // ==================== RESTORED 2D FILTER SYSTEM (Requirement 5) ====================
+        // Categories: all, high-quality, frame-by-frame, puppet, 2d-animation
+        var currentFilter2D = 'all';
+
+        function setFilter2D(category) {
+            currentFilter2D = category;
+            var cards = document.querySelectorAll('.project-card-2d');
+            var visibleCount = 0;
+
+            cards.forEach(function(card) {
+                var cats = (card.getAttribute('data-categories') || '').split(' ');
+                if (category === 'all' || cats.indexOf(category) !== -1) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Update button styles
+            var filterIds = ['all', 'high-quality', 'frame-by-frame', 'puppet', '2d-animation'];
+            filterIds.forEach(function(id) {
+                var btn = document.getElementById('filter-btn-' + id);
+                if (btn) {
+                    if (id === category) {
+                        btn.className = 'filter-btn-2d px-4 py-2.5 rounded-xl font-display font-bold text-sm bg-amber-400 text-comical-hair comic-border-thin shadow-comic-sm transition';
+                    } else {
+                        btn.className = 'filter-btn-2d px-4 py-2.5 rounded-xl font-display font-bold text-sm bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 comic-border-thin shadow-comic-sm hover:bg-slate-100 dark:hover:bg-slate-700 transition';
+                    }
+                }
+            });
+
+            var counter = document.getElementById('project-counter-2d');
+            if (counter) {
+                counter.textContent = 'Showing ' + visibleCount + ' Projects';
+            }
+        }
+
+        // Backward compatibility
+        function resetAllFilters() { setFilter2D('all'); }
+
+        // Modal Controls
+        function openVideoPlayer(src, title, badge, type) {
+            document.getElementById('vid-title').textContent = title;
+            document.getElementById('vid-badge').textContent = badge;
+            var vid = document.getElementById('player-video');
+            vid.src = src;
+            vid.play().catch(function(){});
+            var modal = document.getElementById('video-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideoPlayer() {
+            var modal = document.getElementById('video-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            var vid = document.getElementById('player-video');
+            vid.pause();
+            vid.src = '';
+            document.body.style.overflow = 'auto';
+        }
+
+        function openLightbox(title, desc, badge, src) {
+            document.getElementById('lb-title').textContent = title;
+            document.getElementById('lb-desc').textContent = desc;
+            document.getElementById('lb-badge').textContent = badge;
+            document.getElementById('lb-image').src = src;
+            var modal = document.getElementById('lightbox-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            var modal = document.getElementById('lightbox-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.getElementById('lb-image').src = '';
+            document.body.style.overflow = 'auto';
+        }
+
+        window.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeVideoPlayer();
+                closeLightbox();
+            }
+        });
+        document.getElementById('video-modal').addEventListener('click', function(e) {
+            if (e.target.id === 'video-modal') closeVideoPlayer();
+        });
+        document.getElementById('lightbox-modal').addEventListener('click', function(e) {
+            if (e.target.id === 'lightbox-modal') closeLightbox();
+        });
+
+        // Mobile Nav Toggle
+        var menuBtn = document.getElementById('mobile-menu-btn');
+        var mobileMenu = document.getElementById('mobile-menu');
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', function() {
+            initTheme();
+            initSound();
+
+            var params = new URLSearchParams(window.location.search);
+            var reqFilter = params.get('filter');
+            if (reqFilter && ['high-quality', 'frame-by-frame', 'puppet', '2d-animation'].indexOf(reqFilter) !== -1) {
+                setFilter2D(reqFilter);
+            } else {
+                setFilter2D('all');
+            }
+        });
+    </script>
+</body>
+</html>

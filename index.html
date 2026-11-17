@@ -1,0 +1,1893 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMICAL | 2D & 3D Animation Studio & Creative Portfolio</title>
+    <meta name="description" content="Portfolio of COMICAL: 2D Frame-by-Frame, 3D Character Motion, Zack D Films style animation, and visual development.">
+
+    <!-- Immediate Theme Initialization to Prevent Flash of Unstyled Content -->
+    <script>
+        (function() {
+            try {
+                // Portfolio default is always Light Mode on page load.
+                document.documentElement.classList.remove('dark');
+                document.documentElement.style.colorScheme = 'light';
+                localStorage.setItem('comical_theme', 'light');
+            } catch (e) {}
+        })();
+    </script>
+
+    <!-- Tailwind CSS with Dark Mode Class Support -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Fredoka', 'sans-serif'],
+                    },
+                    colors: {
+                        comical: {
+                            blue: '#1174B5',
+                            blueDark: '#0B5384',
+                            blueLight: '#E6F4FC',
+                            hair: '#141320',
+                            accent: '#F59E0B',
+                            darkBg: '#0F172A',
+                            darkCard: '#1E293B',
+                            darkBorder: '#334155',
+                        }
+                    },
+                    boxShadow: {
+                        'comic': '4px 4px 0px 0px #141320',
+                        'comic-lg': '8px 8px 0px 0px #141320',
+                        'comic-sm': '2px 2px 0px 0px #141320',
+                        'comic-dark': '4px 4px 0px 0px #38BDF8',
+                        'comic-dark-lg': '8px 8px 0px 0px #38BDF8',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .comic-border {
+            border: 3px solid #141320;
+        }
+        .comic-border-thin {
+            border: 2px solid #141320;
+        }
+        .dark .comic-border {
+            border: 3px solid #334155;
+        }
+        .dark .comic-border-thin {
+            border: 2px solid #334155;
+        }
+        .bg-halftone {
+            background-color: #F8FAFC;
+            background-image: radial-gradient(rgba(100,116,139,0.42) 1.65px, transparent 1.65px);
+            background-size: 18px 18px;
+        }
+        .dark .bg-halftone {
+            background-color: #0F172A;
+            background-image: radial-gradient(rgba(100,116,139,0.38) 1.65px, transparent 1.65px);
+            background-size: 18px 18px;
+        }
+        /* Custom Mouse Cursor */
+        @media (pointer: fine) {
+            body {
+                cursor: none !important;
+            }
+            a, button, input, select, textarea, [onclick], .cursor-pointer {
+                cursor: none !important;
+            }
+        }
+        .custom-cursor {
+            pointer-events: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            z-index: 99999;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.2s;
+        }
+        #custom-cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #1174B5;
+            transition: transform 0.05s linear, background-color 0.2s;
+        }
+        .dark #custom-cursor-dot {
+            background-color: #38BDF8;
+        }
+        #custom-cursor-ring {
+            width: 28px;
+            height: 28px;
+            border: 2px solid #1174B5;
+            transition: width 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                        height 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                        border-color 0.2s, 
+                        transform 0.08s ease-out;
+        }
+        .dark #custom-cursor-ring {
+            border-color: #38BDF8;
+        }
+        /* Homepage Comi puppet: subtle float + original blue studio grid */
+        @keyframes comiPuppetFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        #comical-hero-svg.animate-float {
+            animation: comiPuppetFloat 3.8s ease-in-out infinite;
+            transform-origin: 50% 50%;
+        }
+        #puppet-char-container {
+            background-color: #F1F7FC;
+            background-image: linear-gradient(rgba(59,130,246,.22) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,.22) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .dark #puppet-char-container {
+            background-color: #0F172A;
+            background-image: linear-gradient(rgba(56,189,248,.13) 1px, transparent 1px), linear-gradient(90deg, rgba(56,189,248,.13) 1px, transparent 1px);
+        }
+        #comical-aim-arm { transform-box: view-box; transform-origin: 226px 148px; }
+    
+        @keyframes ropeWoodTap {
+            0%, 100% { transform: rotate(0deg) translateX(0); }
+            20% { transform: rotate(-2.2deg) translateX(-1px); }
+            45% { transform: rotate(2deg) translateX(1px); }
+            70% { transform: rotate(-1deg) translateX(-1px); }
+        }
+        .rope-wood-post.wood-tap {
+            transform-origin: bottom center;
+            animation: ropeWoodTap 420ms ease-out;
+        }
+        @keyframes ropeStageTap {
+            0%, 100% { transform: translateY(0); }
+            25% { transform: translateY(2px); }
+            55% { transform: translateY(-1.5px); }
+        }
+        #rope-svg-canvas.rope-tap {
+            animation: ropeStageTap 420ms ease-out;
+        }
+        .contact-panel {
+            background: #FCD34D;
+            color: #141320;
+        }
+        .dark .contact-panel {
+            background: linear-gradient(135deg, #1E293B, #26364D);
+            color: #F8FAFC;
+        }
+        .contact-field {
+            width: 100%;
+            border: 2px solid #141320;
+            border-radius: 12px;
+            padding: 11px 13px;
+            background: #FFFFFF;
+            color: #141320;
+            outline: none;
+            transition: border-color .18s, box-shadow .18s, background .18s;
+        }
+        .contact-field:focus {
+            border-color: #1174B5;
+            box-shadow: 0 0 0 3px rgba(17,116,181,.16);
+        }
+        .dark .contact-field {
+            background: #0F172A;
+            color: #F8FAFC;
+            border-color: #64748B;
+        }
+        .dark .contact-field::placeholder { color: #94A3B8; }
+        .dark .contact-field:focus {
+            border-color: #38BDF8;
+            box-shadow: 0 0 0 3px rgba(56,189,248,.18);
+        }
+        .dark .contact-panel .contact-social-card {
+            background: #0F172A;
+            border-color: #64748B;
+            color: #F8FAFC;
+        }
+        /* Keep contact card labels and account details readable in dark mode. */
+        .dark .contact-panel .contact-social-card .text-slate-500,
+        .dark .contact-panel .contact-social-card .text-comical-hair {
+            color: #F8FAFC !important;
+        }
+</style>
+</head>
+<body class="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 font-sans selection:bg-amber-300 selection:text-comical-hair transition-colors duration-200">
+
+    <!-- Custom Cursor -->
+    <div id="custom-cursor-dot" class="custom-cursor hidden md:block"></div>
+    <div id="custom-cursor-ring" class="custom-cursor hidden md:block"></div>
+
+    <!-- Fullscreen Laser Beam Rendering Canvas Overlay (Homepage Only) -->
+    <svg id="laser-overlay" class="fixed inset-0 pointer-events-none z-[99990] w-full h-full overflow-visible"></svg>
+
+    <!-- ==================== MAIN HEADER NAVIGATION ==================== -->
+    <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b-3 border-comical-hair dark:border-slate-700 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand / Logo -->
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-2xl bg-comical-blue text-white comic-border-thin shadow-comic-sm flex items-center justify-center font-display text-2xl group-hover:-rotate-6 transition-transform">
+                        C!
+                    </div>
+                    <div>
+                        <span class="font-display font-bold text-2xl tracking-wide text-comical-hair dark:text-white block leading-none">COMICAL</span>
+                        <span class="text-[10px] font-bold tracking-widest text-comical-blue dark:text-sky-400 uppercase">2D &amp; 3D Animation</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links (Requirement 4: Balanced, Cleanly Spaced 2D, 3D, Illustration) -->
+                <nav class="hidden lg:flex items-center justify-end gap-1.5 xl:gap-2 font-semibold text-[11px] xl:text-xs flex-shrink-0 whitespace-nowrap">
+                    <!-- 1. 2D Work -->
+                    <a href="2d.html" class="px-2 xl:px-2.5 py-2 rounded-lg bg-amber-100 dark:bg-amber-950/40 text-amber-900 dark:text-amber-200 hover:bg-amber-300 dark:hover:bg-amber-900/60 comic-border-thin shadow-comic-sm transition font-display font-bold flex items-center gap-1.5">
+                        <i class="fa-solid fa-paintbrush text-amber-600"></i> 2D Work
+                    </a>
+                    <!-- 2. 3D Work -->
+                    <a href="3d.html" class="px-2 xl:px-2.5 py-2 rounded-lg bg-sky-100 dark:bg-sky-950/40 text-comical-blue dark:text-sky-300 hover:bg-sky-200 dark:hover:bg-sky-900/60 comic-border-thin shadow-comic-sm transition font-display font-bold flex items-center gap-1.5">
+                        <i class="fa-solid fa-cube text-sky-600 dark:text-sky-400"></i> 3D Work
+                    </a>
+                    <!-- 3. Illustration -->
+                    <a href="illustration.html" class="px-2 xl:px-2.5 py-2 rounded-lg bg-purple-100 dark:bg-purple-950/40 text-purple-900 dark:text-purple-200 hover:bg-purple-300 dark:hover:bg-purple-900/60 comic-border-thin shadow-comic-sm transition font-display font-bold flex items-center gap-1.5">
+                        <i class="fa-solid fa-palette text-purple-600"></i> Illustration
+                    </a>
+
+                    <!-- Section Jump Anchors -->
+                    <a href="#section-services" class="px-2 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-comical-blueLight dark:hover:bg-slate-800 hover:text-comical-blue dark:hover:text-sky-400 transition">
+                        What We Offer
+                    </a>
+                    <a href="#section-process" class="px-2 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-comical-blueLight dark:hover:bg-slate-800 hover:text-comical-blue dark:hover:text-sky-400 transition">
+                        Animation Process
+                    </a>
+                    <a href="#section-work" class="px-2 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-comical-blueLight dark:hover:bg-slate-800 hover:text-comical-blue dark:hover:text-sky-400 transition">
+                        Work With Me
+                    </a>
+                    <a href="#section-contact" class="min-h-[40px] px-3.5 xl:px-4 py-2 rounded-lg bg-comical-hair dark:bg-sky-500 text-white dark:text-slate-950 comic-border-thin shadow-comic-sm hover:bg-comical-blueDark dark:hover:bg-sky-400 transition font-display font-bold text-xs xl:text-sm inline-flex items-center justify-center">
+                        Say Hi!
+                    </a>
+
+                    <!-- Dark Mode Toggle Button -->
+                    <button id="theme-toggle-btn" onclick="toggleTheme()" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode" class="w-10 h-10 shrink-0 inline-flex items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-amber-300 comic-border-thin shadow-comic-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+                        <i id="theme-icon" class="fa-solid fa-moon text-base"></i>
+                    </button>
+
+                    <!-- Sound / Mute Toggle Button -->
+                    <button id="sound-toggle-btn" onclick="toggleSound()" title="Toggle Sound / Mute" aria-label="Toggle Sound / Mute" class="w-10 h-10 shrink-0 inline-flex items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 text-emerald-600 dark:text-emerald-400 comic-border-thin shadow-comic-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+                        <i id="sound-icon" class="fa-solid fa-volume-high text-base"></i>
+                    </button>
+                </nav>
+
+                <!-- Mobile Menu Button & Quick Controls -->
+                <div class="flex items-center gap-2 lg:hidden">
+                    <button onclick="toggleTheme()" aria-label="Toggle Dark Mode" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-amber-300 comic-border-thin">
+                        <i id="theme-icon-mobile" class="fa-solid fa-moon text-sm"></i>
+                    </button>
+                    <button onclick="toggleSound()" aria-label="Toggle Sound" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-emerald-600 dark:text-emerald-400 comic-border-thin">
+                        <i id="sound-icon-mobile" class="fa-solid fa-volume-high text-sm"></i>
+                    </button>
+                    <button id="mobile-menu-btn" aria-label="Toggle Menu" class="p-3 rounded-xl bg-comical-blueLight dark:bg-slate-800 text-comical-hair dark:text-white comic-border-thin">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-900 border-t-2 border-comical-hair dark:border-slate-700 px-4 pt-3 pb-6 space-y-2">
+            <a href="2d.html" class="flex items-center gap-2 px-4 py-3 rounded-xl font-bold bg-amber-100 dark:bg-amber-950/40 text-amber-900 dark:text-amber-200 comic-border-thin">
+                <i class="fa-solid fa-paintbrush text-amber-600"></i> 1. 2D Work
+            </a>
+            <a href="3d.html" class="flex items-center gap-2 px-4 py-3 rounded-xl font-bold bg-sky-100 dark:bg-sky-950/40 text-comical-blue dark:text-sky-300 comic-border-thin">
+                <i class="fa-solid fa-cube text-comical-blue dark:text-sky-400"></i> 2. 3D Work
+            </a>
+            <a href="illustration.html" class="flex items-center gap-2 px-4 py-3 rounded-xl font-bold bg-purple-100 dark:bg-purple-950/40 text-purple-900 dark:text-purple-200 comic-border-thin">
+                <i class="fa-solid fa-palette text-purple-600"></i> 3. Illustration
+            </a>
+            <a href="#section-services" class="block px-4 py-2 text-comical-hair dark:text-slate-200 font-semibold">What We Offer</a>
+            <a href="#section-process" class="block px-4 py-2 text-comical-hair dark:text-slate-200 font-semibold">Animation Process</a>
+            <a href="#section-work" class="block px-4 py-2 text-comical-hair dark:text-slate-200 font-semibold">Work With Me</a>
+            <a href="#section-contact" class="block text-center mt-3 px-4 py-3 rounded-xl font-bold bg-comical-hair dark:bg-sky-500 text-white dark:text-slate-950 comic-border-thin">Say Hi!</a>
+        </div>
+    </header>
+
+    <!-- ==================== HERO SECTION (HOMEPAGE CHARACTER & LASER SCOPE) ==================== -->
+    <section id="section-hero" class="relative pt-12 pb-16 lg:pt-16 lg:pb-24 overflow-hidden border-b-3 border-comical-hair dark:border-slate-700 bg-halftone">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Headline Content -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-300 text-comical-hair comic-border-thin font-bold text-xs uppercase tracking-wider shadow-comic-sm">
+                        <span class="w-2.5 h-2.5 rounded-full bg-rose-500 animate-ping"></span>
+                        Available for Animation Projects
+                    </div>
+
+                    <h1 class="font-display font-bold text-4xl sm:text-6xl lg:text-7xl text-comical-hair dark:text-white leading-[1.05] tracking-tight">
+                        Bringing Stories to Life in <span class="text-comical-blue dark:text-sky-400">2D</span> &amp; <span class="text-amber-500">3D</span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-slate-700 dark:text-slate-300 max-w-2xl leading-relaxed">
+                        Hey! I'm <strong class="text-comical-hair dark:text-white font-bold">COMICAL</strong>. I animate frame-by-frame character acting, stylized 3D game cycles, educational viral story reels, and vibrant visual storytelling.
+                    </p>
+
+                    <!-- Primary CTAs -->
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <a href="2d.html" class="px-6 py-3.5 rounded-2xl bg-amber-300 text-comical-hair font-display font-bold text-base comic-border shadow-comic hover:-translate-y-1 transition duration-150">
+                            Explore 2D Work &rarr;
+                        </a>
+                        <a href="3d.html" class="px-6 py-3.5 rounded-2xl bg-comical-blue text-white font-display font-bold text-base comic-border shadow-comic hover:-translate-y-1 transition duration-150">
+                            Explore 3D Work &rarr;
+                        </a>
+                        <a href="#section-services" class="px-6 py-3.5 rounded-2xl bg-white dark:bg-slate-800 text-comical-hair dark:text-white font-display font-bold text-base comic-border shadow-comic hover:-translate-y-1 transition duration-150">
+                            What We Offer
+                        </a>
+                    </div>
+
+                    <!-- Laser Scope Notification Box -->
+                    <div class="p-3 bg-purple-50 dark:bg-purple-950/40 border-2 border-purple-300 dark:border-purple-800 rounded-2xl flex items-center gap-3 text-xs text-purple-950 dark:text-purple-200 font-semibold max-w-xl shadow-comic-sm">
+                        <span class="text-xl">🔫</span>
+                        <span><strong>Interactive Laser Active:</strong> Click anywhere on the upper homepage down to the "What We Offer" section to blast comic laser beams!</span>
+                    </div>
+                </div>
+
+                <!-- Right Mascot Canvas: Restored Original Interactive Puppet Character with Improved Hairstyle (Requirement 2) -->
+                <div class="lg:col-span-5 flex flex-col items-center">
+                    <div class="relative w-full max-w-md bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic-lg p-3 sm:p-4 flex flex-col items-center overflow-hidden">
+                        
+                        <!-- Header Status Badge -->
+                        <div class="w-full flex items-center justify-between pb-2 mb-2 border-b border-slate-100 dark:border-slate-700 text-xs font-mono font-bold text-slate-700 dark:text-slate-300">
+                            <span class="flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                                COMICAL.PUPPET_CHAR
+                            </span>
+                            <span id="laser-status-badge" class="px-2.5 py-0.5 rounded-md bg-amber-100 dark:bg-amber-900/60 text-amber-900 dark:text-amber-200 text-[10px] font-bold uppercase tracking-wider transition">
+                                Laser Ready ⚡
+                            </span>
+                        </div>
+
+                        <!-- Restored Original Interactive SVG Puppet Character Stage -->
+                        <div id="puppet-char-container" class="relative w-full aspect-[360/440] max-h-[380px] sm:max-h-[410px] flex items-center justify-center rounded-2xl overflow-hidden comic-border-thin select-none">
+                            
+                            <!-- Interactive SVG Puppet Character with Eye Tracking, Blinking, Dynamic Aiming Laser Gun, and Improved Hairstyle -->
+                            <svg id="comical-hero-svg" viewBox="0 0 360 440" class="w-full h-full max-h-[410px] z-10 animate-float">
+                                <defs>
+                                    <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
+                                        <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#141320" flood-opacity="0.15"/>
+                                    </filter>
+                                </defs>
+
+                                <g filter="url(#dropShadow)">
+                                    <!-- LEGS & DARK SLATE-NAVY PANTS -->
+                                    <g id="comical-legs">
+                                        <!-- Left Leg -->
+                                        <path d="M138 255 L136 378 L166 378 L176 285 L184 285 L194 378 L224 378 L222 255 Z" fill="#1C1B29" stroke="#141320" stroke-width="3.5" stroke-linejoin="round"/>
+                                        <!-- Pant cuff creases -->
+                                        <path d="M135 372 Q151 376 167 372" fill="none" stroke="#141320" stroke-width="3"/>
+                                        <path d="M193 372 Q209 376 225 372" fill="none" stroke="#141320" stroke-width="3"/>
+                                    </g>
+
+                                    <!-- SIGNATURE BLUE & WHITE SNEAKERS -->
+                                    <g id="comical-shoes">
+                                        <!-- Left Shoe -->
+                                        <path d="M124 396 C124 382, 138 377, 152 377 C163 377, 168 384, 168 396 Z" fill="#1174B5" stroke="#141320" stroke-width="3"/>
+                                        <path d="M122 396 L170 396 L168 404 L124 404 Z" fill="#FFFFFF" stroke="#141320" stroke-width="3" stroke-linejoin="round"/>
+                                        <!-- Laces -->
+                                        <line x1="140" y1="382" x2="152" y2="382" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+                                        <line x1="138" y1="387" x2="152" y2="387" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+
+                                        <!-- Right Shoe -->
+                                        <path d="M192 396 C192 384, 197 377, 208 377 C222 377, 236 382, 236 396 Z" fill="#1174B5" stroke="#141320" stroke-width="3"/>
+                                        <path d="M190 396 L238 396 L236 404 L192 404 Z" fill="#FFFFFF" stroke="#141320" stroke-width="3" stroke-linejoin="round"/>
+                                        <!-- Laces -->
+                                        <line x1="208" y1="382" x2="220" y2="382" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+                                        <line x1="208" y1="387" x2="222" y2="387" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+                                    </g>
+
+                                    <!-- DYNAMIC ARMS GROUP (Changes with Pose Buttons) -->
+                                    <g id="comical-arms-hero">
+                                        <!-- Left Arm (Relaxed Wave / Pencil hold) -->
+                                        <path d="M134 148 L95 195 L112 212 L140 175" fill="#1174B5" stroke="#141320" stroke-width="3.5" stroke-linejoin="round"/>
+                                        <!-- White rolled cuff -->
+                                        <path d="M92 192 L114 210 L107 218 L85 200 Z" fill="#FFFFFF" stroke="#141320" stroke-width="3"/>
+                                        <!-- Hand -->
+                                        <path d="M87 202 C76 212, 82 226, 94 224 C102 222, 106 216, 105 215" fill="#FCD5BD" stroke="#141320" stroke-width="3"/>
+
+                                        <!-- Right aiming arm + compact comic laser blaster; pivots naturally from shoulder -->
+                                        <g id="comical-aim-arm">
+                                            <path d="M226 148 L268 122 L280 142 L224 176" fill="#1174B5" stroke="#141320" stroke-width="3.5" stroke-linejoin="round"/>
+                                            <path d="M265 119 L282 142 L290 136 L273 113 Z" fill="#FFFFFF" stroke="#141320" stroke-width="3"/>
+                                            <path d="M276 114 C284 98, 298 100, 298 114 C298 124, 292 132, 287 134" fill="#FCD5BD" stroke="#141320" stroke-width="3"/>
+                                            <g id="laser-gun" transform="rotate(-28 291 111)">
+                                                <rect x="282" y="101" width="29" height="11" rx="3" fill="#334155" stroke="#141320" stroke-width="2.5"/>
+                                                <path d="M290 111 L300 111 L297 124 L289 124 Z" fill="#1174B5" stroke="#141320" stroke-width="2"/>
+                                                <rect x="306" y="104" width="7" height="5" rx="1.5" fill="#FACC15" stroke="#141320" stroke-width="1.5"/>
+                                                <circle id="laser-gun-muzzle" cx="314" cy="106.5" r="2.5" fill="#FDE047" stroke="#FFFFFF" stroke-width="1"/>
+                                            </g>
+                                        </g>
+                                    </g>
+
+                                    <g id="comical-arms-shrug" class="hidden">
+                                        <!-- Left Shrug Arm (Matching f1.gif) -->
+                                        <path d="M134 148 L112 206 L74 188 L66 202 L116 226 L142 175" fill="#1174B5" stroke="#141320" stroke-width="3.5" stroke-linejoin="round"/>
+                                        <path d="M76 186 L65 204 L57 199 L68 181 Z" fill="#FFFFFF" stroke="#141320" stroke-width="3"/>
+                                        <path d="M60 196 C42 192, 36 182, 46 178 C54 176, 62 183, 66 185" fill="#FCD5BD" stroke="#141320" stroke-width="3"/>
+
+                                        <!-- Right Shrug Arm -->
+                                        <path d="M226 148 L248 206 L286 188 L294 202 L244 226 L218 175" fill="#1174B5" stroke="#141320" stroke-width="3.5" stroke-linejoin="round"/>
+                                        <path d="M284 186 L295 204 L303 199 L292 181 Z" fill="#FFFFFF" stroke="#141320" stroke-width="3"/>
+                                        <path d="M300 196 C318 192, 324 182, 314 178 C306 176, 298 183, 294 185" fill="#FCD5BD" stroke="#141320" stroke-width="3"/>
+                                    </g>
+
+                                    <g id="comical-arms-panic" class="hidden">
+                                        <!-- Deadline pose: both forearms raised neatly beside the head -->
+                                        <!-- Left upper sleeve and forearm -->
+                                        <path d="M134 148 C119 154 108 164 105 178 L98 194 L116 204 L132 180 L148 164 Z"
+                                              fill="#1174B5" stroke="#141320" stroke-width="3.5" stroke-linejoin="round"/>
+                                        <path d="M96 190 L116 200 L110 211 L90 201 Z"
+                                              fill="#FFFFFF" stroke="#141320" stroke-width="3" stroke-linejoin="round"/>
+                                        <path d="M92 198 C82 190 79 180 85 174 C91 168 100 173 104 182 L111 194 L101 204 Z"
+                                              fill="#FCD5BD" stroke="#141320" stroke-width="3" stroke-linejoin="round"/>
+                                        <path d="M89 178 L96 184 M86 185 L94 190"
+                                              fill="none" stroke="#D9A995" stroke-width="2" stroke-linecap="round"/>
+
+                                        <!-- Right upper sleeve and forearm -->
+                                        <path d="M226 148 C241 154 252 164 255 178 L262 194 L244 204 L228 180 L212 164 Z"
+                                              fill="#1174B5" stroke="#141320" stroke-width="3.5" stroke-linejoin="round"/>
+                                        <path d="M264 190 L244 200 L250 211 L270 201 Z"
+                                              fill="#FFFFFF" stroke="#141320" stroke-width="3" stroke-linejoin="round"/>
+                                        <path d="M268 198 C278 190 281 180 275 174 C269 168 260 173 256 182 L249 194 L259 204 Z"
+                                              fill="#FCD5BD" stroke="#141320" stroke-width="3" stroke-linejoin="round"/>
+                                        <path d="M271 178 L264 184 M274 185 L266 190"
+                                              fill="none" stroke="#D9A995" stroke-width="2" stroke-linecap="round"/>
+                                    </g>
+
+                                    <g id="comical-arms-tpose" class="hidden">
+                                        <!-- Exact T-Pose from reference sheet -->
+                                        <path d="M134 145 L44 148 L44 166 L136 168" fill="#1174B5" stroke="#141320" stroke-width="3.5" stroke-linejoin="round"/>
+                                        <rect x="36" y="147" width="10" height="20" fill="#FFFFFF" stroke="#141320" stroke-width="3"/>
+                                        <path d="M36 150 L12 154 L14 162 L36 163 Z" fill="#FCD5BD" stroke="#141320" stroke-width="3"/>
+
+                                        <path d="M226 145 L316 148 L316 166 L224 168" fill="#1174B5" stroke="#141320" stroke-width="3.5" stroke-linejoin="round"/>
+                                        <rect x="314" y="147" width="10" height="20" fill="#FFFFFF" stroke="#141320" stroke-width="3"/>
+                                        <path d="M324 150 L348 154 L346 162 L324 163 Z" fill="#FCD5BD" stroke="#141320" stroke-width="3"/>
+                                    </g>
+
+                                    <!-- TORSO: BLUE HENLEY SHIRT -->
+                                    <g id="comical-torso">
+                                        <!-- Main Blue Shirt Body -->
+                                        <path d="M134 142 L226 142 L226 260 Q180 266 134 260 Z" fill="#1174B5" stroke="#141320" stroke-width="3.5" stroke-linejoin="round"/>
+                                        <!-- Subtle shirt fold lines matching reference -->
+                                        <path d="M155 232 Q180 222 198 214" fill="none" stroke="#141320" stroke-width="2.2" stroke-linecap="round"/>
+                                        
+                                        <!-- Light Grey/White Mandarin Collar -->
+                                        <path d="M156 136 Q180 148 204 136 L208 144 Q180 158 152 144 Z" fill="#CBD5E1" stroke="#141320" stroke-width="3" stroke-linejoin="round"/>
+                                        
+                                        <!-- Henley 3-Button Placket -->
+                                        <rect x="175" y="146" width="10" height="32" rx="3" fill="#0E639C" stroke="#141320" stroke-width="2.2"/>
+                                        <circle cx="180" cy="153" r="1.8" fill="#141320"/>
+                                        <circle cx="180" cy="162" r="1.8" fill="#141320"/>
+                                        <circle cx="180" cy="171" r="1.8" fill="#141320"/>
+
+                                        <!-- SIGNATURE SPECTACLES HANGING FROM FRONT COLLAR -->
+                                        <g id="signature-spectacles">
+                                            <!-- Temple arm hooked inside collar -->
+                                            <line x1="180" y1="147" x2="180" y2="162" stroke="#141320" stroke-width="2.5" stroke-linecap="round"/>
+                                            <!-- Vertical hanging glasses frames (exact detail from f1, f2, f3) -->
+                                            <rect x="180" y="154" width="9" height="12" rx="3.5" fill="rgba(255,255,255,0.25)" stroke="#141320" stroke-width="2.4"/>
+                                            <line x1="184.5" y1="166" x2="184.5" y2="170" stroke="#141320" stroke-width="2.4"/>
+                                            <rect x="180" y="170" width="9" height="12" rx="3.5" fill="rgba(255,255,255,0.25)" stroke="#141320" stroke-width="2.4"/>
+                                        </g>
+                                    </g>
+
+                                    <!-- NECK & HEAD -->
+                                    <!-- Neck stays attached to the torso and does not rotate with the head -->
+                                    <rect x="170" y="124" width="20" height="18" fill="#FCD5BD" stroke="#141320" stroke-width="3"/>
+                                    <g id="comical-head">
+                                        
+                                        <!-- Back Spiky Hair Silhouette -->
+                                        <path d="M126 95 L114 82 L126 66 L122 46 L142 34 L162 22 L180 28 L198 22 L218 34 L238 46 L234 66 L246 82 L234 95 L238 112 L222 118 L216 128 L144 128 L138 118 L122 112 Z" fill="#141320" stroke="#141320" stroke-width="3" stroke-linejoin="round"/>
+                                        
+                                        <!-- Ears -->
+                                        <path d="M134 86 C125 84, 125 104, 136 104" fill="#FCD5BD" stroke="#141320" stroke-width="3"/>
+                                        <path d="M226 86 C235 84, 235 104, 224 104" fill="#FCD5BD" stroke="#141320" stroke-width="3"/>
+
+                                        <!-- Face Base -->
+                                        <path d="M135 66 L135 96 C135 118, 158 128, 180 128 C202 128, 225 118, 225 96 L225 66 Z" fill="#FCD5BD" stroke="#141320" stroke-width="3.5" stroke-linejoin="round"/>
+
+                                        <!-- Front Spiky Bangs & Indigo Hair Highlights -->
+                                        <path d="M130 74 L144 52 L156 68 L174 48 L184 68 L202 50 L214 68 L228 74 L222 46 L180 30 L138 46 Z" fill="#141320"/>
+                                        <!-- Subtle purple/indigo anime hair sheen from reference -->
+                                        <path d="M148 44 L154 39 L158 45 Z" fill="#4F46E5"/>
+                                        <path d="M204 42 L210 38 L212 45 Z" fill="#4F46E5"/>
+
+                                        <!-- EXPRESSIVE FACE VARIANTS -->
+                                        <!-- 1. Default / T-Pose Calm Smile -->
+                                        <g id="face-calm">
+                                            <path d="M148 73 Q158 69 167 73" fill="none" stroke="#141320" stroke-width="3.5" stroke-linecap="round"/>
+                                            <path d="M193 73 Q202 69 212 73" fill="none" stroke="#141320" stroke-width="3.5" stroke-linecap="round"/>
+                                            <ellipse cx="158" cy="87" rx="8" ry="9.5" fill="#FFFFFF" stroke="#141320" stroke-width="2.5"/>
+                                            <circle id="pupil-left" cx="159" cy="87" r="4" fill="#141320"/>
+                                            <circle cx="157" cy="85" r="1.5" fill="#FFFFFF"/>
+                                            <ellipse cx="202" cy="87" rx="8" ry="9.5" fill="#FFFFFF" stroke="#141320" stroke-width="2.5"/>
+                                            <circle id="pupil-right" cx="201" cy="87" r="4" fill="#141320"/>
+                                            <circle cx="199" cy="85" r="1.5" fill="#FFFFFF"/>
+                                            <!-- Nose -->
+                                            <circle cx="178" cy="100" r="1.2" fill="#141320"/>
+                                            <circle cx="182" cy="100" r="1.2" fill="#141320"/>
+                                            <!-- Smile -->
+                                            <path d="M172 111 Q180 116 188 111" fill="none" stroke="#141320" stroke-width="2.8" stroke-linecap="round"/>
+                                        </g>
+
+                                        <!-- 2. Shrug / Stressed (f1 / f3) -->
+                                        <g id="face-stressed" class="hidden">
+                                            <!-- Furrowed Brows -->
+                                            <path d="M146 70 L168 76" fill="none" stroke="#141320" stroke-width="4" stroke-linecap="round"/>
+                                            <path d="M214 70 L192 76" fill="none" stroke="#141320" stroke-width="4" stroke-linecap="round"/>
+                                            <!-- Eye bags (optional toggle for panic) -->
+                                            <g id="panic-eyebags" class="hidden">
+                                                <path d="M148 94 Q158 104 168 94" fill="#B48A78" opacity="0.75"/>
+                                                <path d="M192 94 Q202 104 212 94" fill="#B48A78" opacity="0.75"/>
+                                            </g>
+                                            <ellipse cx="158" cy="87" rx="8.5" ry="8" fill="#FFFFFF" stroke="#141320" stroke-width="2.5"/>
+                                            <circle cx="159" cy="87" r="2.2" fill="#141320"/>
+                                            <ellipse cx="202" cy="87" rx="8.5" ry="8" fill="#FFFFFF" stroke="#141320" stroke-width="2.5"/>
+                                            <circle cx="201" cy="87" r="2.2" fill="#141320"/>
+                                            <!-- Open Comedic Mouth -->
+                                            <path d="M168 113 Q180 106 192 113 Q190 121 180 121 Q170 121 168 113 Z" fill="#7F1D1D" stroke="#141320" stroke-width="2.5"/>
+                                            <path d="M170 112 Q180 109 190 112" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+
+                        <!-- Interactive Puppet Expression / Pose Switcher Buttons (Requirement 2) -->
+                        <div class="w-full mt-3 pt-2 border-t border-slate-100 dark:border-slate-700 flex flex-col items-center gap-2">
+                            <div class="grid grid-cols-4 gap-1.5 w-full">
+                                <button type="button" onclick="setComicalPose('hero')" id="pose-btn-hero" class="pose-btn py-1.5 px-1 sm:px-2 rounded-xl font-bold text-[11px] bg-comical-blue text-white comic-border-thin shadow-comic-sm transition text-center">
+                                    😎 Chill
+                                </button>
+                                <button type="button" onclick="setComicalPose('shrug')" id="pose-btn-shrug" class="pose-btn py-1.5 px-1 sm:px-2 rounded-xl font-bold text-[11px] bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 comic-border-thin transition text-center">
+                                    🤷 Confused
+                                </button>
+                                <button type="button" onclick="setComicalPose('panic')" id="pose-btn-panic" class="pose-btn py-1.5 px-1 sm:px-2 rounded-xl font-bold text-[11px] bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 comic-border-thin transition text-center">
+                                    😱 Deadline!
+                                </button>
+                                <button type="button" onclick="setComicalPose('tpose')" id="pose-btn-tpose" class="pose-btn py-1.5 px-1 sm:px-2 rounded-xl font-bold text-[11px] bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 comic-border-thin transition text-center">
+                                    🧍 3D Rig
+                                </button>
+                            </div>
+
+                            <!-- Dynamic Speech Caption Bubble -->
+                            <div class="w-full text-center px-1">
+                                <p id="comical-speech" class="text-xs font-semibold text-slate-600 dark:text-slate-300 italic">
+                                    "Ready to animate your next big idea! Click anywhere to blast the laser!"
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== "WHAT WE OFFER" SECTION WITH RESTORED CENTERED ROPE (REQUIREMENT 5) ==================== -->
+    <section id="section-services" class="py-12 lg:py-20 bg-white dark:bg-slate-900 border-b-3 border-comical-hair dark:border-slate-700 overflow-hidden transition-colors">
+        
+        <!-- REQUIREMENT 5: Restored Original Centered Smaller Rope Stage (max-w-4xl, Centered Above What We Offer) -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+            <div id="rope-interactive-stage" class="relative w-full max-w-4xl mx-auto h-40 select-none overflow-visible bg-transparent border-0 rounded-none p-0" title="Click Comical to make him fall & bounce rope!">
+                
+                <!-- Left Wooden Post Anchor -->
+                <div id="rope-left-post" class="rope-wood-post absolute left-3 bottom-3 w-5 h-20 bg-amber-900 comic-border-thin rounded-t-lg shadow-comic-sm z-10 flex flex-col items-center pt-1.5">
+                    <div class="w-2.5 h-2.5 rounded-full bg-amber-600 comic-border-thin mb-1"></div>
+                    <div class="w-3 h-1 bg-amber-950 rounded"></div>
+                </div>
+                
+                <!-- Right Wooden Post Anchor -->
+                <div id="rope-right-post" class="rope-wood-post absolute right-9 bottom-3 w-5 h-20 bg-amber-900 comic-border-thin rounded-t-lg shadow-comic-sm z-10 flex flex-col items-center pt-1.5">
+                    <div class="w-2.5 h-2.5 rounded-full bg-amber-600 comic-border-thin mb-1"></div>
+                    <div class="w-3 h-1 bg-amber-950 rounded"></div>
+                </div>
+
+                <!-- Centered SVG Rope with Natural Catenary Sag & Dynamic Physical Jiggle -->
+                <svg id="rope-svg-canvas" class="w-full h-full absolute inset-0 overflow-visible pointer-events-none" preserveAspectRatio="none">
+                    <!-- Drop Shadow -->
+                    <path id="rope-path-shadow" d="M 20 74 Q 50% 86, calc(100% - 20px) 74" fill="none" stroke="rgba(20,19,32,0.18)" stroke-width="10" stroke-linecap="round" />
+                    <!-- Core Braided Rope Body -->
+                    <path id="rope-path-base" d="M 20 68 Q 50% 80, calc(100% - 20px) 68" fill="none" stroke="#D97706" stroke-width="8" stroke-linecap="round" />
+                    <path id="rope-path-braid" d="M 20 68 Q 50% 80, calc(100% - 20px) 68" fill="none" stroke="#FBBF24" stroke-width="5" stroke-dasharray="12 6" stroke-linecap="round" />
+                    <path id="rope-path-highlight" d="M 20 66 Q 50% 78, calc(100% - 20px) 66" fill="none" stroke="#FEF3C7" stroke-width="2" stroke-dasharray="8 10" stroke-linecap="round" />
+                </svg>
+
+                <!-- Hanging rope label: suspended directly beneath the rope -->
+                <div class="absolute left-1/2 top-[78px] -translate-x-1/2 z-30 flex flex-col items-center pointer-events-none">
+                    <div class="flex gap-16 -mt-1 mb-0">
+                        <span class="block w-px h-3 bg-amber-800/80"></span>
+                        <span class="block w-px h-3 bg-amber-800/80"></span>
+                    </div>
+                    <span class="inline-block px-4 py-1.5 rounded-md bg-comical-blueLight dark:bg-slate-800 text-comical-blue dark:text-sky-400 font-bold text-[10px] sm:text-xs uppercase tracking-[0.16em] comic-border-thin shadow-comic-sm whitespace-nowrap">
+                        Specialized Creative Services
+                    </span>
+                </div>
+
+                <!-- Interactive Walking Character - Slightly Increased Size (width: 80px, height: 104px) Facing RIGHT -->
+                <div id="rope-walker" class="absolute z-20 cursor-pointer pointer-events-auto transition-transform" style="bottom: 75px; left: 20px; width: 92px; height: 120px;">
+                    <svg id="rope-walker-svg" viewBox="0 0 360 440" class="w-full h-full filter drop-shadow-md">
+                        <g id="rope-char-body">
+                            <!-- Legs with walking stride animation -->
+                            <g id="rope-char-legs">
+                                <path id="rope-leg-left" d="M142 255 L136 378 L166 378 L174 275" fill="#1C1B29" stroke="#141320" stroke-width="4"/>
+                                <path id="rope-shoe-left" d="M124 396 C124 382, 138 377, 152 377 C163 377, 168 384, 168 396 Z" fill="#1174B5" stroke="#141320" stroke-width="3.5"/>
+                                <path id="rope-leg-right" d="M184 275 L194 378 L224 378 L218 255" fill="#1C1B29" stroke="#141320" stroke-width="4"/>
+                                <path id="rope-shoe-right" d="M192 396 C192 384, 197 377, 208 377 C222 377, 236 382, 236 396 Z" fill="#1174B5" stroke="#141320" stroke-width="3.5"/>
+                            </g>
+                            <!-- Torso with Henley Shirt -->
+                            <path d="M134 142 L226 142 L226 260 Q180 266 134 260 Z" fill="#1174B5" stroke="#141320" stroke-width="4"/>
+                            <rect x="175" y="146" width="10" height="30" rx="3" fill="#0E639C" stroke="#141320" stroke-width="2.5"/>
+                            <!-- Arms balancing on tightrope -->
+                            <g id="rope-char-arms">
+                                <path d="M134 148 L90 180 L104 196 L140 172" fill="#1174B5" stroke="#141320" stroke-width="4"/>
+                                <circle cx="95" cy="190" r="10" fill="#FCD5BD" stroke="#141320" stroke-width="3"/>
+                                <path d="M226 148 L270 180 L256 196 L220 172" fill="#1174B5" stroke="#141320" stroke-width="4"/>
+                                <circle cx="265" cy="190" r="10" fill="#FCD5BD" stroke="#141320" stroke-width="3"/>
+                            </g>
+                            <!-- Rope walker head: match the latest homepage Comi head exactly; keep body and walk cycle unchanged -->
+                            <g id="rope-comi-head">
+                                <rect x="170" y="124" width="20" height="18" fill="#FCD5BD" stroke="#141320" stroke-width="3"/>
+                                <!-- Back spiky hair silhouette matching homepage puppet -->
+                                <path d="M126 95 L114 82 L126 66 L122 46 L142 34 L162 22 L180 28 L198 22 L218 34 L238 46 L234 66 L246 82 L234 95 L238 112 L222 118 L216 128 L144 128 L138 118 L122 112 Z" fill="#141320" stroke="#141320" stroke-width="3" stroke-linejoin="round"/>
+                                <path d="M134 86 C125 84,125 104,136 104" fill="#FCD5BD" stroke="#141320" stroke-width="3"/>
+                                <path d="M226 86 C235 84,235 104,224 104" fill="#FCD5BD" stroke="#141320" stroke-width="3"/>
+                                <path d="M135 66 L135 96 C135 118 158 128 180 128 C202 128 225 118 225 96 L225 66 Z" fill="#FCD5BD" stroke="#141320" stroke-width="3.5" stroke-linejoin="round"/>
+                                <!-- Front spiky bangs and indigo highlights copied from the current homepage puppet -->
+                                <path d="M130 74 L144 52 L156 68 L174 48 L184 68 L202 50 L214 68 L228 74 L222 46 L180 30 L138 46 Z" fill="#141320"/>
+                                <path d="M148 44 L154 39 L158 45 Z" fill="#4F46E5"/>
+                                <path d="M204 42 L210 38 L212 45 Z" fill="#4F46E5"/>
+                                <!-- Existing rope-walker expressions retained for fall interaction -->
+                                <g id="rope-char-face-calm">
+                                    <path d="M148 73 Q158 69 167 73 M193 73 Q202 69 212 73" fill="none" stroke="#141320" stroke-width="3.5" stroke-linecap="round"/>
+                                    <ellipse cx="158" cy="87" rx="8" ry="9.5" fill="#FFFFFF" stroke="#141320" stroke-width="2.5"/>
+                                    <circle cx="159" cy="87" r="4" fill="#141320"/>
+                                    <circle cx="157" cy="85" r="1.5" fill="#FFFFFF"/>
+                                    <ellipse cx="202" cy="87" rx="8" ry="9.5" fill="#FFFFFF" stroke="#141320" stroke-width="2.5"/>
+                                    <circle cx="201" cy="87" r="4" fill="#141320"/>
+                                    <circle cx="199" cy="85" r="1.5" fill="#FFFFFF"/>
+                                    <circle cx="178" cy="100" r="1.2" fill="#141320"/>
+                                    <circle cx="182" cy="100" r="1.2" fill="#141320"/>
+                                    <path d="M172 111 Q180 116 188 111" fill="none" stroke="#141320" stroke-width="2.8" stroke-linecap="round"/>
+                                </g>
+                                <g id="rope-char-face-panic" class="hidden">
+                                    <ellipse cx="158" cy="87" rx="9" ry="11" fill="#FFFFFF" stroke="#141320" stroke-width="2.5"/>
+                                    <circle cx="158" cy="87" r="3" fill="#141320"/>
+                                    <ellipse cx="202" cy="87" rx="9" ry="11" fill="#FFFFFF" stroke="#141320" stroke-width="2.5"/>
+                                    <circle cx="202" cy="87" r="3" fill="#141320"/>
+                                    <ellipse cx="180" cy="114" rx="8" ry="10" fill="#141320"/>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    <div id="rope-walker-puff" class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-amber-400 opacity-0 pointer-events-none transition-opacity"></div>
+                </div>
+
+                <!-- Floating Click Hint -->
+                <div class="absolute top-2 right-4 text-[10px] text-slate-500 dark:text-slate-400 font-mono bg-white/80 dark:bg-slate-900/80 px-2 py-0.5 rounded border border-slate-200 dark:border-slate-700 pointer-events-none flex items-center gap-1 shadow-sm">
+                    <span>💡 Click walker to fall &amp; bounce rope!</span>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- "What We Offer" Heading -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+
+                <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-comical-hair dark:text-white">
+                    What We Offer
+                </h2>
+                <p class="text-slate-600 dark:text-slate-300 mt-3 text-base sm:text-lg">
+                    Comprehensive production services across 2D visual development, 3D character motion, and viral YouTube illustration.
+                </p>
+            </div>
+
+            <!-- 2D SERVICES CATEGORY -->
+            <div class="mb-14">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="w-10 h-10 rounded-2xl bg-amber-300 comic-border-thin shadow-comic-sm flex items-center justify-center text-lg text-comical-hair font-bold">
+                        <i class="fa-solid fa-paintbrush"></i>
+                    </span>
+                    <div>
+                        <h3 class="font-display font-bold text-2xl text-comical-hair dark:text-white">2D Animation &amp; Art Services</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Character design, scenic background art, and high-CTR thumbnails</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- 2D Service 1: 2D Animation -->
+                    <a href="2d.html?filter=high-quality" class="group bg-slate-50 dark:bg-slate-800 hover:bg-amber-50 dark:hover:bg-slate-700 rounded-3xl comic-border shadow-comic p-6 sm:p-8 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="w-12 h-12 rounded-2xl bg-rose-200 dark:bg-rose-900/50 comic-border-thin flex items-center justify-center text-xl text-rose-800 dark:text-rose-200 shadow-comic-sm group-hover:scale-105 transition-transform">
+                                    <i class="fa-solid fa-compass-drafting"></i>
+                                </span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 comic-border-thin text-[10px] font-bold uppercase text-slate-600 dark:text-slate-300">
+                                    2D Animation
+                                </span>
+                            </div>
+                            <h4 class="font-display font-bold text-xl text-comical-hair dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition">
+                                2D Animation &amp; Model Sheets
+                            </h4>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+                                Complete turnaround sheets (Front, Side, 3/4 &amp; Back), facial expression matrices, and clean proportion blueprints for 2D animation and 3D sculpting.
+                            </p>
+                        </div>
+                        <div class="pt-4 mt-6 border-t border-slate-200 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400 group-hover:text-amber-600 dark:group-hover:text-amber-400">
+                            <span>View 2D Projects</span>
+                            <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </a>
+
+                    <!-- 2D Service 2: Background Art -->
+                    <a href="illustration.html?filter=bg-art" class="group bg-slate-50 dark:bg-slate-800 hover:bg-purple-50 dark:hover:bg-slate-700 rounded-3xl comic-border shadow-comic p-6 sm:p-8 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="w-12 h-12 rounded-2xl bg-purple-200 dark:bg-purple-900/50 comic-border-thin flex items-center justify-center text-xl text-purple-800 dark:text-purple-200 shadow-comic-sm group-hover:scale-105 transition-transform">
+                                    <i class="fa-solid fa-mountain-sun"></i>
+                                </span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 comic-border-thin text-[10px] font-bold uppercase text-slate-600 dark:text-slate-300">
+                                    Illustration
+                                </span>
+                            </div>
+                            <h4 class="font-display font-bold text-xl text-comical-hair dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition">
+                                Background Art
+                            </h4>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+                                Atmospheric interior and exterior environment paintings, stylized perspective plates, and cel-shaded layout backgrounds ready for character compositing.
+                            </p>
+                        </div>
+                        <div class="pt-4 mt-6 border-t border-slate-200 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400 group-hover:text-purple-600 dark:group-hover:text-purple-400">
+                            <span>Explore Background Art</span>
+                            <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </a>
+
+                    <!-- 2D Service 3: Thumbnail Design -->
+                    <a href="illustration.html?filter=thumbnails" class="group bg-slate-50 dark:bg-slate-800 hover:bg-yellow-50 dark:hover:bg-slate-700 rounded-3xl comic-border shadow-comic p-6 sm:p-8 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="w-12 h-12 rounded-2xl bg-yellow-200 dark:bg-yellow-900/50 comic-border-thin flex items-center justify-center text-xl text-yellow-800 dark:text-yellow-200 shadow-comic-sm group-hover:scale-105 transition-transform">
+                                    <i class="fa-solid fa-image"></i>
+                                </span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 comic-border-thin text-[10px] font-bold uppercase text-slate-600 dark:text-slate-300">
+                                    High CTR
+                                </span>
+                            </div>
+                            <h4 class="font-display font-bold text-xl text-comical-hair dark:text-white group-hover:text-yellow-600 dark:group-hover:text-yellow-400 transition">
+                                Thumbnail Design
+                            </h4>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+                                High-impact YouTube covers with exaggerated facial expressions, punchy rim lights, and clear narrative visual hooks optimized for algorithm conversions.
+                            </p>
+                        </div>
+                        <div class="pt-4 mt-6 border-t border-slate-200 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400 group-hover:text-yellow-600 dark:group-hover:text-yellow-400">
+                            <span>See Thumbnails</span>
+                            <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- REQUIREMENT 6: 3D SERVICES CATEGORY - ONLY 3 SERVICE CARDS -->
+            <div class="mb-14">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="w-10 h-10 rounded-2xl bg-sky-400 comic-border-thin shadow-comic-sm flex items-center justify-center text-lg text-slate-900 font-bold">
+                        <i class="fa-solid fa-cube"></i>
+                    </span>
+                    <div>
+                        <h3 class="font-display font-bold text-2xl text-comical-hair dark:text-white">3D Animation &amp; Art Services</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Zack D style educational shorts, responsive game mechanics, and expressive character acting</p>
+                    </div>
+                </div>
+
+                <!-- Exactly Three Cards as Specified in Requirement 6 -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    
+                    <!-- Card 1: 3D Zack D Animation -->
+                    <a href="3d.html?filter=zackd" class="group bg-slate-50 dark:bg-slate-800 hover:bg-amber-50 dark:hover:bg-slate-700 rounded-3xl comic-border shadow-comic p-6 sm:p-8 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="w-12 h-12 rounded-2xl bg-amber-200 dark:bg-amber-900/50 comic-border-thin flex items-center justify-center text-xl text-amber-800 dark:text-amber-200 shadow-comic-sm group-hover:scale-105 transition-transform">
+                                    <i class="fa-solid fa-film"></i>
+                                </span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 comic-border-thin text-[10px] font-bold uppercase text-slate-600 dark:text-slate-300">
+                                    Short Form
+                                </span>
+                            </div>
+                            <h4 class="font-display font-bold text-xl text-comical-hair dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition">
+                                3D Zack D Animation
+                            </h4>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+                                Snappy stepped educational shorts, synchronized VO acting, crisp medical/scientific explanations, and viral comedy timing.
+                            </p>
+                        </div>
+                        <div class="pt-4 mt-6 border-t border-slate-200 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400 group-hover:text-amber-600 dark:group-hover:text-amber-400">
+                            <span>Explore Zack D Shorts</span>
+                            <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </a>
+
+                    <!-- Card 2: Game Animation -->
+                    <a href="3d.html?filter=game" class="group bg-slate-50 dark:bg-slate-800 hover:bg-emerald-50 dark:hover:bg-slate-700 rounded-3xl comic-border shadow-comic p-6 sm:p-8 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="w-12 h-12 rounded-2xl bg-emerald-200 dark:bg-emerald-900/50 comic-border-thin flex items-center justify-center text-xl text-emerald-800 dark:text-emerald-200 shadow-comic-sm group-hover:scale-105 transition-transform">
+                                    <i class="fa-solid fa-gamepad"></i>
+                                </span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 comic-border-thin text-[10px] font-bold uppercase text-slate-600 dark:text-slate-300">
+                                    Gameplay
+                                </span>
+                            </div>
+                            <h4 class="font-display font-bold text-xl text-comical-hair dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition">
+                                Game Animation
+                            </h4>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+                                Root-motion locomotion cycles, dynamic melee combat choreography, tactical gun play, and snappy state transitions.
+                            </p>
+                        </div>
+                        <div class="pt-4 mt-6 border-t border-slate-200 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400 group-hover:text-emerald-600 dark:group-hover:text-emerald-400">
+                            <span>Inspect Game Cycles</span>
+                            <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </a>
+
+                    <!-- Card 3: Character Animation -->
+                    <a href="3d.html?filter=character" class="group bg-slate-50 dark:bg-slate-800 hover:bg-sky-50 dark:hover:bg-slate-700 rounded-3xl comic-border shadow-comic p-6 sm:p-8 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="w-12 h-12 rounded-2xl bg-sky-200 dark:bg-sky-900/50 comic-border-thin flex items-center justify-center text-xl text-sky-800 dark:text-sky-200 shadow-comic-sm group-hover:scale-105 transition-transform">
+                                    <i class="fa-solid fa-person-running"></i>
+                                </span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 comic-border-thin text-[10px] font-bold uppercase text-slate-600 dark:text-slate-300">
+                                    Acting
+                                </span>
+                            </div>
+                            <h4 class="font-display font-bold text-xl text-comical-hair dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition">
+                                Character Animation
+                            </h4>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+                                Stylized body mechanics, physical weight, expressive face blendshape dialogue, and personality-driven acting performances.
+                            </p>
+                        </div>
+                        <div class="pt-4 mt-6 border-t border-slate-200 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-comical-blue dark:text-sky-400 group-hover:text-sky-600 dark:group-hover:text-sky-400">
+                            <span>View Character Acting</span>
+                            <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================== ANIMATION PROCESS (PRESERVED PIPELINE) ==================== -->
+    <section id="section-process" class="py-16 lg:py-24 bg-comical-blueLight dark:bg-slate-800/80 border-b-3 border-comical-hair dark:border-slate-700 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="inline-block px-3 py-1 rounded-lg bg-white dark:bg-slate-900 text-comical-blue dark:text-sky-400 comic-border-thin font-bold text-xs uppercase tracking-widest mb-3">
+                        Pipeline &amp; Method
+                    </span>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-comical-hair dark:text-white">
+                        My Animation Process
+                    </h2>
+                </div>
+                <div class="mt-4 md:mt-0 flex items-center gap-3">
+                    <button id="tab-pipe-2d" onclick="switchPipeline('2d')" class="px-5 py-2.5 rounded-xl font-display font-bold text-sm bg-comical-blue text-white comic-border-thin shadow-comic-sm transition">
+                        2D Pipeline
+                    </button>
+                    <button id="tab-pipe-3d" onclick="switchPipeline('3d')" class="px-5 py-2.5 rounded-xl font-display font-bold text-sm bg-white dark:bg-slate-900 text-comical-hair dark:text-white comic-border-thin shadow-comic-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                        3D Pipeline
+                    </button>
+                </div>
+            </div>
+
+            <!-- 2D Pipeline Container -->
+            <div id="pipeline-2d" class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="bg-white dark:bg-slate-900 rounded-3xl comic-border shadow-comic p-6 flex flex-col justify-between">
+                    <div>
+                        <span class="font-display text-4xl text-amber-400 font-bold block mb-2">01</span>
+                        <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white mb-2">Thumbnail &amp; Storyboard</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Rough sketches defining key acting beats, camera angles, comedy timing, and silhouette clarity before animating.</p>
+                    </div>
+                    <div class="pt-4 mt-6 border-t border-slate-100 dark:border-slate-800 text-xs font-bold text-comical-blue dark:text-sky-400">Stage: Planning</div>
+                </div>
+
+                <div class="bg-white dark:bg-slate-900 rounded-3xl comic-border shadow-comic p-6 flex flex-col justify-between">
+                    <div>
+                        <span class="font-display text-4xl text-amber-400 font-bold block mb-2">02</span>
+                        <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white mb-2">Rough Keys &amp; Breakdowns</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Posing primary storytelling golden poses and arcs with strong squash, stretch, and snappy frame holds.</p>
+                    </div>
+                    <div class="pt-4 mt-6 border-t border-slate-100 dark:border-slate-800 text-xs font-bold text-comical-blue dark:text-sky-400">Stage: Keyframing</div>
+                </div>
+
+                <div class="bg-white dark:bg-slate-900 rounded-3xl comic-border shadow-comic p-6 flex flex-col justify-between">
+                    <div>
+                        <span class="font-display text-4xl text-amber-400 font-bold block mb-2">03</span>
+                        <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white mb-2">Tie-Down &amp; Clean Line</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Locking precise character model volume, solid linework, and inbetween frame transitions on 2s and 1s.</p>
+                    </div>
+                    <div class="pt-4 mt-6 border-t border-slate-100 dark:border-slate-800 text-xs font-bold text-comical-blue dark:text-sky-400">Stage: Inbetweening</div>
+                </div>
+
+                <div class="bg-white dark:bg-slate-900 rounded-3xl comic-border shadow-comic p-6 flex flex-col justify-between">
+                    <div>
+                        <span class="font-display text-4xl text-amber-400 font-bold block mb-2">04</span>
+                        <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white mb-2">Color, Shading &amp; Comp</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Flat cel palettes, rim lights, atmospheric environmental shadows, and camera depth of field passes.</p>
+                    </div>
+                    <div class="pt-4 mt-6 border-t border-slate-100 dark:border-slate-800 text-xs font-bold text-comical-blue dark:text-sky-400">Stage: Final Render</div>
+                </div>
+            </div>
+
+            <!-- 3D Pipeline Container -->
+            <div id="pipeline-3d" class="hidden grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="bg-white dark:bg-slate-900 rounded-3xl comic-border shadow-comic p-6 flex flex-col justify-between">
+                    <div>
+                        <span class="font-display text-4xl text-sky-400 font-bold block mb-2">01</span>
+                        <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white mb-2">Reference &amp; Audio Beat</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Analyzing live-action video reference, scrubbing audio syllables for lip-sync accents, and planning beats.</p>
+                    </div>
+                    <div class="pt-4 mt-6 border-t border-slate-100 dark:border-slate-800 text-xs font-bold text-sky-500">Stage: Analysis</div>
+                </div>
+
+                <div class="bg-white dark:bg-slate-900 rounded-3xl comic-border shadow-comic p-6 flex flex-col justify-between">
+                    <div>
+                        <span class="font-display text-4xl text-sky-400 font-bold block mb-2">02</span>
+                        <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white mb-2">Stepped Blocking</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Keying primary story poses with stepped tangents: silhouette clarity, hips center of gravity, and eye lines.</p>
+                    </div>
+                    <div class="pt-4 mt-6 border-t border-slate-100 dark:border-slate-800 text-xs font-bold text-sky-500">Stage: Posing</div>
+                </div>
+
+                <div class="bg-white dark:bg-slate-900 rounded-3xl comic-border shadow-comic p-6 flex flex-col justify-between">
+                    <div>
+                        <span class="font-display text-4xl text-sky-400 font-bold block mb-2">03</span>
+                        <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white mb-2">Splining &amp; Arc Polish</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Switching Euler curves to spline: smoothing motion arcs on wrists and nose tip, and timing follow-through.</p>
+                    </div>
+                    <div class="pt-4 mt-6 border-t border-slate-100 dark:border-slate-800 text-xs font-bold text-sky-500">Stage: Polish</div>
+                </div>
+
+                <div class="bg-white dark:bg-slate-900 rounded-3xl comic-border shadow-comic p-6 flex flex-col justify-between">
+                    <div>
+                        <span class="font-display text-4xl text-sky-400 font-bold block mb-2">04</span>
+                        <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white mb-2">Lighting &amp; Post</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">NPR toon shaders, stylized rim highlights, motion blur, and final composite passes ready for export.</p>
+                    </div>
+                    <div class="pt-4 mt-6 border-t border-slate-100 dark:border-slate-800 text-xs font-bold text-sky-500">Stage: Output</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== WORK WITH ME SECTION ==================== -->
+    <section id="section-work" class="py-16 lg:py-24 bg-white dark:bg-slate-900 border-b-3 border-comical-hair dark:border-slate-700 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-block px-3 py-1 rounded-lg bg-amber-300 text-comical-hair comic-border-thin font-bold text-xs uppercase tracking-widest mb-3 shadow-comic-sm">
+                    How We Collaborate
+                </span>
+                <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-comical-hair dark:text-white">
+                    Work With Me
+                </h2>
+                <p class="text-slate-600 dark:text-slate-300 mt-3 text-base sm:text-lg">
+                    Whether you need an entire animation sequence from scratch or focused character animation for your game, here is what working together looks like:
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-slate-50 dark:bg-slate-800 rounded-3xl comic-border shadow-comic p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-amber-300 comic-border-thin flex items-center justify-center text-2xl mb-6 shadow-comic-sm">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl text-comical-hair dark:text-white mb-3">1. Scope &amp; Brief</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                            We discuss your vision, visual style (2D hand-drawn, 3D stepped, or Zack D style), target frame rate, and timeline milestones.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 dark:border-slate-700 text-xs font-mono font-bold text-slate-500 dark:text-slate-400">
+                        Deliverable: Quote &amp; Schedule
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 dark:bg-slate-800 rounded-3xl comic-border shadow-comic p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-sky-300 comic-border-thin flex items-center justify-center text-2xl mb-6 shadow-comic-sm">
+                            <i class="fa-solid fa-person-running"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl text-comical-hair dark:text-white mb-3">2. Work-In-Progress</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                            You get regular review checkpoints: rough storyboard/blocking first, followed by splining or tie-down lines, ensuring zero surprises.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 dark:border-slate-700 text-xs font-mono font-bold text-comical-blue dark:text-sky-400">
+                        Deliverable: Review Previews
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 dark:bg-slate-800 rounded-3xl comic-border shadow-comic p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-purple-300 comic-border-thin flex items-center justify-center text-2xl mb-6 shadow-comic-sm">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl text-comical-hair dark:text-white mb-3">3. Final Delivery</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                            Master animation clips exported in ProRes/MP4, root-motion FBX game assets, layered PSDs, and project archives ready for production.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 dark:border-slate-700 text-xs font-mono font-bold text-purple-600 dark:text-purple-400">
+                        Deliverable: Master Production Files
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== REQUIREMENT 8: CONTACT ME SECTION ==================== -->
+    <section id="section-contact" class="py-16 lg:py-24 bg-white dark:bg-slate-900 transition-colors">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="contact-panel rounded-3xl comic-border shadow-comic-lg p-8 sm:p-12 relative overflow-hidden">
+                <div class="relative z-10 text-comical-hair">
+                    <span class="inline-block px-3.5 py-1 rounded-lg bg-white dark:bg-slate-700 dark:text-sky-200 dark:border-slate-500 comic-border-thin font-bold text-xs uppercase tracking-widest mb-3">
+                        Let’s Collaborate
+                    </span>
+                    <h2 class="font-display font-bold text-3xl sm:text-5xl text-comical-hair dark:text-white mb-4">
+                        Have an Animation in Mind?
+                    </h2>
+                    <p class="text-base sm:text-lg text-slate-900 dark:text-slate-300 max-w-xl mb-8 leading-relaxed font-medium">
+                        Whether it’s a high-stakes 2D action scene, a 3D short, or game character combat loops, let’s bring it to life!
+                    </p>
+
+                    <!-- Contact Details (Requirement 8) -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                        <!-- Email Link -->
+                        <a href="mailto:backupu795@gmail.com" class="contact-social-card flex items-center gap-3 bg-white p-4 rounded-2xl comic-border-thin shadow-comic-sm hover:-translate-y-1 transition group">
+                            <span class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center text-lg text-amber-700 group-hover:bg-amber-400 transition">
+                                <i class="fa-solid fa-envelope"></i>
+                            </span>
+                            <div class="overflow-hidden">
+                                <span class="text-[10px] font-bold text-slate-500 uppercase block">Email Me</span>
+                                <span class="text-xs font-bold text-comical-hair truncate block">backupu795@gmail.com</span>
+                            </div>
+                        </a>
+
+                        <!-- YouTube Link -->
+                        <a href="https://www.youtube.com/@iamcomical5050" target="_blank" rel="noopener noreferrer" class="contact-social-card flex items-center gap-3 bg-white p-4 rounded-2xl comic-border-thin shadow-comic-sm hover:-translate-y-1 transition group">
+                            <span class="w-10 h-10 rounded-xl bg-rose-100 flex items-center justify-center text-lg text-rose-600 group-hover:bg-rose-500 group-hover:text-white transition">
+                                <i class="fa-brands fa-youtube"></i>
+                            </span>
+                            <div class="overflow-hidden">
+                                <span class="text-[10px] font-bold text-slate-500 uppercase block">YouTube</span>
+                                <span class="text-xs font-bold text-comical-hair truncate block">@iamcomical5050</span>
+                            </div>
+                        </a>
+
+                        <!-- Instagram Link -->
+                        <a href="https://www.instagram.com/rp.comical/" target="_blank" rel="noopener noreferrer" class="contact-social-card flex items-center gap-3 bg-white p-4 rounded-2xl comic-border-thin shadow-comic-sm hover:-translate-y-1 transition group">
+                            <span class="w-10 h-10 rounded-xl bg-pink-100 flex items-center justify-center text-lg text-pink-600 group-hover:bg-pink-500 group-hover:text-white transition">
+                                <i class="fa-brands fa-instagram"></i>
+                            </span>
+                            <div class="overflow-hidden">
+                                <span class="text-[10px] font-bold text-slate-500 uppercase block">Instagram</span>
+                                <span class="text-xs font-bold text-comical-hair truncate block">@rp.comical</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Open the detailed enquiry form only when the visitor needs it -->
+                    <div class="mt-2 mb-6">
+                        <button
+                            id="toggle-enquiry-form"
+                            type="button"
+                            onclick="toggleProjectEnquiry()"
+                            aria-expanded="false"
+                            aria-controls="project-enquiry-form"
+                            class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-2xl bg-comical-hair dark:bg-sky-400 text-white dark:text-slate-950 font-display font-bold text-base comic-border shadow-comic hover:bg-comical-blue dark:hover:bg-sky-300 transition">
+                            <span id="toggle-enquiry-label">Let’s Do It</span>
+                            <i id="toggle-enquiry-icon" class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    </div>
+
+                    <!-- Project enquiry form: hidden until the visitor opens it -->
+                    <form id="project-enquiry-form" class="hidden mt-2 grid grid-cols-1 sm:grid-cols-2 gap-4" onsubmit="sendProjectEnquiry(event)">
+                        <div>
+                            <label for="enquiry-name" class="block text-xs font-bold uppercase tracking-wider mb-1.5 dark:text-slate-200">Your Name *</label>
+                            <input id="enquiry-name" name="name" class="contact-field" type="text" placeholder="Enter your name" required>
+                        </div>
+                        <div>
+                            <label for="enquiry-email" class="block text-xs font-bold uppercase tracking-wider mb-1.5 dark:text-slate-200">Your Email *</label>
+                            <input id="enquiry-email" name="email" class="contact-field" type="email" placeholder="you@example.com" required>
+                        </div>
+                        <div>
+                            <label for="enquiry-work" class="block text-xs font-bold uppercase tracking-wider mb-1.5 dark:text-slate-200">What do you need? *</label>
+                            <select id="enquiry-work" name="work" class="contact-field" required>
+                                <option value="">Select project type</option>
+                                <option>2D Animation</option>
+                                <option>3D Animation</option>
+                                <option>Character Design</option>
+                                <option>3D Modeling / Product Animation</option>
+                                <option>Illustration / Storyboard</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="enquiry-budget" class="block text-xs font-bold uppercase tracking-wider mb-1.5 dark:text-slate-200">Estimated Budget</label>
+                            <select id="enquiry-budget" name="budget" class="contact-field">
+                                <option value="">Select budget (optional)</option>
+                                <option>Under ₹10,000</option>
+                                <option>₹10,000 – ₹25,000</option>
+                                <option>₹25,000 – ₹50,000</option>
+                                <option>₹50,000 – ₹1,00,000</option>
+                                <option>₹1,00,000+</option>
+                                <option>Need a quote</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="enquiry-timeline" class="block text-xs font-bold uppercase tracking-wider mb-1.5 dark:text-slate-200">Expected Timeline</label>
+                            <input id="enquiry-timeline" name="timeline" class="contact-field" type="text" placeholder="e.g. 3–4 weeks">
+                        </div>
+                        <div>
+                            <label for="enquiry-reference" class="block text-xs font-bold uppercase tracking-wider mb-1.5 dark:text-slate-200">Reference Link (optional)</label>
+                            <input id="enquiry-reference" name="reference" class="contact-field" type="url" placeholder="Paste a link to your reference">
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label for="enquiry-brief" class="block text-xs font-bold uppercase tracking-wider mb-1.5 dark:text-slate-200">Tell us about your project *</label>
+                            <textarea id="enquiry-brief" name="brief" class="contact-field min-h-[120px] resize-y" placeholder="Describe the animation, style, duration, deliverables and any important details..." required></textarea>
+                        </div>
+                        <div class="sm:col-span-2 flex flex-col sm:flex-row sm:items-center gap-3">
+                            <button type="submit" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-comical-hair dark:bg-sky-400 text-white dark:text-slate-950 font-display font-bold text-base comic-border shadow-comic hover:bg-comical-blue dark:hover:bg-sky-300 transition">
+                                <span>Send Project Enquiry</span>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                            <p class="text-xs text-slate-700 dark:text-slate-300">Your email app will open with the project details filled in.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="py-12 bg-comical-hair text-white border-t-3 border-comical-hair">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-700">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-comical-blue text-white comic-border-thin flex items-center justify-center font-display text-xl">
+                        C!
+                    </div>
+                    <span class="font-display font-bold text-2xl tracking-wide">COMICAL</span>
+                </div>
+
+                <div class="flex items-center gap-4 text-sm font-semibold">
+                    <a href="2d.html" class="hover:text-amber-300 transition">2D Work</a>
+                    <span>&bull;</span>
+                    <a href="3d.html" class="hover:text-sky-300 transition">3D Work</a>
+                    <span>&bull;</span>
+                    <a href="illustration.html" class="hover:text-purple-300 transition">Illustration</a>
+                    <span>&bull;</span>
+                    <a href="#section-services" class="hover:text-white transition">What We Offer</a>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <a href="https://www.youtube.com/@iamcomical5050" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-rose-600 flex items-center justify-center text-white transition">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a href="https://www.instagram.com/rp.comical/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-pink-600 flex items-center justify-center text-white transition">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="mailto:backupu795@gmail.com" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-amber-400 hover:text-slate-900 flex items-center justify-center text-white transition">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+                <p>&copy; 2026 COMICAL STUDIO. All Animation, 3D Art &amp; Rights Reserved.</p>
+                <p>Equipped with Dark Mode &amp; Sound Controls</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== JAVASCRIPT CONTROLLERS ==================== -->
+    <script>
+        // ==================== DARK MODE TOGGLE CONTROLLER (Requirement 9) ====================
+        function initTheme() {
+            // Always start in Light Mode, even if the browser previously stored Dark Mode.
+            document.documentElement.classList.remove('dark');
+            document.documentElement.style.colorScheme = 'light';
+            applyTheme(false);
+        }
+
+        function applyTheme(isDark) {
+            if (isDark) {
+                document.documentElement.classList.add('dark');
+                document.documentElement.style.colorScheme = 'dark';
+                localStorage.setItem('comical_theme', 'dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+                document.documentElement.style.colorScheme = 'light';
+                localStorage.setItem('comical_theme', 'light');
+            }
+            updateThemeIcons(isDark);
+        }
+
+        function toggleTheme() {
+            var isDark = document.documentElement.classList.contains('dark');
+            applyTheme(!isDark);
+        }
+
+        function updateThemeIcons(isDark) {
+            var icon = document.getElementById('theme-icon');
+            var iconMob = document.getElementById('theme-icon-mobile');
+            if (icon) {
+                icon.className = isDark ? 'fa-solid fa-sun text-base text-amber-400' : 'fa-solid fa-moon text-base';
+            }
+            if (iconMob) {
+                iconMob.className = isDark ? 'fa-solid fa-sun text-sm text-amber-400' : 'fa-solid fa-moon text-sm';
+            }
+        }
+
+        // ==================== SOUND / MUTE CONTROLLER (Requirement 9) ====================
+        window.isSoundMuted = function() {
+            return localStorage.getItem('comical_sound_muted') === 'true';
+        };
+
+        function initSound() {
+            var muted = window.isSoundMuted();
+            updateSoundIcons(muted);
+        }
+
+        function toggleSound() {
+            var muted = !window.isSoundMuted();
+            localStorage.setItem('comical_sound_muted', muted ? 'true' : 'false');
+            updateSoundIcons(muted);
+        }
+
+        function updateSoundIcons(muted) {
+            var icon = document.getElementById('sound-icon');
+            var iconMob = document.getElementById('sound-icon-mobile');
+            if (icon) {
+                icon.className = muted ? 'fa-solid fa-volume-xmark text-base text-rose-500' : 'fa-solid fa-volume-high text-base text-emerald-600 dark:text-emerald-400';
+            }
+            if (iconMob) {
+                iconMob.className = muted ? 'fa-solid fa-volume-xmark text-sm text-rose-500' : 'fa-solid fa-volume-high text-sm text-emerald-600 dark:text-emerald-400';
+            }
+        }
+
+        // ==================== CUSTOM MOUSE CURSOR ====================
+        var cursorDot = document.getElementById('custom-cursor-dot');
+        var cursorRing = document.getElementById('custom-cursor-ring');
+        var mouseX = -100, mouseY = -100;
+        var ringX = -100, ringY = -100;
+
+        window.addEventListener('mousemove', function(e) {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            if (cursorDot) {
+                cursorDot.style.left = mouseX + 'px';
+                cursorDot.style.top = mouseY + 'px';
+            }
+        });
+
+        function renderCursorRing() {
+            ringX += (mouseX - ringX) * 0.22;
+            ringY += (mouseY - ringY) * 0.22;
+            if (cursorRing) {
+                cursorRing.style.left = ringX + 'px';
+                cursorRing.style.top = ringY + 'px';
+            }
+            requestAnimationFrame(renderCursorRing);
+        }
+        requestAnimationFrame(renderCursorRing);
+
+        document.querySelectorAll('a, button, [onclick], .cursor-pointer').forEach(function(el) {
+            el.addEventListener('mouseenter', function() {
+                if (cursorRing) {
+                    cursorRing.style.width = '44px';
+                    cursorRing.style.height = '44px';
+                    cursorRing.style.backgroundColor = 'rgba(17, 116, 181, 0.15)';
+                }
+            });
+            el.addEventListener('mouseleave', function() {
+                if (cursorRing) {
+                    cursorRing.style.width = '28px';
+                    cursorRing.style.height = '28px';
+                    cursorRing.style.backgroundColor = 'transparent';
+                }
+            });
+        });
+
+        // ==================== SOUND SYNTHESIZER (Respects Mute) ====================
+        function playLaserSound() {
+            if (window.isSoundMuted()) return;
+            try {
+                var AudioCtx = window.AudioContext || window.webkitAudioContext;
+                if (!AudioCtx) return;
+                var ctx = new AudioCtx();
+                if (ctx.state === 'suspended') ctx.resume();
+
+                var osc = ctx.createOscillator();
+                var gain = ctx.createGain();
+
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(920, ctx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(140, ctx.currentTime + 0.16);
+
+                gain.gain.setValueAtTime(0.18, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.16);
+
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+
+                osc.start();
+                osc.stop(ctx.currentTime + 0.17);
+            } catch (e) {}
+        }
+
+        // ==================== HOME PUPPET: CURSOR EYE + HEAD TRACKING ====================
+        function initPuppetCharacter() {
+            var svg = document.getElementById('comical-hero-svg');
+            var head = document.getElementById('comical-head');
+            var pupilLeft = document.getElementById('pupil-left');
+            var pupilRight = document.getElementById('pupil-right');
+            if (!svg || !head || !pupilLeft || !pupilRight) return;
+
+            // SVG transform attribute is used instead of CSS transforms so the
+            // head movement remains reliable across browsers.
+            var headPivotX = 180;
+            var headPivotY = 88;
+            var comicalHeadPoseEnabled = true;
+            window.comicalHeadPoseEnabled = true;
+
+            function trackPointer(e) {
+                if (e.pointerType === 'touch') return;
+                var rect = svg.getBoundingClientRect();
+                if (!rect.width || !rect.height) return;
+
+                var nx = Math.max(-1, Math.min(1,
+                    (e.clientX - (rect.left + rect.width / 2)) / (rect.width / 2)));
+                var ny = Math.max(-1, Math.min(1,
+                    (e.clientY - (rect.top + rect.height * 0.22)) / (rect.height * 0.62)));
+
+                var dx = nx * 4.2;
+                var dy = ny * 3.0;
+                var pupilTransform = 'translate(' + dx.toFixed(2) + ' ' + dy.toFixed(2) + ')';
+                pupilLeft.setAttribute('transform', pupilTransform);
+                pupilRight.setAttribute('transform', pupilTransform);
+
+                if (window.comicalHeadPoseEnabled !== false) {
+                    // Very subtle movement: rotate the head only, never the neck.
+                    var rotate = nx * 1.15;
+                    var tiltY = ny * 0.25;
+                    head.setAttribute(
+                        'transform',
+                        'translate(' + headPivotX + ' ' + headPivotY + ') rotate(' +
+                        rotate.toFixed(2) + ') translate(' + (-headPivotX) + ' ' +
+                        (-headPivotY + tiltY).toFixed(2) + ')'
+                    );
+                } else {
+                    head.removeAttribute('transform');
+                }
+            }
+
+            // Listen on the document so tracking works even when the pointer
+            // is outside the character artwork.
+            document.addEventListener('pointermove', trackPointer, { passive: true });
+
+            // Blink only the visible face, without interfering with tracking.
+            function blink() {
+                var visibleEyes = document.querySelectorAll(
+                    '#face-calm ellipse, #face-stressed ellipse'
+                );
+                visibleEyes.forEach(function(eye) {
+                    eye.style.transformBox = 'fill-box';
+                    eye.style.transformOrigin = 'center';
+                    eye.style.transform = 'scaleY(0.08)';
+                });
+                setTimeout(function() {
+                    visibleEyes.forEach(function(eye) {
+                        eye.style.transform = 'scaleY(1)';
+                    });
+                }, 120);
+                setTimeout(blink, 3200 + Math.random() * 2600);
+            }
+            setTimeout(blink, 2200);
+        }
+
+        // Laser is enabled only for the Chill (hero) pose.
+
+        // Comical Hero Pose & Expression Switcher
+        function setComicalPose(pose) {
+            comicalLaserPoseEnabled = (pose === 'hero');
+            // Head movement is enabled only for Chill. Eye tracking remains active.
+            window.comicalHeadPoseEnabled = (pose === 'hero');
+            var laserOverlay = document.getElementById('laser-overlay');
+            if (!comicalLaserPoseEnabled && laserOverlay) laserOverlay.innerHTML = '';
+            var laserBadge = document.getElementById('laser-status-badge');
+            if (laserBadge && !comicalLaserPoseEnabled) {
+                laserBadge.textContent = 'Laser OFF';
+                laserBadge.className = 'px-2.5 py-0.5 rounded-md bg-slate-200 text-slate-500 text-[10px] font-bold uppercase tracking-wider transition';
+            }
+            ['hero', 'shrug', 'panic', 'tpose'].forEach(function(p) {
+                var el = document.getElementById('comical-arms-' + p);
+                if (el) el.classList.add('hidden');
+                var btn = document.getElementById('pose-btn-' + p);
+                if (btn) {
+                    btn.className = 'pose-btn py-1.5 px-1 sm:px-2 rounded-xl font-bold text-[11px] bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 comic-border-thin transition text-center';
+                }
+            });
+
+            var activeArms = document.getElementById('comical-arms-' + pose);
+            if (activeArms) activeArms.classList.remove('hidden');
+
+            var activeBtn = document.getElementById('pose-btn-' + pose);
+            if (activeBtn) {
+                activeBtn.className = 'pose-btn py-1.5 px-1 sm:px-2 rounded-xl font-bold text-[11px] bg-comical-blue text-white comic-border-thin shadow-comic-sm transition text-center';
+            }
+
+            var faceCalm = document.getElementById('face-calm');
+            var faceStressed = document.getElementById('face-stressed');
+            var eyebags = document.getElementById('panic-eyebags');
+            var speech = document.getElementById('comical-speech');
+
+            if (pose === 'hero') {
+                if (faceCalm) faceCalm.classList.remove('hidden');
+                if (faceStressed) faceStressed.classList.add('hidden');
+                if (eyebags) eyebags.classList.add('hidden');
+                if (speech) speech.textContent = '"Ready to animate your next big idea! Click anywhere to blast the laser!"';
+            } else if (pose === 'shrug') {
+                if (faceCalm) faceCalm.classList.add('hidden');
+                if (faceStressed) faceStressed.classList.remove('hidden');
+                if (eyebags) eyebags.classList.add('hidden');
+                if (speech) speech.textContent = '"Wait... you want 60fps hand-drawn animation by tomorrow?!"';
+            } else if (pose === 'panic') {
+                if (faceCalm) faceCalm.classList.add('hidden');
+                if (faceStressed) faceStressed.classList.remove('hidden');
+                if (eyebags) eyebags.classList.remove('hidden');
+                if (speech) speech.textContent = '"Did I save the Blender project file before starting the render?!"';
+            } else if (pose === 'tpose') {
+                if (faceCalm) faceCalm.classList.remove('hidden');
+                if (faceStressed) faceStressed.classList.add('hidden');
+                if (eyebags) eyebags.classList.add('hidden');
+                if (speech) speech.textContent = '"T-Pose rig calibrated! Clean quad topology locked."';
+            }
+        }
+
+        // ==================== LASER CLICK ALLOWLIST ====================
+        // Laser is active in the hero and rope stage.
+        // Header clicks fire the laser only while the page is at the very top.
+        var comicalLaserPoseEnabled = true;
+
+        function isLaserPermitted(e) {
+            if (!comicalLaserPoseEnabled) return false;
+            if (!e || !e.target || !e.target.closest) return false;
+
+            if (e.target.closest('#section-hero, #rope-interactive-stage')) {
+                return true;
+            }
+
+            if (e.target.closest('header')) {
+                return window.scrollY <= 8;
+            }
+
+            return false;
+        }
+
+        function updateLaserBadge(isOn) {
+            var badge = document.getElementById('laser-status-badge');
+            if (!badge) return;
+            if (isOn) {
+                badge.textContent = 'Laser Ready ⚡';
+                badge.className = 'px-2.5 py-0.5 rounded-md bg-amber-100 dark:bg-amber-900/60 text-amber-900 dark:text-amber-200 text-[10px] font-bold uppercase tracking-wider transition';
+            } else {
+                badge.textContent = 'Laser: OFF';
+                badge.className = 'px-2.5 py-0.5 rounded-md bg-slate-200 dark:bg-slate-700 text-slate-500 dark:text-slate-400 text-[10px] font-bold uppercase tracking-wider transition';
+            }
+        }
+        window.addEventListener('scroll', function() { updateLaserBadge(false); }, { passive: true });
+
+        // Aim the handheld laser toward pointer/touch movement while staying inside the homepage laser zone.
+        function aimComicalLaser(clientX, clientY) {
+            if (!comicalLaserPoseEnabled) return;
+            var arm = document.getElementById('comical-aim-arm');
+            var svg = document.getElementById('comical-hero-svg');
+            if (!arm || !svg) return;
+            var rect = svg.getBoundingClientRect();
+            if (rect.bottom <= 0 || rect.top >= window.innerHeight) return;
+            var sx = rect.left + (226 / 360) * rect.width;
+            var sy = rect.top + (148 / 440) * rect.height;
+            var dx = clientX - sx, dy = clientY - sy;
+            var angle = Math.atan2(dy, dx) * 180 / Math.PI;
+            var baseAngle = Math.atan2((114-148), (298-226)) * 180 / Math.PI;
+            var delta = Math.max(-75, Math.min(75, angle - baseAngle));
+            arm.style.transform = 'rotate(' + delta.toFixed(1) + 'deg)';
+        }
+        document.addEventListener('pointermove', function(e) {
+            if (e.pointerType === 'touch' || e.pointerType === 'pen' || e.pointerType === 'mouse') {
+                aimComicalLaser(e.clientX, e.clientY);
+            }
+        }, { passive: true });
+
+        // Fire only for approved navigation/actions or mascot clicks; capture phase also catches the rope character.
+        document.addEventListener('click', function(e) {
+            if (!isLaserPermitted(e)) {
+                updateLaserBadge(false);
+                return;
+            }
+            updateLaserBadge(true);
+
+            var muzzle = document.getElementById('laser-gun-muzzle');
+            var overlay = document.getElementById('laser-overlay');
+            var arm = document.getElementById('comical-aim-arm');
+            var pivotEl = document.getElementById('laser-arm-pivot');
+
+            if (!overlay) return;
+
+            var tX = e.clientX;
+            var tY = e.clientY;
+
+            // Keep the character's hand/blaster aimed at the exact click point.
+            aimComicalLaser(tX, tY);
+
+            var mX = window.innerWidth * 0.72;
+            var mY = 220;
+
+            if (muzzle) {
+                var mRect = muzzle.getBoundingClientRect();
+                if (mRect.bottom > 0 && mRect.top < window.innerHeight) {
+                    mX = mRect.left + mRect.width / 2;
+                    mY = mRect.top + mRect.height / 2;
+                }
+            }
+
+            playLaserSound();
+
+            // Render Stylized Comic Laser Beam
+            overlay.innerHTML =
+                '<line x1="' + mX + '" y1="' + mY + '" x2="' + tX + '" y2="' + tY + '" stroke="#A855F7" stroke-width="12" stroke-linecap="round" opacity="0.85" />' +
+                '<line x1="' + mX + '" y1="' + mY + '" x2="' + tX + '" y2="' + tY + '" stroke="#FACC15" stroke-width="5" stroke-linecap="round" />' +
+                '<line x1="' + mX + '" y1="' + mY + '" x2="' + tX + '" y2="' + tY + '" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" />' +
+                '<circle cx="' + mX + '" cy="' + mY + '" r="20" fill="#A855F7" opacity="0.9" />' +
+                '<circle cx="' + mX + '" cy="' + mY + '" r="8" fill="#FFFFFF" />' +
+                '<circle cx="' + tX + '" cy="' + tY + '" r="26" fill="#FACC15" opacity="0.95" />' +
+                '<circle cx="' + tX + '" cy="' + tY + '" r="12" fill="#FFFFFF" />' +
+                '<line x1="' + (tX - 18) + '" y1="' + (tY - 18) + '" x2="' + (tX + 18) + '" y2="' + (tY + 18) + '" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />' +
+                '<line x1="' + (tX + 18) + '" y1="' + (tY - 18) + '" x2="' + (tX - 18) + '" y2="' + (tY + 18) + '" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />';
+
+            setTimeout(function() {
+                overlay.innerHTML = '';
+            }, 180);
+        }, true);
+
+        // ==================== RESTORED CENTERED ROPE CHARACTER CONTROLLER WITH PHYSICAL JIGGLE (Requirement 5) ====================
+        window.RopeCharacterController = (function() {
+            var stage = document.getElementById('rope-interactive-stage');
+            var walker = document.getElementById('rope-walker');
+            var legLeft = document.getElementById('rope-leg-left');
+            var legRight = document.getElementById('rope-leg-right');
+            var faceCalm = document.getElementById('rope-char-face-calm');
+            var facePanic = document.getElementById('rope-char-face-panic');
+            var puff = document.getElementById('rope-walker-puff');
+
+            var pathBase = document.getElementById('rope-path-base');
+            var pathBraid = document.getElementById('rope-path-braid');
+            var pathHighlight = document.getElementById('rope-path-highlight');
+            var pathShadow = document.getElementById('rope-path-shadow');
+
+            if (!stage || !walker) return null;
+
+            var state = 'walking'; // 'walking' | 'falling'
+            var posX = 20;
+            var speed = 1.1;
+            var legStep = 0;
+            var velocityY = 0;
+            var gravity = 0.65;
+            var rot = 0;
+            var currentBottom = 75;
+            var exitFrames = 0;
+
+            // Rope Physical Jiggle Simulation Variables
+            var ropeJiggleEnergy = 0;
+            var ropeJiggleTime = 0;
+            var ropeBaseY = 68;
+            var ropeMaxSag = 12;
+
+            function updateRopeCurve(w) {
+                var currentSag = ropeMaxSag;
+                if (ropeJiggleEnergy > 0.005) {
+                    ropeJiggleTime += 0.28;
+                    ropeJiggleEnergy *= 0.94; // Decay
+                    var jiggle = Math.sin(ropeJiggleTime * 5.5) * (ropeJiggleEnergy * 16);
+                    currentSag += jiggle;
+                }
+
+                var midY = ropeBaseY + currentSag;
+                var leftX = 20;
+                var rightX = w - 46;
+                var midX = w / 2;
+
+                var dBase = 'M ' + leftX + ' ' + ropeBaseY + ' Q ' + midX.toFixed(1) + ' ' + midY.toFixed(1) + ', ' + rightX + ' ' + ropeBaseY;
+                var dShadow = 'M ' + leftX + ' ' + (ropeBaseY + 6) + ' Q ' + midX.toFixed(1) + ' ' + (midY + 6).toFixed(1) + ', ' + rightX + ' ' + (ropeBaseY + 6);
+                var dHighlight = 'M ' + leftX + ' ' + (ropeBaseY - 2) + ' Q ' + midX.toFixed(1) + ' ' + (midY - 2).toFixed(1) + ', ' + rightX + ' ' + (ropeBaseY - 2);
+
+                if (pathBase) pathBase.setAttribute('d', dBase);
+                if (pathBraid) pathBraid.setAttribute('d', dBase);
+                if (pathHighlight) pathHighlight.setAttribute('d', dHighlight);
+                if (pathShadow) pathShadow.setAttribute('d', dShadow);
+            }
+
+            function triggerFall() {
+                if (state !== 'walking') return;
+                state = 'falling';
+                exitFrames = 0;
+                walker.style.opacity = '1';
+                velocityY = 0;
+                rot = 0;
+
+                // Physics spring impulse on rope
+                ropeJiggleEnergy = 1.0;
+                ropeJiggleTime = 0;
+
+                if (faceCalm) faceCalm.classList.add('hidden');
+                if (facePanic) facePanic.classList.remove('hidden');
+
+                if (puff) {
+                    puff.style.opacity = '0.9';
+                    setTimeout(function() { puff.style.opacity = '0'; }, 300);
+                }
+            }
+
+            walker.addEventListener('click', function(e) {
+                e.stopPropagation();
+                triggerFall();
+            });
+
+            function updateLoop() {
+                var stageWidth = stage.clientWidth || 800;
+                updateRopeCurve(stageWidth);
+
+                if (state === 'walking') {
+                    if (exitFrames > 0) {
+                        exitFrames--;
+                        walker.style.opacity = '0';
+                        if (exitFrames === 0) {
+                            posX = 20;
+                            walker.style.left = posX + 'px';
+                            walker.style.opacity = '1';
+                        }
+                    } else {
+                    walker.style.opacity = '1';
+                    posX += speed;
+                    legStep += 0.16;
+
+                    var normX = Math.max(0, Math.min(posX / stageWidth, 1));
+                    var sag = Math.sin(normX * Math.PI) * ropeMaxSag;
+                    var bob = Math.sin(legStep * 2) * 0.35; // Keep torso stable; no exaggerated up/down bounce
+
+                    currentBottom = 75 - sag + bob;
+                    walker.style.left = posX + 'px';
+                    walker.style.bottom = currentBottom + 'px';
+                    walker.style.transform = 'rotate(0deg)';
+
+                    var legAngleL = Math.sin(legStep) * 7;
+                    var legAngleR = -Math.sin(legStep) * 7;
+                    if (legLeft) { legLeft.style.transformOrigin = '50% 0%'; legLeft.style.transformBox = 'fill-box'; legLeft.style.transform = 'rotate(' + legAngleL.toFixed(1) + 'deg)'; }
+                    if (legRight) { legRight.style.transformOrigin = '50% 0%'; legRight.style.transformBox = 'fill-box'; legRight.style.transform = 'rotate(' + legAngleR.toFixed(1) + 'deg)'; }
+
+                    // Fade when the walker's centre reaches the actual rope endpoint.
+                    // This keeps the rope and character ending at the same location.
+                    var walkerWidth = walker.offsetWidth || 80;
+                    if (posX + walkerWidth / 2 >= stageWidth - 46) {
+                        exitFrames = 42;
+                        walker.style.opacity = '0';
+                    }
+                    }
+                } else if (state === 'falling') {
+                    velocityY += gravity;
+                    currentBottom -= velocityY;
+                    rot -= 5;
+
+                    walker.style.bottom = currentBottom + 'px';
+                    walker.style.transform = 'rotate(' + rot + 'deg)';
+
+                    if (currentBottom < -140) {
+                        state = 'walking';
+                        exitFrames = 0;
+                        walker.style.opacity = '1';
+                        posX = 20;
+                        velocityY = 0;
+                        rot = 0;
+                        if (faceCalm) faceCalm.classList.remove('hidden');
+                        if (facePanic) facePanic.classList.add('hidden');
+                    }
+                }
+
+                requestAnimationFrame(updateLoop);
+            }
+            requestAnimationFrame(updateLoop);
+
+            return {
+                fall: triggerFall,
+                jiggle: function(power) {
+                    ropeJiggleEnergy = Math.max(ropeJiggleEnergy, power || 0.55);
+                    ropeJiggleTime = 0;
+                },
+                reset: function() {
+                    state = 'walking';
+                    exitFrames = 0;
+                    walker.style.opacity = '1';
+                    posX = 20;
+                }
+            };
+        })();
+
+
+        // Rope/post interaction: taps create a light rope wobble; wooden posts shake briefly.
+        (function initRopeTapFeedback() {
+            var stage = document.getElementById('rope-interactive-stage');
+            var ropeSvg = document.getElementById('rope-svg-canvas');
+            if (!stage) return;
+            stage.addEventListener('click', function(e) {
+                if (e.target.closest('#rope-walker')) return;
+                if (window.RopeCharacterController) window.RopeCharacterController.jiggle(0.62);
+                if (ropeSvg) {
+                    ropeSvg.classList.remove('rope-tap');
+                    void ropeSvg.offsetWidth;
+                    ropeSvg.classList.add('rope-tap');
+                    setTimeout(function() { ropeSvg.classList.remove('rope-tap'); }, 450);
+                }
+                var post = e.target.closest('.rope-wood-post');
+                if (post) {
+                    post.classList.remove('wood-tap');
+                    void post.offsetWidth;
+                    post.classList.add('wood-tap');
+                    setTimeout(function() { post.classList.remove('wood-tap'); }, 450);
+                }
+            });
+        })();
+
+        // Mobile Nav Toggle
+        var mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        var mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            mobileMenu.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() { mobileMenu.classList.add('hidden'); });
+            });
+        }
+
+        // Animation Process Pipeline Switcher
+        function switchPipeline(mode) {
+            var p2d = document.getElementById('pipeline-2d');
+            var p3d = document.getElementById('pipeline-3d');
+            var tab2d = document.getElementById('tab-pipe-2d');
+            var tab3d = document.getElementById('tab-pipe-3d');
+
+            if (mode === '2d') {
+                if (p2d) p2d.classList.remove('hidden');
+                if (p3d) p3d.classList.add('hidden');
+                if (tab2d) {
+                    tab2d.classList.add('bg-comical-blue', 'text-white');
+                    tab2d.classList.remove('bg-white', 'text-comical-hair', 'dark:bg-slate-900', 'dark:text-white');
+                }
+                if (tab3d) {
+                    tab3d.classList.remove('bg-comical-blue', 'text-white');
+                    tab3d.classList.add('bg-white', 'text-comical-hair', 'dark:bg-slate-900', 'dark:text-white');
+                }
+            } else {
+                if (p2d) p2d.classList.add('hidden');
+                if (p3d) p3d.classList.remove('hidden');
+                if (tab3d) {
+                    tab3d.classList.add('bg-comical-blue', 'text-white');
+                    tab3d.classList.remove('bg-white', 'text-comical-hair', 'dark:bg-slate-900', 'dark:text-white');
+                }
+                if (tab2d) {
+                    tab2d.classList.remove('bg-comical-blue', 'text-white');
+                    tab2d.classList.add('bg-white', 'text-comical-hair', 'dark:bg-slate-900', 'dark:text-white');
+                }
+            }
+        }
+
+        // Show or hide the detailed project enquiry form on demand.
+        function toggleProjectEnquiry() {
+            var form = document.getElementById('project-enquiry-form');
+            var button = document.getElementById('toggle-enquiry-form');
+            var label = document.getElementById('toggle-enquiry-label');
+            var icon = document.getElementById('toggle-enquiry-icon');
+            if (!form || !button) return;
+
+            var isOpening = form.classList.contains('hidden');
+            form.classList.toggle('hidden', !isOpening);
+            button.setAttribute('aria-expanded', isOpening ? 'true' : 'false');
+
+            if (label) label.textContent = isOpening ? 'Close Enquiry Form' : 'Let’s Do It';
+            if (icon) {
+                icon.classList.toggle('fa-chevron-down', !isOpening);
+                icon.classList.toggle('fa-chevron-up', isOpening);
+            }
+
+            if (isOpening) {
+                window.setTimeout(function() {
+                    form.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 50);
+            }
+        }
+
+        // Build a detailed project enquiry email from the contact form.
+        function sendProjectEnquiry(event) {
+            event.preventDefault();
+            var get = function(id) {
+                var el = document.getElementById(id);
+                return el ? el.value.trim() : '';
+            };
+            var name = get('enquiry-name');
+            var email = get('enquiry-email');
+            var work = get('enquiry-work');
+            var budget = get('enquiry-budget') || 'Not specified';
+            var timeline = get('enquiry-timeline') || 'Not specified';
+            var reference = get('enquiry-reference') || 'Not provided';
+            var brief = get('enquiry-brief');
+
+            var subject = 'Project Enquiry - ' + name + ' | ' + work;
+            var body = [
+                'Hello COMICAL Studio,',
+                '',
+                'I would like to discuss a project with you.',
+                '',
+                'Name: ' + name,
+                'Email: ' + email,
+                'Project Type: ' + work,
+                'Estimated Budget: ' + budget,
+                'Expected Timeline: ' + timeline,
+                'Reference Link: ' + reference,
+                '',
+                'Project Details:',
+                brief,
+                '',
+                'Looking forward to hearing from you.'
+            ].join('\n');
+
+            window.location.href = 'mailto:backupu795@gmail.com?subject=' +
+                encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        }
+
+        // Initialize Controls on Page Load
+        window.addEventListener('DOMContentLoaded', function() {
+            initTheme();
+            initSound();
+            initPuppetCharacter();
+            updateLaserBadge(false);
+        });
+    </script>
+</body>
+</html>
