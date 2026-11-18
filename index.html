@@ -2588,7 +2588,15 @@
     if (!notice || !continueButton) return;
 
     var isPhoneOrTablet = window.matchMedia('(max-width: 1024px)').matches;
-    if (isPhoneOrTablet) {
+    var dismissedThisSession = false;
+
+    try {
+        dismissedThisSession = sessionStorage.getItem('comical_preview_notice_dismissed') === '1';
+    } catch (e) {
+        // If session storage is unavailable, keep dismissal for this page only.
+    }
+
+    if (isPhoneOrTablet && !dismissedThisSession) {
         notice.hidden = false;
         document.body.classList.add('preview-notice-open');
     }
@@ -2596,6 +2604,9 @@
     function dismissNotice() {
         notice.hidden = true;
         document.body.classList.remove('preview-notice-open');
+        try {
+            sessionStorage.setItem('comical_preview_notice_dismissed', '1');
+        } catch (e) {}
     }
 
     continueButton.addEventListener('click', dismissNotice);
