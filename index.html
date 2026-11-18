@@ -2214,14 +2214,21 @@
                 heroRect.right > 0 &&
                 heroRect.left < window.innerWidth);
 
-            if (heroIsVisible && muzzle) {
-                // Normal state: beam starts exactly at the visible character's active laser muzzle.
+            var isMobileTablet = window.matchMedia('(max-width: 1024px)').matches;
+
+            if (isMobileTablet) {
+                // Mobile and tablet: laser always originates from the bottom of the screen
+                mX = activeLaserSide === 'left'
+                    ? Math.max(16, window.innerWidth * 0.28)
+                    : Math.min(window.innerWidth - 16, window.innerWidth * 0.72);
+                mY = Math.max(24, window.innerHeight - 24);
+            } else if (heroIsVisible && muzzle) {
+                // Desktop: beam starts exactly at the visible character's active laser muzzle.
                 var mRect = muzzle.getBoundingClientRect();
                 mX = mRect.left + mRect.width / 2;
                 mY = mRect.top + mRect.height / 2;
             } else {
-                // Scrolled state (e.g. clicking the rope character): launch from just below
-                // the sticky header, never from a stale pointer position or a guessed screen dot.
+                // Desktop fallback remains just below the sticky header.
                 var header = document.querySelector('header');
                 var headerRect = header ? header.getBoundingClientRect() : null;
                 if (!headerRect || headerRect.bottom <= 0 || headerRect.bottom >= window.innerHeight) {
