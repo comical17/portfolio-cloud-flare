@@ -203,6 +203,382 @@
         .dark .contact-panel .contact-social-card .text-comical-hair {
             color: #F8FAFC !important;
         }
+
+        /* Phone preview only: compact three-column service and process cards. */
+        @media (max-width: 767px) {
+            #section-services .mobile-service-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 8px;
+            }
+            #section-services .mobile-service-grid > a {
+                min-width: 0;
+                min-height: 0;
+                height: 184px;
+                min-height: 184px;
+                padding: 11px 9px;
+                border-radius: 17px;
+                box-shadow: 2px 2px 0 #141320;
+                overflow: hidden;
+            }
+            .dark #section-services .mobile-service-grid > a {
+                box-shadow: 2px 2px 0 #334155;
+            }
+            #section-services .mobile-service-grid > a > div:first-child {
+                min-width: 0;
+            }
+            #section-services .mobile-service-grid > a > div:first-child > div:first-child {
+                gap: 4px;
+                margin-bottom: 8px;
+                align-items: flex-start;
+            }
+            #section-services .mobile-service-grid > a > div:first-child > div:first-child > span:first-child {
+                width: 30px;
+                height: 30px;
+                min-width: 30px;
+                border-radius: 9px;
+                font-size: 13px;
+            }
+            #section-services .mobile-service-grid > a > div:first-child > div:first-child > span:last-child {
+                font-size: 7.5px;
+                line-height: 1.15;
+                padding: 3px 5px;
+                white-space: normal;
+                text-align: center;
+            }
+            #section-services .mobile-service-grid h4 {
+                font-size: 12px;
+                line-height: 1.25;
+                overflow-wrap: normal;
+                word-break: normal;
+            }
+            #section-services .mobile-service-grid p {
+                font-size: 8.5px;
+                line-height: 1.35;
+                margin-top: 6px;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
+                overflow: hidden;
+            }
+            #section-services .mobile-service-grid > a > div:last-child {
+                margin-top: 7px;
+                padding-top: 6px;
+                gap: 3px;
+                font-size: 7px;
+                line-height: 1.2;
+            }
+
+            #section-services .mb-14 {
+                margin-bottom: 28px;
+            }
+            #section-services .mb-14 .flex.items-center.gap-3 {
+                gap: 8px;
+                margin-bottom: 12px;
+            }
+            #section-services .mb-14 .flex.items-center.gap-3 > span {
+                width: 32px;
+                height: 32px;
+                min-width: 32px;
+                border-radius: 10px;
+                font-size: 14px;
+            }
+            #section-services .mb-14 h3 {
+                font-size: 16px;
+                line-height: 1.15;
+            }
+            #section-services .mb-14 p {
+                font-size: 9px;
+                line-height: 1.25;
+            }
+
+            #section-work .mobile-process-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 8px;
+            }
+            #section-work .mobile-process-grid > div {
+                min-width: 0;
+                height: 184px;
+                min-height: 184px;
+                padding: 11px 9px;
+                border-radius: 17px;
+                box-shadow: 2px 2px 0 #141320;
+                overflow: hidden;
+                overflow-wrap: anywhere;
+            }
+            .dark #section-work .mobile-process-grid > div {
+                box-shadow: 2px 2px 0 #334155;
+            }
+            #section-work .mobile-process-grid > div > div:first-child > div:first-child {
+                width: 30px;
+                height: 30px;
+                border-radius: 9px;
+                font-size: 14px;
+                margin-bottom: 9px;
+            }
+            #section-work .mobile-process-grid h3 {
+                font-size: 12px;
+                line-height: 1.25;
+                margin-bottom: 7px;
+                overflow-wrap: normal;
+                word-break: normal;
+            }
+            #section-work .mobile-process-grid p {
+                font-size: 8.5px;
+                line-height: 1.35;
+                margin-bottom: 7px;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
+                overflow: hidden;
+            }
+            #section-work .mobile-process-grid > div > div:last-child {
+                padding-top: 7px;
+                font-size: 7px;
+                line-height: 1.25;
+            }
+            #section-work {
+                padding-top: 36px;
+                padding-bottom: 36px;
+            }
+            #section-work .text-center.max-w-3xl {
+                margin-bottom: 22px;
+            }
+            #section-work .text-center h2 {
+                font-size: 26px;
+                line-height: 1.15;
+            }
+            #section-work .text-center p {
+                font-size: 11px;
+                line-height: 1.4;
+            }
+
+            /* Keep the contact CTA directly below the three process cards without
+               allowing the panel to consume the full phone viewport. */
+            #section-contact {
+                padding-top: 28px;
+                padding-bottom: 28px;
+            }
+            #section-contact .mobile-contact-panel {
+                padding: 16px;
+                border-radius: 18px;
+                box-shadow: 3px 3px 0 #141320;
+            }
+            #section-contact .mobile-contact-panel h2 {
+                font-size: 22px;
+                line-height: 1.15;
+                margin-bottom: 8px;
+            }
+            #section-contact .mobile-contact-panel p {
+                font-size: 11px;
+                line-height: 1.4;
+                margin-bottom: 14px;
+            }
+            #section-contact .mobile-contact-panel > div > span {
+                font-size: 9px;
+                padding: 4px 8px;
+                margin-bottom: 8px;
+            }
+            #section-contact .mobile-contact-panel .grid {
+                gap: 7px;
+                margin-bottom: 14px;
+            }
+            #section-contact .mobile-contact-panel .contact-social-card {
+                padding: 8px;
+                gap: 7px;
+                border-radius: 10px;
+            }
+            #section-contact .mobile-contact-panel .contact-social-card > span {
+                width: 28px;
+                height: 28px;
+                min-width: 28px;
+                border-radius: 8px;
+                font-size: 12px;
+            }
+            #section-contact .mobile-contact-panel .contact-social-card span.text-xs {
+                font-size: 9px;
+            }
+        }
+
+
+        /* Refined phone service cards: lighter outlines and quieter inner elements. */
+        @media (max-width: 767px) {
+            #section-services .mobile-service-grid > a {
+                border-width: 2px !important;
+                padding: 10px 9px;
+                border-radius: 16px;
+                box-shadow: 1.5px 1.5px 0 #141320;
+            }
+            .dark #section-services .mobile-service-grid > a {
+                box-shadow: 1.5px 1.5px 0 #334155;
+            }
+            #section-services .mobile-service-grid > a > div:first-child > div:first-child > span:first-child {
+                width: 27px;
+                height: 27px;
+                min-width: 27px;
+                border-width: 1.5px;
+                border-radius: 8px;
+                font-size: 12px;
+                box-shadow: 1px 1px 0 #141320;
+            }
+            #section-services .mobile-service-grid > a > div:first-child > div:first-child > span:last-child {
+                border-width: 1.25px;
+                border-radius: 7px;
+                padding: 3px 5px;
+                font-size: 7px;
+                line-height: 1.1;
+                letter-spacing: .01em;
+                box-shadow: none;
+            }
+            #section-services .mobile-service-grid h4 {
+                font-size: 11.5px;
+                line-height: 1.22;
+                margin-top: 1px;
+            }
+            #section-services .mobile-service-grid p {
+                font-size: 8px;
+                line-height: 1.3;
+                margin-top: 5px;
+            }
+            #section-services .mobile-service-grid > a > div:last-child {
+                font-size: 6.8px;
+                padding-top: 5px;
+                margin-top: 6px;
+            }
+        }
+
+
+        @media (max-width: 767px) {
+            #section-services .mobile-service-grid > a,
+            #section-work .mobile-process-grid > div {
+                border-width: 1.5px !important;
+            }
+            .dark #section-services .mobile-service-grid > a,
+            .dark #section-work .mobile-process-grid > div {
+                border-width: 1.5px !important;
+            }
+        }
+
+
+/* Shared mobile navigation and scroll-compressed header */
+@media (max-width: 767px) {
+  #main-header { border-bottom-width:1px!important; transform:translateZ(0); transition:box-shadow .28s ease,background-color .28s ease,border-color .28s ease; }
+  #main-header .mobile-header-inner { height:76px!important; transition:height .32s cubic-bezier(.2,.75,.25,1); }
+  #main-header .mobile-header-brand { gap:10px!important; min-width:0; transition:gap .3s ease; }
+  #main-header .mobile-header-logo { width:43px!important;height:43px!important;border-width:1.5px!important;border-radius:14px!important;box-shadow:1px 1px 0 #141320!important;font-size:21px!important;transition:all .3s ease; }
+  #main-header .mobile-header-name { font-size:21px!important;letter-spacing:.015em!important;transition:all .3s ease; }
+  #main-header .mobile-header-tagline { display:block!important;margin-top:3px;font-size:8px!important;letter-spacing:.12em!important;line-height:1.1;opacity:.88;transition:all .3s ease; }
+  #main-header .mobile-header-controls { gap:7px!important;flex:0 0 auto; }
+  #main-header .mobile-header-controls>button { width:39px;height:39px;min-width:39px;padding:0!important;display:inline-flex;align-items:center;justify-content:center;border-width:1.5px!important;border-radius:12px!important;box-shadow:1px 1px 0 #141320!important;transition:all .3s ease; }
+  #main-header .mobile-header-controls>button i { font-size:16px!important;transition:font-size .3s ease; }
+  #main-header #mobile-menu-btn i { font-size:18px!important; }
+  #main-header.is-scrolled { box-shadow:0 5px 18px rgba(15,23,42,.09);background-color:rgba(255,255,255,.96); }
+  .dark #main-header.is-scrolled { background-color:rgba(15,23,42,.96);box-shadow:0 5px 18px rgba(0,0,0,.2); }
+  #main-header.is-scrolled .mobile-header-inner { height:60px!important; }
+  #main-header.is-scrolled .mobile-header-brand { gap:8px!important; }
+  #main-header.is-scrolled .mobile-header-logo { width:35px!important;height:35px!important;border-radius:11px!important;font-size:17px!important;box-shadow:none!important; }
+  #main-header.is-scrolled .mobile-header-name { font-size:17px!important;letter-spacing:0!important; }
+  #main-header.is-scrolled .mobile-header-tagline { font-size:7px!important;letter-spacing:.095em!important;opacity:.78;margin-top:2px; }
+  #main-header.is-scrolled .mobile-header-controls { gap:6px!important; }
+  #main-header.is-scrolled .mobile-header-controls>button { width:34px;height:34px;min-width:34px;border-radius:10px!important;box-shadow:none!important;background-color:rgba(241,245,249,.78); }
+  .dark #main-header.is-scrolled .mobile-header-controls>button { background-color:rgba(30,41,59,.82); }
+  #main-header.is-scrolled .mobile-header-controls>button i { font-size:14px!important; }
+  #main-header.is-scrolled #mobile-menu-btn i { font-size:16px!important; }
+  #main-header.is-scrolled #mobile-menu-btn { background-color:rgba(255,248,220,.9); }
+  .dark #main-header.is-scrolled #mobile-menu-btn { background-color:rgba(51,65,85,.9); }
+
+  #mobile-menu.mobile-menu-panel { padding:11px 13px 12px!important;border-top-width:1px!important;box-shadow:0 12px 24px rgba(15,23,42,.10); }
+  .mobile-menu-heading { display:flex;align-items:center;gap:10px;margin:0 2px 8px;color:#64748b;font-size:8px;font-weight:800;letter-spacing:.14em; }
+  .mobile-menu-heading-line { height:1px;flex:1;background:#e2e8f0; }
+  .dark .mobile-menu-heading-line { background:#334155; }
+  .mobile-work-grid { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px; }
+  .mobile-work-link { min-width:0;min-height:76px;padding:8px 4px 7px;border:1.5px solid #dbe2ea;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center;text-decoration:none;box-shadow:1px 1px 0 #141320; }
+  .mobile-work-link>i { font-size:16px;line-height:1; }
+  .mobile-work-link>span { font-size:10px;line-height:1.1;font-weight:800;white-space:nowrap; }
+  .mobile-work-link>small { font-size:7px;line-height:1.1;font-weight:600;opacity:.76; }
+  .mobile-work-2d { background:#fff7d6;color:#171522;border-color:#eabf39; }
+  .mobile-work-2d>i { color:#a66a00; }
+  .mobile-work-3d { background:#e8f5fd;color:#176b9c;border-color:#b8dced; }
+  .mobile-work-3d>i { color:#1684b7; }
+  .mobile-work-illustration { background:#f4eafd;color:#67359a;border-color:#dec7f2; }
+  .mobile-work-illustration>i { color:#9348c9; }
+  .mobile-work-link.is-active { outline:2px solid currentColor;outline-offset:1px; }
+  .dark .mobile-work-link { border-color:#475569;box-shadow:1px 1px 0 #020617; }
+  .dark .mobile-work-2d { background:#493b18;color:#fff2bd; }
+  .dark .mobile-work-3d { background:#102f43;color:#c8eaff; }
+  .dark .mobile-work-illustration { background:#302044;color:#f0ddff; }
+  .mobile-menu-secondary { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;margin-top:9px;padding-top:8px;border-top:1px solid #e2e8f0; }
+  .dark .mobile-menu-secondary { border-color:#334155; }
+  .mobile-menu-secondary a { min-width:0;min-height:29px;padding:5px 3px;display:flex;align-items:center;justify-content:center;border-radius:7px;background:#f1f5f9;color:#475569;font-size:8px;line-height:1.2;font-weight:700;text-align:center;text-decoration:none; }
+  .dark .mobile-menu-secondary a { background:#1e293b;color:#cbd5e1; }
+  .mobile-menu-contact { margin-top:9px;padding:8px 11px;border-radius:10px;background:#141320;color:white;display:flex;align-items:center;justify-content:space-between;gap:10px;text-decoration:none; }
+  .mobile-menu-contact>span { font-size:9px;line-height:1.25;color:#cbd5e1;font-weight:600; }
+  .mobile-menu-contact>strong { flex:0 0 auto;display:inline-flex;align-items:center;gap:5px;font-size:11px;color:#ffcf32;font-weight:800; }
+
+  footer .footer-mobile-nav { width:100%;display:flex!important;flex-wrap:nowrap!important;justify-content:center;align-items:center;gap:8px!important;white-space:nowrap;font-size:13px!important;line-height:1.2; }
+  footer .footer-mobile-nav a, footer .footer-mobile-nav span { flex:0 0 auto;white-space:nowrap; }
+}
+@media (prefers-reduced-motion:reduce) {
+  #main-header,#main-header * { transition-duration:.01ms!important;animation-duration:.01ms!important; }
+}
+
+
+/* Reference-matched small tiles and labels: clean, light outlines, stacked layout. */
+@media (max-width: 767px) {
+  #section-services .mobile-service-grid > a > div:first-child > div:first-child {
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:flex-start!important;
+    justify-content:flex-start!important;
+    gap:5px!important;
+    margin-bottom:10px!important;
+  }
+  #section-services .mobile-service-grid > a > div:first-child > div:first-child > span:first-child {
+    width:42px!important;
+    height:42px!important;
+    min-width:42px!important;
+    border:1.5px solid #141320!important;
+    border-radius:12px!important;
+    box-shadow:none!important;
+    font-size:17px!important;
+  }
+  #section-services .mobile-service-grid > a > div:first-child > div:first-child > span:last-child {
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:auto!important;
+    max-width:100%!important;
+    min-height:25px!important;
+    padding:4px 9px!important;
+    border:1.5px solid #141320!important;
+    border-radius:999px!important;
+    background:#fff!important;
+    box-shadow:none!important;
+    font-size:9px!important;
+    line-height:1.1!important;
+    letter-spacing:0!important;
+    white-space:nowrap!important;
+    text-align:center!important;
+  }
+  .dark #section-services .mobile-service-grid > a > div:first-child > div:first-child > span:last-child {
+    background:#0f172a!important;
+    border-color:#64748b!important;
+  }
+  #section-work .mobile-process-grid > div > div:first-child > div:first-child {
+    width:42px!important;
+    height:42px!important;
+    min-width:42px!important;
+    border:1.5px solid #141320!important;
+    border-radius:12px!important;
+    box-shadow:none!important;
+    font-size:18px!important;
+    margin-bottom:10px!important;
+  }
+  #section-services .mobile-service-grid > a,
+  #section-work .mobile-process-grid > div {
+    border-width:1.5px!important;
+  }
+}
+
 </style>
 </head>
 <body class="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 font-sans selection:bg-amber-300 selection:text-comical-hair transition-colors duration-200">
@@ -215,17 +591,17 @@
     <svg id="laser-overlay" class="fixed inset-0 pointer-events-none z-[99990] w-full h-full overflow-visible"></svg>
 
     <!-- ==================== MAIN HEADER NAVIGATION ==================== -->
-    <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b-3 border-comical-hair dark:border-slate-700 transition-colors">
+    <header id="main-header" class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b-3 border-comical-hair dark:border-slate-700 transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
+            <div class="mobile-header-inner flex items-center justify-between h-20">
                 <!-- Brand / Logo -->
-                <a href="index.html" class="flex items-center gap-3 group">
-                    <div class="w-12 h-12 rounded-2xl bg-comical-blue text-white comic-border-thin shadow-comic-sm flex items-center justify-center font-display text-2xl group-hover:-rotate-6 transition-transform">
+                <a href="index.html" class="mobile-header-brand flex items-center gap-3 group">
+                    <div class="mobile-header-logo w-12 h-12 rounded-2xl bg-comical-blue text-white comic-border-thin shadow-comic-sm flex items-center justify-center font-display text-2xl group-hover:-rotate-6 transition-transform">
                         C!
                     </div>
                     <div>
-                        <span class="font-display font-bold text-2xl tracking-wide text-comical-hair dark:text-white block leading-none">COMICAL</span>
-                        <span class="text-[10px] font-bold tracking-widest text-comical-blue dark:text-sky-400 uppercase">2D &amp; 3D Animation</span>
+                        <span class="mobile-header-name font-display font-bold text-2xl tracking-wide text-comical-hair dark:text-white block leading-none">COMICAL</span>
+                        <span class="mobile-header-tagline text-[10px] font-bold tracking-widest text-comical-blue dark:text-sky-400 uppercase">2D &amp; 3D Animation</span>
                     </div>
                 </a>
 
@@ -285,21 +661,20 @@
         </div>
 
         <!-- Mobile Navigation Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-900 border-t-2 border-comical-hair dark:border-slate-700 px-4 pt-3 pb-6 space-y-2">
-            <a href="2d.html" class="flex items-center gap-2 px-4 py-3 rounded-xl font-bold bg-amber-100 dark:bg-amber-950/40 text-amber-900 dark:text-amber-200 comic-border-thin">
-                <i class="fa-solid fa-paintbrush text-amber-600"></i> 1. 2D Work
-            </a>
-            <a href="3d.html" class="flex items-center gap-2 px-4 py-3 rounded-xl font-bold bg-sky-100 dark:bg-sky-950/40 text-comical-blue dark:text-sky-300 comic-border-thin">
-                <i class="fa-solid fa-cube text-comical-blue dark:text-sky-400"></i> 2. 3D Work
-            </a>
-            <a href="illustration.html" class="flex items-center gap-2 px-4 py-3 rounded-xl font-bold bg-purple-100 dark:bg-purple-950/40 text-purple-900 dark:text-purple-200 comic-border-thin">
-                <i class="fa-solid fa-palette text-purple-600"></i> 3. Illustration
-            </a>
-            <a href="#section-services" class="block px-4 py-2 text-comical-hair dark:text-slate-200 font-semibold">What We Offer</a>
-            <a href="#section-process" class="block px-4 py-2 text-comical-hair dark:text-slate-200 font-semibold">Animation Process</a>
-            <a href="#section-work" class="block px-4 py-2 text-comical-hair dark:text-slate-200 font-semibold">Work With Me</a>
-            <a href="#section-contact" class="block text-center mt-3 px-4 py-3 rounded-xl font-bold bg-comical-hair dark:bg-sky-500 text-white dark:text-slate-950 comic-border-thin">Say Hi!</a>
-        </div>
+        <div id="mobile-menu" class="hidden md:hidden mobile-menu-panel bg-white dark:bg-slate-900">
+      <div class="mobile-menu-heading"><span>EXPLORE WORK</span><span class="mobile-menu-heading-line"></span></div>
+      <div class="mobile-work-grid">
+        <a href="2d.html" class="mobile-work-link mobile-work-2d is-active" aria-current="page"><i class="fa-solid fa-paintbrush"></i><span>2D Work</span><small>Frame by frame &amp; puppet</small></a>
+        <a href="3d.html" class="mobile-work-link mobile-work-3d"><i class="fa-solid fa-cube"></i><span>3D Work</span><small>Animation &amp; renders</small></a>
+        <a href="illustration.html" class="mobile-work-link mobile-work-illustration"><i class="fa-solid fa-palette"></i><span>Illustration</span><small>Art &amp; backgrounds</small></a>
+      </div>
+      <div class="mobile-menu-secondary">
+        <a href="#section-services">What We Offer</a>
+        <a href="#section-process">Animation Process</a>
+        <a href="#section-work">Work With Me</a>
+      </div>
+      <a href="#section-contact" class="mobile-menu-contact"><span>Have a project in mind?</span><strong>Say Hi! <i class="fa-solid fa-arrow-right"></i></strong></a>
+    </div>
     </header>
 
     <!-- ==================== HERO SECTION (HOMEPAGE CHARACTER & LASER SCOPE) ==================== -->
@@ -397,12 +772,32 @@
 
                                     <!-- DYNAMIC ARMS GROUP (Changes with Pose Buttons) -->
                                     <g id="comical-arms-hero">
-                                        <!-- Left Arm (Relaxed Wave / Pencil hold) -->
-                                        <path d="M134 148 L95 195 L112 212 L140 175" fill="#1174B5" stroke="#141320" stroke-width="3.5" stroke-linejoin="round"/>
-                                        <!-- White rolled cuff -->
-                                        <path d="M92 192 L114 210 L107 218 L85 200 Z" fill="#FFFFFF" stroke="#141320" stroke-width="3"/>
-                                        <!-- Hand -->
-                                        <path d="M87 202 C76 212, 82 226, 94 224 C102 222, 106 216, 105 215" fill="#FCD5BD" stroke="#141320" stroke-width="3"/>
+                                        <!-- Resting opposite arm stays visible while the other hand aims the laser. -->
+                                        <g id="comical-rest-arm-left">
+                                            <path d="M134 148 L95 195 L112 212 L140 175" fill="#1174B5" stroke="#141320" stroke-width="3.5" stroke-linejoin="round"/>
+                                            <path d="M92 192 L114 210 L107 218 L85 200 Z" fill="#FFFFFF" stroke="#141320" stroke-width="3"/>
+                                            <path d="M87 202 C76 212, 82 226, 94 224 C102 222, 106 216, 105 215" fill="#FCD5BD" stroke="#141320" stroke-width="3"/>
+                                        </g>
+                                        <g id="comical-rest-arm-right" style="display:none" transform="translate(360 0) scale(-1 1)">
+                                            <path d="M134 148 L95 195 L112 212 L140 175" fill="#1174B5" stroke="#141320" stroke-width="3.5" stroke-linejoin="round"/>
+                                            <path d="M92 192 L114 210 L107 218 L85 200 Z" fill="#FFFFFF" stroke="#141320" stroke-width="3"/>
+                                            <path d="M87 202 C76 212, 82 226, 94 224 C102 222, 106 216, 105 215" fill="#FCD5BD" stroke="#141320" stroke-width="3"/>
+                                        </g>
+
+                                        <!-- Left aiming arm: mirrored copy of the right laser arm, activated on the left half of the screen -->
+                                        <g id="comical-aim-arm-left" style="display:none" transform="translate(360 0) scale(-1 1)">
+                                            <g class="laser-arm-rotor" style="transform-box:view-box;transform-origin:226px 148px">
+                                                <path d="M226 148 L268 122 L280 142 L224 176" fill="#1174B5" stroke="#141320" stroke-width="3.5" stroke-linejoin="round"/>
+                                                <path d="M265 119 L282 142 L290 136 L273 113 Z" fill="#FFFFFF" stroke="#141320" stroke-width="3"/>
+                                                <path d="M276 114 C284 98, 298 100, 298 114 C298 124, 292 132, 287 134" fill="#FCD5BD" stroke="#141320" stroke-width="3"/>
+                                                <g transform="rotate(-28 291 111)">
+                                                    <rect x="282" y="101" width="29" height="11" rx="3" fill="#334155" stroke="#141320" stroke-width="2.5"/>
+                                                    <path d="M290 111 L300 111 L297 124 L289 124 Z" fill="#1174B5" stroke="#141320" stroke-width="2"/>
+                                                    <rect x="306" y="104" width="7" height="5" rx="1.5" fill="#FACC15" stroke="#141320" stroke-width="1.5"/>
+                                                    <circle class="laser-muzzle" cx="314" cy="106.5" r="2.5" fill="#FDE047" stroke="#FFFFFF" stroke-width="1"/>
+                                                </g>
+                                            </g>
+                                        </g>
 
                                         <!-- Right aiming arm + compact comic laser blaster; pivots naturally from shoulder -->
                                         <g id="comical-aim-arm">
@@ -413,7 +808,7 @@
                                                 <rect x="282" y="101" width="29" height="11" rx="3" fill="#334155" stroke="#141320" stroke-width="2.5"/>
                                                 <path d="M290 111 L300 111 L297 124 L289 124 Z" fill="#1174B5" stroke="#141320" stroke-width="2"/>
                                                 <rect x="306" y="104" width="7" height="5" rx="1.5" fill="#FACC15" stroke="#141320" stroke-width="1.5"/>
-                                                <circle id="laser-gun-muzzle" cx="314" cy="106.5" r="2.5" fill="#FDE047" stroke="#FFFFFF" stroke-width="1"/>
+                                                <circle id="laser-gun-muzzle" class="laser-muzzle" cx="314" cy="106.5" r="2.5" fill="#FDE047" stroke="#FFFFFF" stroke-width="1"/>
                                             </g>
                                         </g>
                                     </g>
@@ -717,7 +1112,7 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mobile-service-grid">
                     <!-- 2D Service 1: 2D Animation -->
                     <a href="2d.html?filter=high-quality" class="group bg-slate-50 dark:bg-slate-800 hover:bg-amber-50 dark:hover:bg-slate-700 rounded-3xl comic-border shadow-comic p-6 sm:p-8 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1">
                         <div>
@@ -805,7 +1200,7 @@
                 </div>
 
                 <!-- Exactly Three Cards as Specified in Requirement 6 -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mobile-service-grid">
                     
                     <!-- Card 1: 3D Zack D Animation -->
                     <a href="3d.html?filter=zackd" class="group bg-slate-50 dark:bg-slate-800 hover:bg-amber-50 dark:hover:bg-slate-700 rounded-3xl comic-border shadow-comic p-6 sm:p-8 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1">
@@ -1002,7 +1397,7 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mobile-process-grid">
                 <div class="bg-slate-50 dark:bg-slate-800 rounded-3xl comic-border shadow-comic p-8 flex flex-col justify-between">
                     <div>
                         <div class="w-14 h-14 rounded-2xl bg-amber-300 comic-border-thin flex items-center justify-center text-2xl mb-6 shadow-comic-sm">
@@ -1054,7 +1449,7 @@
     <!-- ==================== REQUIREMENT 8: CONTACT ME SECTION ==================== -->
     <section id="section-contact" class="py-16 lg:py-24 bg-white dark:bg-slate-900 transition-colors">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="contact-panel rounded-3xl comic-border shadow-comic-lg p-8 sm:p-12 relative overflow-hidden">
+            <div class="contact-panel mobile-contact-panel rounded-3xl comic-border shadow-comic-lg p-8 sm:p-12 relative overflow-hidden">
                 <div class="relative z-10 text-comical-hair">
                     <span class="inline-block px-3.5 py-1 rounded-lg bg-white dark:bg-slate-700 dark:text-sky-200 dark:border-slate-500 comic-border-thin font-bold text-xs uppercase tracking-widest mb-3">
                         Let’s Collaborate
@@ -1186,7 +1581,7 @@
                     <span class="font-display font-bold text-2xl tracking-wide">COMICAL</span>
                 </div>
 
-                <div class="flex items-center gap-4 text-sm font-semibold">
+                <div class="footer-mobile-nav flex items-center gap-4 text-sm font-semibold">
                     <a href="2d.html" class="hover:text-amber-300 transition">2D Work</a>
                     <span>&bull;</span>
                     <a href="3d.html" class="hover:text-sky-300 transition">3D Work</a>
@@ -1514,25 +1909,54 @@
         }
         window.addEventListener('scroll', function() { updateLaserBadge(false); }, { passive: true });
 
-        // Aim the handheld laser toward pointer/touch movement while staying inside the homepage laser zone.
-        function aimComicalLaser(clientX, clientY) {
+        // Select the hand nearest the active side of the screen and aim it toward the pointer.
+        var activeLaserSide = 'right';
+        function aimComicalLaser(clientX, clientY, switchSideOnClick) {
             if (!comicalLaserPoseEnabled) return;
-            var arm = document.getElementById('comical-aim-arm');
             var svg = document.getElementById('comical-hero-svg');
-            if (!arm || !svg) return;
+            var rightArm = document.getElementById('comical-aim-arm');
+            var leftArm = document.getElementById('comical-aim-arm-left');
+            var restingLeft = document.getElementById('comical-rest-arm-left');
+            var restingRight = document.getElementById('comical-rest-arm-right');
+            if (!rightArm || !leftArm || !restingLeft || !restingRight || !svg) return;
+
+            // Pointer hover only aims the currently selected hand.
+            // The active hand changes sides only when the user clicks.
+            if (switchSideOnClick) {
+                activeLaserSide = clientX < (window.innerWidth / 2) ? 'left' : 'right';
+            }
+
+            // Keep the selected-hand state in sync even when the hero is scrolled off-screen.
+            rightArm.style.display = activeLaserSide === 'right' ? '' : 'none';
+            leftArm.style.display = activeLaserSide === 'left' ? '' : 'none';
+
+            // Show the non-laser hand in a relaxed pose on the opposite side.
+            restingLeft.style.display = activeLaserSide === 'right' ? '' : 'none';
+            restingRight.style.display = activeLaserSide === 'left' ? '' : 'none';
+
             var rect = svg.getBoundingClientRect();
+            // Only rotate the on-character arm while the puppet itself is visible.
+            // When scrolled away, the click beam will use the fixed header launch point.
             if (rect.bottom <= 0 || rect.top >= window.innerHeight) return;
-            var sx = rect.left + (226 / 360) * rect.width;
+
+            var pivotX = activeLaserSide === 'left' ? 134 : 226;
+            var sx = rect.left + (pivotX / 360) * rect.width;
             var sy = rect.top + (148 / 440) * rect.height;
             var dx = clientX - sx, dy = clientY - sy;
-            var angle = Math.atan2(dy, dx) * 180 / Math.PI;
+            // The left arm is mirrored in SVG, so convert the pointer vector
+            // back into that arm's local coordinate space before calculating rotation.
+            var localDx = activeLaserSide === 'left' ? -dx : dx;
+            var angle = Math.atan2(dy, localDx) * 180 / Math.PI;
             var baseAngle = Math.atan2((114-148), (298-226)) * 180 / Math.PI;
             var delta = Math.max(-75, Math.min(75, angle - baseAngle));
-            arm.style.transform = 'rotate(' + delta.toFixed(1) + 'deg)';
+            var rotor = activeLaserSide === 'right'
+                ? rightArm
+                : leftArm.querySelector('.laser-arm-rotor');
+            if (rotor) rotor.style.transform = 'rotate(' + delta.toFixed(1) + 'deg)';
         }
         document.addEventListener('pointermove', function(e) {
             if (e.pointerType === 'touch' || e.pointerType === 'pen' || e.pointerType === 'mouse') {
-                aimComicalLaser(e.clientX, e.clientY);
+                aimComicalLaser(e.clientX, e.clientY, false);
             }
         }, { passive: true });
 
@@ -1544,10 +1968,7 @@
             }
             updateLaserBadge(true);
 
-            var muzzle = document.getElementById('laser-gun-muzzle');
             var overlay = document.getElementById('laser-overlay');
-            var arm = document.getElementById('comical-aim-arm');
-            var pivotEl = document.getElementById('laser-arm-pivot');
 
             if (!overlay) return;
 
@@ -1555,17 +1976,40 @@
             var tY = e.clientY;
 
             // Keep the character's hand/blaster aimed at the exact click point.
-            aimComicalLaser(tX, tY);
+            aimComicalLaser(tX, tY, true);
+            var activeArm = activeLaserSide === 'left'
+                ? document.getElementById('comical-aim-arm-left')
+                : document.getElementById('comical-aim-arm');
+            var muzzle = activeArm ? activeArm.querySelector('.laser-muzzle') : null;
 
-            var mX = window.innerWidth * 0.72;
-            var mY = 220;
+            var mX, mY;
+            var heroSvg = document.getElementById('comical-hero-svg');
+            var heroRect = heroSvg ? heroSvg.getBoundingClientRect() : null;
+            var heroIsVisible = !!(heroRect &&
+                heroRect.bottom > 0 &&
+                heroRect.top < window.innerHeight &&
+                heroRect.right > 0 &&
+                heroRect.left < window.innerWidth);
 
-            if (muzzle) {
+            if (heroIsVisible && muzzle) {
+                // Normal state: beam starts exactly at the visible character's active laser muzzle.
                 var mRect = muzzle.getBoundingClientRect();
-                if (mRect.bottom > 0 && mRect.top < window.innerHeight) {
-                    mX = mRect.left + mRect.width / 2;
-                    mY = mRect.top + mRect.height / 2;
+                mX = mRect.left + mRect.width / 2;
+                mY = mRect.top + mRect.height / 2;
+            } else {
+                // Scrolled state (e.g. clicking the rope character): launch from just below
+                // the sticky header, never from a stale pointer position or a guessed screen dot.
+                var header = document.querySelector('header');
+                var headerRect = header ? header.getBoundingClientRect() : null;
+                if (!headerRect || headerRect.bottom <= 0 || headerRect.bottom >= window.innerHeight) {
+                    overlay.innerHTML = '';
+                    updateLaserBadge(false);
+                    return;
                 }
+                mX = activeLaserSide === 'left'
+                    ? Math.max(12, window.innerWidth * 0.28)
+                    : Math.min(window.innerWidth - 12, window.innerWidth * 0.72);
+                mY = Math.min(window.innerHeight - 12, headerRect.bottom + 8);
             }
 
             playLaserSound();
@@ -1575,8 +2019,6 @@
                 '<line x1="' + mX + '" y1="' + mY + '" x2="' + tX + '" y2="' + tY + '" stroke="#A855F7" stroke-width="12" stroke-linecap="round" opacity="0.85" />' +
                 '<line x1="' + mX + '" y1="' + mY + '" x2="' + tX + '" y2="' + tY + '" stroke="#FACC15" stroke-width="5" stroke-linecap="round" />' +
                 '<line x1="' + mX + '" y1="' + mY + '" x2="' + tX + '" y2="' + tY + '" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" />' +
-                '<circle cx="' + mX + '" cy="' + mY + '" r="20" fill="#A855F7" opacity="0.9" />' +
-                '<circle cx="' + mX + '" cy="' + mY + '" r="8" fill="#FFFFFF" />' +
                 '<circle cx="' + tX + '" cy="' + tY + '" r="26" fill="#FACC15" opacity="0.95" />' +
                 '<circle cx="' + tX + '" cy="' + tY + '" r="12" fill="#FFFFFF" />' +
                 '<line x1="' + (tX - 18) + '" y1="' + (tY - 18) + '" x2="' + (tX + 18) + '" y2="' + (tY + 18) + '" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />' +
@@ -1889,5 +2331,17 @@
             updateLaserBadge(false);
         });
     </script>
+
+<script>
+(function(){
+  var header=document.getElementById('main-header');
+  if(!header) return;
+  var ticking=false;
+  function update(){header.classList.toggle('is-scrolled',window.scrollY>28);ticking=false;}
+  window.addEventListener('scroll',function(){if(!ticking){window.requestAnimationFrame(update);ticking=true;}},{passive:true});
+  update();
+})();
+</script>
+
 </body>
 </html>

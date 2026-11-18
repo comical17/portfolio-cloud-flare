@@ -1,13 +1,13 @@
 ﻿<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Illustration &amp; Art Services | COMICAL STUDIO</title>
-    <meta name="description" content="COMICAL STUDIO - Illustration, Background Art & High-CTR YouTube Thumbnails.">
 
-    <!-- Immediate Theme Initialization to Prevent Flash of Unstyled Content -->
-    <script>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Illustration &amp; Art Services | COMICAL STUDIO</title>
+<meta content="COMICAL STUDIO - Illustration, Background Art &amp; High-CTR YouTube Thumbnails." name="description"/>
+<!-- Immediate Theme Initialization to Prevent Flash of Unstyled Content -->
+<script>
         (function() {
             try {
                 var theme = localStorage.getItem('comical_theme');
@@ -19,10 +19,9 @@
             } catch (e) {}
         })();
     </script>
-
-    <!-- Tailwind CSS with Dark Mode Class Support -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
+<!-- Tailwind CSS with Dark Mode Class Support -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
@@ -49,15 +48,13 @@
             }
         }
     </script>
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
         html, body {
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -125,602 +122,666 @@
         .dark #custom-cursor-ring {
             border-color: #C084FC;
         }
-    </style>
-</head>
+    
+/* Shared mobile navigation and scroll-compressed header */
+@media (max-width: 767px) {
+  #main-header { border-bottom-width:1px!important; transform:translateZ(0); transition:box-shadow .28s ease,background-color .28s ease,border-color .28s ease; }
+  #main-header .mobile-header-inner { height:76px!important; transition:height .32s cubic-bezier(.2,.75,.25,1); }
+  #main-header .mobile-header-brand { gap:10px!important; min-width:0; transition:gap .3s ease; }
+  #main-header .mobile-header-logo { width:43px!important;height:43px!important;border-width:1.5px!important;border-radius:14px!important;box-shadow:1px 1px 0 #141320!important;font-size:21px!important;transition:all .3s ease; }
+  #main-header .mobile-header-name { font-size:21px!important;letter-spacing:.015em!important;transition:all .3s ease; }
+  #main-header .mobile-header-tagline { display:block!important;margin-top:3px;font-size:8px!important;letter-spacing:.12em!important;line-height:1.1;opacity:.88;transition:all .3s ease; }
+  #main-header .mobile-header-controls { gap:7px!important;flex:0 0 auto; }
+  #main-header .mobile-header-controls>button { width:39px;height:39px;min-width:39px;padding:0!important;display:inline-flex;align-items:center;justify-content:center;border-width:1.5px!important;border-radius:12px!important;box-shadow:1px 1px 0 #141320!important;transition:all .3s ease; }
+  #main-header .mobile-header-controls>button i { font-size:16px!important;transition:font-size .3s ease; }
+  #main-header #mobile-menu-btn i { font-size:18px!important; }
+  #main-header.is-scrolled { box-shadow:0 5px 18px rgba(15,23,42,.09);background-color:rgba(255,255,255,.96); }
+  .dark #main-header.is-scrolled { background-color:rgba(15,23,42,.96);box-shadow:0 5px 18px rgba(0,0,0,.2); }
+  #main-header.is-scrolled .mobile-header-inner { height:60px!important; }
+  #main-header.is-scrolled .mobile-header-brand { gap:8px!important; }
+  #main-header.is-scrolled .mobile-header-logo { width:35px!important;height:35px!important;border-radius:11px!important;font-size:17px!important;box-shadow:none!important; }
+  #main-header.is-scrolled .mobile-header-name { font-size:17px!important;letter-spacing:0!important; }
+  #main-header.is-scrolled .mobile-header-tagline { font-size:7px!important;letter-spacing:.095em!important;opacity:.78;margin-top:2px; }
+  #main-header.is-scrolled .mobile-header-controls { gap:6px!important; }
+  #main-header.is-scrolled .mobile-header-controls>button { width:34px;height:34px;min-width:34px;border-radius:10px!important;box-shadow:none!important;background-color:rgba(241,245,249,.78); }
+  .dark #main-header.is-scrolled .mobile-header-controls>button { background-color:rgba(30,41,59,.82); }
+  #main-header.is-scrolled .mobile-header-controls>button i { font-size:14px!important; }
+  #main-header.is-scrolled #mobile-menu-btn i { font-size:16px!important; }
+  #main-header.is-scrolled #mobile-menu-btn { background-color:rgba(255,248,220,.9); }
+  .dark #main-header.is-scrolled #mobile-menu-btn { background-color:rgba(51,65,85,.9); }
+
+  #mobile-menu.mobile-menu-panel { padding:11px 13px 12px!important;border-top-width:1px!important;box-shadow:0 12px 24px rgba(15,23,42,.10); }
+  .mobile-menu-heading { display:flex;align-items:center;gap:10px;margin:0 2px 8px;color:#64748b;font-size:8px;font-weight:800;letter-spacing:.14em; }
+  .mobile-menu-heading-line { height:1px;flex:1;background:#e2e8f0; }
+  .dark .mobile-menu-heading-line { background:#334155; }
+  .mobile-work-grid { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px; }
+  .mobile-work-link { min-width:0;min-height:76px;padding:8px 4px 7px;border:1.5px solid #dbe2ea;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center;text-decoration:none;box-shadow:1px 1px 0 #141320; }
+  .mobile-work-link>i { font-size:16px;line-height:1; }
+  .mobile-work-link>span { font-size:10px;line-height:1.1;font-weight:800;white-space:nowrap; }
+  .mobile-work-link>small { font-size:7px;line-height:1.1;font-weight:600;opacity:.76; }
+  .mobile-work-2d { background:#fff7d6;color:#171522;border-color:#eabf39; }
+  .mobile-work-2d>i { color:#a66a00; }
+  .mobile-work-3d { background:#e8f5fd;color:#176b9c;border-color:#b8dced; }
+  .mobile-work-3d>i { color:#1684b7; }
+  .mobile-work-illustration { background:#f4eafd;color:#67359a;border-color:#dec7f2; }
+  .mobile-work-illustration>i { color:#9348c9; }
+  .mobile-work-link.is-active { outline:2px solid currentColor;outline-offset:1px; }
+  .dark .mobile-work-link { border-color:#475569;box-shadow:1px 1px 0 #020617; }
+  .dark .mobile-work-2d { background:#493b18;color:#fff2bd; }
+  .dark .mobile-work-3d { background:#102f43;color:#c8eaff; }
+  .dark .mobile-work-illustration { background:#302044;color:#f0ddff; }
+  .mobile-menu-secondary { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;margin-top:9px;padding-top:8px;border-top:1px solid #e2e8f0; }
+  .dark .mobile-menu-secondary { border-color:#334155; }
+  .mobile-menu-secondary a { min-width:0;min-height:29px;padding:5px 3px;display:flex;align-items:center;justify-content:center;border-radius:7px;background:#f1f5f9;color:#475569;font-size:8px;line-height:1.2;font-weight:700;text-align:center;text-decoration:none; }
+  .dark .mobile-menu-secondary a { background:#1e293b;color:#cbd5e1; }
+  .mobile-menu-contact { margin-top:9px;padding:8px 11px;border-radius:10px;background:#141320;color:white;display:flex;align-items:center;justify-content:space-between;gap:10px;text-decoration:none; }
+  .mobile-menu-contact>span { font-size:9px;line-height:1.25;color:#cbd5e1;font-weight:600; }
+  .mobile-menu-contact>strong { flex:0 0 auto;display:inline-flex;align-items:center;gap:5px;font-size:11px;color:#ffcf32;font-weight:800; }
+
+  footer .footer-mobile-nav { width:100%;display:flex!important;flex-wrap:nowrap!important;justify-content:center;align-items:center;gap:8px!important;white-space:nowrap;font-size:13px!important;line-height:1.2; }
+  footer .footer-mobile-nav a, footer .footer-mobile-nav span { flex:0 0 auto;white-space:nowrap; }
+}
+@media (prefers-reduced-motion:reduce) {
+  #main-header,#main-header * { transition-duration:.01ms!important;animation-duration:.01ms!important; }
+}
+
+@media(max-width:767px){
+ #filter-container-illu{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px!important;width:100%;align-items:stretch}
+ #filter-container-illu .filter-btn-illu{min-width:0;width:100%;min-height:39px;padding:7px 4px!important;border-radius:9px!important;font-size:10px!important;line-height:1.15!important;white-space:normal;text-align:center;display:flex;align-items:center;justify-content:center;overflow-wrap:anywhere;box-shadow:1px 1px 0 #141320!important}
+ #filter-count-illu{margin-top:7px;padding:3px 7px!important;font-size:8px!important;line-height:1.1!important;border-radius:8px!important;box-shadow:1px 1px 0 #141320!important}
+ #grid-illu{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px!important;align-items:start}
+ #grid-illu .project-card-illu{min-width:0;border-width:1.5px!important;border-radius:17px!important;box-shadow:1.5px 1.5px 0 #141320!important;align-self:start}
+ #grid-illu .project-card-illu>div:first-child{aspect-ratio:.9/1!important;min-width:0;flex:0 0 auto}
+ #grid-illu .project-card-illu>div:last-child{padding:8px 9px 9px!important;min-width:0;gap:0!important;flex:0 0 auto}
+ #grid-illu .project-card-illu>div:last-child>div:first-child>span:first-child{display:none!important}
+ #grid-illu .project-card-illu h3{font-size:12px!important;line-height:1.24!important;margin:0!important;min-width:0;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;overflow-wrap:anywhere}
+ #grid-illu .project-card-illu .mobile-title-row{display:flex;align-items:center;gap:5px;min-width:0}
+ #grid-illu .project-card-illu .mobile-description-toggle{flex:0 0 25px;width:25px;height:25px;display:inline-flex;align-items:center;justify-content:center;border:1px solid #cbd5e1;border-radius:8px;background:#f8fafc;color:#7c3aed;font-size:12px;line-height:1;box-shadow:1px 1px 0 #141320}
+ #grid-illu .project-card-illu p{display:none!important;font-size:10px!important;line-height:1.4!important;margin:8px 0 1px!important;color:#64748b}
+ #grid-illu .project-card-illu.mobile-description-open p{display:block!important}
+ #grid-illu .project-card-illu>div:last-child>div:last-child{display:none!important}
+ #grid-illu .project-card-illu>div:first-child>span{font-size:8px!important;line-height:1.15!important;padding:4px 6px!important;max-width:calc(100% - 12px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+}
+
+</style>
+<style>
+/* Illustration gallery: thumbnail-first 80/20 card layout */
+#grid-illu .project-card-illu {
+  height: 390px !important;
+  min-height: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+#grid-illu .project-card-illu > div:first-child {
+  flex: 0 0 80% !important;
+  height: 80% !important;
+  min-height: 0 !important;
+  aspect-ratio: auto !important;
+  width: 100% !important;
+}
+#grid-illu .project-card-illu > div:first-child > img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+#grid-illu .project-card-illu > div:last-child {
+  flex: 0 0 20% !important;
+  height: 20% !important;
+  min-height: 0 !important;
+  padding: 10px 14px !important;
+  overflow: hidden !important;
+  justify-content: center !important;
+  gap: 0 !important;
+}
+#grid-illu .project-card-illu > div:last-child > div:first-child > span:first-child {
+  display: none !important;
+}
+#grid-illu .project-card-illu h3 {
+  font-size: 15px !important;
+  line-height: 1.25 !important;
+  margin: 0 !important;
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 2 !important;
+  overflow: hidden !important;
+}
+#grid-illu .project-card-illu p {
+  display: none !important;
+}
+@media (max-width: 767px) {
+  #grid-illu .project-card-illu { height: 260px !important; }
+  #grid-illu .project-card-illu > div:last-child { padding: 7px 9px !important; }
+  #grid-illu .project-card-illu h3 { font-size: 11px !important; }
+}
+</style></head>
 <body class="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 font-sans selection:bg-purple-300 selection:text-comical-hair transition-colors duration-200">
-
-    <!-- Custom Cursor -->
-    <div id="custom-cursor-dot" class="custom-cursor hidden md:block"></div>
-    <div id="custom-cursor-ring" class="custom-cursor hidden md:block"></div>
-
-    <!-- ==================== MAIN HEADER NAVIGATION ==================== -->
-    <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b-3 border-comical-hair dark:border-slate-700 transition-colors">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <!-- Brand / Logo -->
-                <a href="index.html" class="flex items-center gap-3 group">
-                    <div class="w-12 h-12 rounded-2xl bg-purple-500 comic-border-thin shadow-comic-sm flex items-center justify-center text-white font-display text-2xl group-hover:-rotate-6 transition-transform">
+<!-- Custom Cursor -->
+<div class="custom-cursor hidden md:block" id="custom-cursor-dot"></div>
+<div class="custom-cursor hidden md:block" id="custom-cursor-ring"></div>
+<!-- ==================== MAIN HEADER NAVIGATION ==================== -->
+<header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b-3 border-comical-hair dark:border-slate-700 transition-colors" id="main-header">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="mobile-header-inner flex items-center justify-between h-20">
+<!-- Brand / Logo -->
+<a class="mobile-header-brand flex items-center gap-3 group" href="index.html">
+<div class="mobile-header-logo w-12 h-12 rounded-2xl bg-purple-500 comic-border-thin shadow-comic-sm flex items-center justify-center text-white font-display text-2xl group-hover:-rotate-6 transition-transform">
                         C!
                     </div>
-                    <div>
-                        <span class="font-display font-bold text-2xl tracking-wide text-comical-hair dark:text-white block leading-none">COMICAL</span>
-                        <span class="text-[10px] font-bold tracking-widest text-purple-600 dark:text-purple-400 uppercase">Illustration &amp; Art</span>
+<div>
+<span class="mobile-header-name font-display font-bold text-2xl tracking-wide text-comical-hair dark:text-white block leading-none">COMICAL</span>
+<span class="mobile-header-tagline text-[10px] font-bold tracking-widest text-purple-600 dark:text-purple-400 uppercase">Illustration &amp; Art</span>
+</div>
+</a>
+<!-- Desktop Navigation Links (Requirement 4: Balanced, Cleanly Spaced 2D, 3D, Illustration) -->
+<nav class="hidden md:flex items-center gap-2 lg:gap-3 font-semibold text-sm">
+<!-- 1. 2D Work -->
+<a class="px-4 py-2 rounded-xl bg-amber-100 dark:bg-amber-950/40 text-amber-900 dark:text-amber-200 hover:bg-amber-300 dark:hover:bg-amber-900/60 comic-border-thin shadow-comic-sm transition font-display font-bold flex items-center gap-1.5" href="2d.html">
+<i class="fa-solid fa-paintbrush text-amber-600"></i> 2D Work
+                    </a>
+<!-- 2. 3D Work -->
+<a class="px-4 py-2 rounded-xl bg-sky-100 dark:bg-sky-950/40 text-comical-blue dark:text-sky-300 hover:bg-sky-200 dark:hover:bg-sky-900/60 comic-border-thin shadow-comic-sm transition font-display font-bold flex items-center gap-1.5" href="3d.html">
+<i class="fa-solid fa-cube text-sky-600 dark:text-sky-400"></i> 3D Work
+                    </a>
+<!-- 3. Illustration (Active) -->
+<a class="px-4 py-2 rounded-xl bg-purple-600 text-white ring-2 ring-purple-400 comic-border-thin shadow-comic-sm font-display font-bold flex items-center gap-1.5" href="illustration.html">
+<i class="fa-solid fa-palette text-white"></i> Illustration
+                    </a>
+<a class="px-3.5 py-2 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-comical-blueLight dark:hover:bg-slate-800 hover:text-comical-blue dark:hover:text-sky-400 transition" href="index.html#section-services">What We Offer</a>
+<a class="px-3.5 py-2 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-comical-blueLight dark:hover:bg-slate-800 hover:text-comical-blue dark:hover:text-sky-400 transition" href="index.html#section-process">Animation Process</a>
+<a class="px-3.5 py-2 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-comical-blueLight dark:hover:bg-slate-800 hover:text-comical-blue dark:hover:text-sky-400 transition" href="index.html#section-work">Work With Me</a>
+<a class="px-4 py-2 rounded-xl bg-comical-hair dark:bg-sky-500 text-white dark:text-slate-950 comic-border-thin shadow-comic-sm hover:bg-comical-blueDark dark:hover:bg-sky-400 transition font-display font-bold" href="index.html#section-contact">Say Hi!</a>
+<!-- Dark Mode Toggle Button -->
+<button aria-label="Toggle Dark/Light Mode" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-amber-300 comic-border-thin shadow-comic-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition" id="theme-toggle-btn" onclick="toggleTheme()" title="Toggle Dark/Light Mode">
+<i class="fa-solid fa-moon text-base" id="theme-icon"></i>
+</button>
+<!-- Sound / Mute Toggle Button -->
+<button aria-label="Toggle Sound / Mute" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-emerald-600 dark:text-emerald-400 comic-border-thin shadow-comic-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition" id="sound-toggle-btn" onclick="toggleSound()" title="Toggle Sound / Mute">
+<i class="fa-solid fa-volume-high text-base" id="sound-icon"></i>
+</button>
+</nav>
+<!-- Mobile Menu Button & Controls -->
+<div class="mobile-header-controls flex items-center gap-2 md:hidden">
+<button aria-label="Toggle Dark Mode" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-amber-300 comic-border-thin" onclick="toggleTheme()">
+<i class="fa-solid fa-moon text-sm" id="theme-icon-mobile"></i>
+</button>
+<button aria-label="Toggle Sound" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-emerald-600 dark:text-emerald-400 comic-border-thin" onclick="toggleSound()">
+<i class="fa-solid fa-volume-high text-sm" id="sound-icon-mobile"></i>
+</button>
+<button aria-label="Toggle Menu" class="p-3 rounded-xl bg-purple-100 dark:bg-slate-800 text-comical-hair dark:text-white comic-border-thin" id="mobile-menu-btn">
+<i class="fa-solid fa-bars text-xl"></i>
+</button>
+</div>
+</div>
+</div>
+<div class="hidden md:hidden mobile-menu-panel bg-white dark:bg-slate-900" id="mobile-menu">
+<div class="mobile-menu-heading"><span>EXPLORE WORK</span><span class="mobile-menu-heading-line"></span></div>
+<div class="mobile-work-grid"><a class="mobile-work-link mobile-work-2d" href="2d.html"><i class="fa-solid fa-paintbrush"></i><span>2D Work</span><small>Frame by frame &amp; puppet</small></a><a class="mobile-work-link mobile-work-3d" href="3d.html"><i class="fa-solid fa-cube"></i><span>3D Work</span><small>Animation &amp; renders</small></a><a aria-current="page" class="mobile-work-link mobile-work-illustration is-active" href="illustration.html"><i class="fa-solid fa-palette"></i><span>Illustration</span><small>Art &amp; backgrounds</small></a></div>
+<div class="mobile-menu-secondary">
+<a href="index.html#section-services">What We Offer</a>
+<a href="index.html#section-process">Animation Process</a>
+<a href="index.html#section-work">Work With Me</a>
+</div>
+<a class="mobile-menu-contact" href="index.html#section-contact"><span>Have a project in mind?</span><strong>Say Hi! <i class="fa-solid fa-arrow-right"></i></strong></a>
+</div>
+</header>
+<!-- ==================== HERO SECTION (ENLARGED COMI LEARN GIF ANIMATION - REQUIREMENT 3) ==================== -->
+<section class="relative pt-10 pb-14 lg:pt-14 lg:pb-16 bg-gradient-to-b from-purple-100 via-purple-50 to-white dark:from-slate-900 dark:via-slate-900 dark:to-slate-900 border-b-3 border-comical-hair dark:border-slate-700 overflow-hidden transition-colors">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+<!-- Left Text Intro -->
+<div class="lg:col-span-5 space-y-4">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-200 dark:bg-purple-900/60 border-2 border-purple-400 text-purple-900 dark:text-purple-200 font-bold text-xs uppercase tracking-wider shadow-comic-sm">
+<i class="fa-solid fa-paint-roller text-purple-700 dark:text-purple-300"></i> Environmental Layouts &amp; High-CTR Art
                     </div>
-                </a>
-
-                <!-- Desktop Navigation Links (Requirement 4: Balanced, Cleanly Spaced 2D, 3D, Illustration) -->
-                <nav class="hidden md:flex items-center gap-2 lg:gap-3 font-semibold text-sm">
-                    <!-- 1. 2D Work -->
-                    <a href="2d.html" class="px-4 py-2 rounded-xl bg-amber-100 dark:bg-amber-950/40 text-amber-900 dark:text-amber-200 hover:bg-amber-300 dark:hover:bg-amber-900/60 comic-border-thin shadow-comic-sm transition font-display font-bold flex items-center gap-1.5">
-                        <i class="fa-solid fa-paintbrush text-amber-600"></i> 2D Work
-                    </a>
-                    <!-- 2. 3D Work -->
-                    <a href="3d.html" class="px-4 py-2 rounded-xl bg-sky-100 dark:bg-sky-950/40 text-comical-blue dark:text-sky-300 hover:bg-sky-200 dark:hover:bg-sky-900/60 comic-border-thin shadow-comic-sm transition font-display font-bold flex items-center gap-1.5">
-                        <i class="fa-solid fa-cube text-sky-600 dark:text-sky-400"></i> 3D Work
-                    </a>
-                    <!-- 3. Illustration (Active) -->
-                    <a href="illustration.html" class="px-4 py-2 rounded-xl bg-purple-600 text-white ring-2 ring-purple-400 comic-border-thin shadow-comic-sm font-display font-bold flex items-center gap-1.5">
-                        <i class="fa-solid fa-palette text-white"></i> Illustration
-                    </a>
-
-                    <a href="index.html#section-services" class="px-3.5 py-2 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-comical-blueLight dark:hover:bg-slate-800 hover:text-comical-blue dark:hover:text-sky-400 transition">What We Offer</a>
-                    <a href="index.html#section-process" class="px-3.5 py-2 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-comical-blueLight dark:hover:bg-slate-800 hover:text-comical-blue dark:hover:text-sky-400 transition">Animation Process</a>
-                    <a href="index.html#section-work" class="px-3.5 py-2 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-comical-blueLight dark:hover:bg-slate-800 hover:text-comical-blue dark:hover:text-sky-400 transition">Work With Me</a>
-                    <a href="index.html#section-contact" class="px-4 py-2 rounded-xl bg-comical-hair dark:bg-sky-500 text-white dark:text-slate-950 comic-border-thin shadow-comic-sm hover:bg-comical-blueDark dark:hover:bg-sky-400 transition font-display font-bold">Say Hi!</a>
-
-                    <!-- Dark Mode Toggle Button -->
-                    <button id="theme-toggle-btn" onclick="toggleTheme()" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-amber-300 comic-border-thin shadow-comic-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition">
-                        <i id="theme-icon" class="fa-solid fa-moon text-base"></i>
-                    </button>
-
-                    <!-- Sound / Mute Toggle Button -->
-                    <button id="sound-toggle-btn" onclick="toggleSound()" title="Toggle Sound / Mute" aria-label="Toggle Sound / Mute" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-emerald-600 dark:text-emerald-400 comic-border-thin shadow-comic-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition">
-                        <i id="sound-icon" class="fa-solid fa-volume-high text-base"></i>
-                    </button>
-                </nav>
-
-                <!-- Mobile Menu Button & Controls -->
-                <div class="flex items-center gap-2 md:hidden">
-                    <button onclick="toggleTheme()" aria-label="Toggle Dark Mode" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-amber-300 comic-border-thin">
-                        <i id="theme-icon-mobile" class="fa-solid fa-moon text-sm"></i>
-                    </button>
-                    <button onclick="toggleSound()" aria-label="Toggle Sound" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-emerald-600 dark:text-emerald-400 comic-border-thin">
-                        <i id="sound-icon-mobile" class="fa-solid fa-volume-high text-sm"></i>
-                    </button>
-                    <button id="mobile-menu-btn" aria-label="Toggle Menu" class="p-3 rounded-xl bg-purple-100 dark:bg-slate-800 text-comical-hair dark:text-white comic-border-thin">
-                        <i class="fa-solid fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-900 border-t-2 border-comical-hair dark:border-slate-700 px-4 pt-3 pb-6 space-y-2">
-            <a href="2d.html" class="flex items-center gap-2 px-4 py-3 rounded-xl font-bold bg-amber-100 dark:bg-amber-950/40 text-amber-900 dark:text-amber-200 comic-border-thin">
-                <i class="fa-solid fa-paintbrush text-amber-600"></i> 1. 2D Work
-            </a>
-            <a href="3d.html" class="flex items-center gap-2 px-4 py-3 rounded-xl font-bold bg-sky-100 dark:bg-sky-950/40 text-comical-blue dark:text-sky-300 comic-border-thin">
-                <i class="fa-solid fa-cube text-comical-blue dark:text-sky-400"></i> 2. 3D Work
-            </a>
-            <a href="illustration.html" class="flex items-center gap-2 px-4 py-3 rounded-xl font-bold bg-purple-600 text-white comic-border-thin ring-2 ring-purple-400">
-                <i class="fa-solid fa-palette text-white"></i> 3. Illustration (Active)
-            </a>
-            <a href="index.html#section-services" class="block px-4 py-2 text-slate-700 dark:text-slate-200 font-semibold">What We Offer</a>
-            <a href="index.html#section-process" class="block px-4 py-2 text-slate-700 dark:text-slate-200 font-semibold">Animation Process</a>
-            <a href="index.html#section-work" class="block px-4 py-2 text-slate-700 dark:text-slate-200 font-semibold">Work With Me</a>
-            <a href="index.html#section-contact" class="block text-center mt-3 px-4 py-3 rounded-xl font-bold bg-comical-hair dark:bg-sky-500 text-white dark:text-slate-950 comic-border-thin">Say Hi!</a>
-        </div>
-    </header>
-
-    <!-- ==================== HERO SECTION (ENLARGED COMI LEARN GIF ANIMATION - REQUIREMENT 3) ==================== -->
-    <section class="relative pt-10 pb-14 lg:pt-14 lg:pb-16 bg-gradient-to-b from-purple-100 via-purple-50 to-white dark:from-slate-900 dark:via-slate-900 dark:to-slate-900 border-b-3 border-comical-hair dark:border-slate-700 overflow-hidden transition-colors">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-                
-                <!-- Left Text Intro -->
-                <div class="lg:col-span-5 space-y-4">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-200 dark:bg-purple-900/60 border-2 border-purple-400 text-purple-900 dark:text-purple-200 font-bold text-xs uppercase tracking-wider shadow-comic-sm">
-                        <i class="fa-solid fa-paint-roller text-purple-700 dark:text-purple-300"></i> Environmental Layouts &amp; High-CTR Art
-                    </div>
-                    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl text-comical-hair dark:text-white tracking-wide leading-tight">
+<h1 class="font-display text-4xl sm:text-5xl lg:text-6xl text-comical-hair dark:text-white tracking-wide leading-tight">
                         Illustration &amp; Art Services
                     </h1>
-                    <p class="text-slate-700 dark:text-slate-300 text-base sm:text-lg leading-relaxed font-normal">
+<p class="text-slate-700 dark:text-slate-300 text-base sm:text-lg leading-relaxed font-normal">
                         Cinematic animation background layouts, atmospheric perspective passes, and viral YouTube thumbnails crafted to maximize audience retention, emotion, and click-through rates.
                     </p>
-                    <div class="flex flex-wrap items-center gap-3 pt-2">
-                        <span class="px-3 py-1 rounded-xl bg-white dark:bg-slate-800 comic-border-thin text-xs font-bold text-slate-700 dark:text-slate-300 shadow-comic-sm">
-                            <i class="fa-solid fa-check text-purple-500 mr-1"></i> Layered Animation PSDs
+<div class="flex flex-wrap items-center gap-3 pt-2">
+<span class="px-3 py-1 rounded-xl bg-white dark:bg-slate-800 comic-border-thin text-xs font-bold text-slate-700 dark:text-slate-300 shadow-comic-sm">
+<i class="fa-solid fa-check text-purple-500 mr-1"></i> Layered Animation PSDs
                         </span>
-                        <span class="px-3 py-1 rounded-xl bg-white dark:bg-slate-800 comic-border-thin text-xs font-bold text-slate-700 dark:text-slate-300 shadow-comic-sm">
-                            <i class="fa-solid fa-check text-purple-500 mr-1"></i> High-CTR Viral Thumbnails
+<span class="px-3 py-1 rounded-xl bg-white dark:bg-slate-800 comic-border-thin text-xs font-bold text-slate-700 dark:text-slate-300 shadow-comic-sm">
+<i class="fa-solid fa-check text-purple-500 mr-1"></i> High-CTR Viral Thumbnails
                         </span>
-                        <span class="px-3 py-1 rounded-xl bg-white dark:bg-slate-800 comic-border-thin text-xs font-bold text-slate-700 dark:text-slate-300 shadow-comic-sm">
-                            <i class="fa-solid fa-check text-purple-500 mr-1"></i> Atmospheric Mood Lighting
+<span class="px-3 py-1 rounded-xl bg-white dark:bg-slate-800 comic-border-thin text-xs font-bold text-slate-700 dark:text-slate-300 shadow-comic-sm">
+<i class="fa-solid fa-check text-purple-500 mr-1"></i> Atmospheric Mood Lighting
                         </span>
-                    </div>
-                </div>
+</div>
+</div>
+<!-- Right Visual: ENLARGED Provided Comi Learn GIF Showcase (Requirement 3) -->
+<div class="lg:col-span-7 flex justify-center">
+<div class="w-full relative">
 
-                <!-- Right Visual: ENLARGED Provided Comi Learn GIF Showcase (Requirement 3) -->
-                <div class="lg:col-span-7 flex justify-center">
-                    <div class="w-full relative">
-                        <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-100 dark:border-slate-700">
-                            <div class="flex items-center gap-2">
-                                <span class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></span>
-                                <span class="text-xs font-mono font-bold text-purple-700 dark:text-purple-300">COMI.LEARN_ANIMATION_STUDY</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <span class="px-2.5 py-0.5 rounded bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-200 text-[10px] font-bold comic-border-thin">1920 &times; 1080 HD</span>
-                                <span class="px-2.5 py-0.5 rounded bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-emerald-200 text-[10px] font-bold comic-border-thin">ANIMATED GIF</span>
-                            </div>
-                        </div>
-                        
-                        <!-- Artwork is tightly cropped to its transparent bounds so the character displays at a useful size -->
-                        <div class="relative w-full aspect-video min-h-[300px] sm:min-h-[380px] md:min-h-[440px] lg:min-h-[480px] bg-transparent flex items-center justify-center overflow-visible">
-                            <div aria-hidden="true" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[58%] aspect-square rounded-full bg-gradient-to-br from-violet-200 via-purple-300 to-fuchsia-200 dark:from-violet-950 dark:via-purple-900 dark:to-fuchsia-950 opacity-80"></div>
-                            <img src="./assets/comi-learn-gif.gif" alt="Comical Illustration Animation Study" class="relative z-10 w-full h-full object-contain select-none" loading="eager">
-                        </div>
-                        
-                        <div class="mt-3 flex items-center justify-between flex-wrap gap-2 text-xs">
-                            <div>
-                                <h4 class="font-display font-bold text-base text-comical-hair dark:text-white">Continuous Animation Study</h4>
-                                <p class="text-xs text-slate-500 dark:text-slate-400">Hand-drawn 2D expressive character illustration &amp; pacing</p>
-                            </div>
-                            <span class="text-[11px] font-mono text-purple-600 dark:text-purple-400 font-bold bg-purple-50 dark:bg-purple-950/50 px-2 py-1 rounded comic-border-thin">
+<!-- Artwork is tightly cropped to its transparent bounds so the character displays at a useful size -->
+<div class="relative w-full aspect-video min-h-[300px] sm:min-h-[380px] md:min-h-[440px] lg:min-h-[480px] bg-transparent flex items-center justify-center overflow-visible">
+<div aria-hidden="true" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[58%] aspect-square rounded-full bg-gradient-to-br from-violet-200 via-purple-300 to-fuchsia-200 dark:from-violet-950 dark:via-purple-900 dark:to-fuchsia-950 opacity-80"></div>
+<img alt="Comical Illustration Animation Study" class="relative z-10 w-full h-full object-contain select-none" loading="eager" src="./assets/comi-learn-gif.gif"/>
+</div>
+<div class="mt-3 flex items-center justify-between flex-wrap gap-2 text-xs">
+<div>
+<h4 class="font-display font-bold text-base text-comical-hair dark:text-white">Continuous Animation Study</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400">Hand-drawn 2D expressive character illustration &amp; pacing</p>
+</div>
+<span class="text-[11px] font-mono text-purple-600 dark:text-purple-400 font-bold bg-purple-50 dark:bg-purple-950/50 px-2 py-1 rounded comic-border-thin">
                                 Original 16:9 Frame Rate Active
                             </span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== REQUIREMENT 5: RESTORED ILLUSTRATION FILTERS (ALL SELECTED BY DEFAULT, NO ISOLATE) ==================== -->
-    <section class="py-12 lg:py-16 bg-slate-50 dark:bg-slate-900 transition-colors">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="mb-10 pb-6 border-b-2 border-slate-200 dark:border-slate-700">
-                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-                    <div class="flex flex-wrap items-center gap-2.5" id="filter-container-illu">
-                        
-                        <!-- 1. All Illustration (Selected by Default) -->
-                        <button onclick="setFilterIllu('all')" id="filter-btn-all" class="filter-btn-illu px-4 py-2.5 rounded-xl font-display font-bold text-sm bg-purple-600 text-white comic-border-thin shadow-comic-sm transition">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== REQUIREMENT 5: RESTORED ILLUSTRATION FILTERS (ALL SELECTED BY DEFAULT, NO ISOLATE) ==================== -->
+<section class="py-12 lg:py-16 bg-slate-50 dark:bg-slate-900 transition-colors">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="mb-10 pb-6 border-b-2 border-slate-200 dark:border-slate-700">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="flex flex-wrap items-center gap-2.5" id="filter-container-illu">
+<!-- 1. All Illustration (Selected by Default) -->
+<button class="filter-btn-illu px-4 py-2.5 rounded-xl font-display font-bold text-sm bg-purple-600 text-white comic-border-thin shadow-comic-sm transition" id="filter-btn-all" onclick="setFilterIllu('all')">
                             🎨 All Illustration
                         </button>
-
-                        <!-- 2. Background Art -->
-                        <button onclick="setFilterIllu('bg-art')" id="filter-btn-bg-art" class="filter-btn-illu px-4 py-2.5 rounded-xl font-display font-bold text-sm bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 comic-border-thin shadow-comic-sm hover:bg-slate-100 dark:hover:bg-slate-700 transition">
+<!-- 2. Background Art -->
+<button class="filter-btn-illu px-4 py-2.5 rounded-xl font-display font-bold text-sm bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 comic-border-thin shadow-comic-sm hover:bg-slate-100 dark:hover:bg-slate-700 transition" id="filter-btn-bg-art" onclick="setFilterIllu('bg-art')">
                             🌄 Background Art
                         </button>
-
-                        <!-- 3. YouTube Thumbnails -->
-                        <button onclick="setFilterIllu('thumbnails')" id="filter-btn-thumbnails" class="filter-btn-illu px-4 py-2.5 rounded-xl font-display font-bold text-sm bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 comic-border-thin shadow-comic-sm hover:bg-slate-100 dark:hover:bg-slate-700 transition">
+<!-- 3. YouTube Thumbnails -->
+<button class="filter-btn-illu px-4 py-2.5 rounded-xl font-display font-bold text-sm bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 comic-border-thin shadow-comic-sm hover:bg-slate-100 dark:hover:bg-slate-700 transition" id="filter-btn-thumbnails" onclick="setFilterIllu('thumbnails')">
                             🔴 YouTube Thumbnails
                         </button>
-
-                    </div>
-
-                    <span id="filter-count-illu" class="text-xs font-mono font-bold text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 px-3.5 py-2 rounded-xl comic-border-thin shadow-comic-sm shrink-0 self-start lg:self-auto">
+</div>
+<span class="text-xs font-mono font-bold text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 px-3.5 py-2 rounded-xl comic-border-thin shadow-comic-sm shrink-0 self-start lg:self-auto" id="filter-count-illu">
                         Showing 11 Artworks
                     </span>
-                </div>
-            </div>
+</div>
+</div>
+<!-- ILLUSTRATION PROJECTS GRID -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="grid-illu">
+<!-- Card: Classroom Interior Background -->
+<article class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300" data-categories="bg-art">
+<div aria-label="Preview image: Classroom Interior Background" class="relative bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb w-full min-h-0 relative" onclick="openLightbox('Classroom Interior Background', 'Anime-inspired school classroom layout with detailed desks, windows, and warm sunlit atmosphere.', 'Background Art', './Thumbnail%20and%20Bg%20art/Bg%20art/11bgsa.png')" role="button" style="flex: 0 0 80%;" tabindex="0">
+<img alt="Classroom Interior Background" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300" loading="lazy" src="./Thumbnail%20and%20Bg%20art/Bg%20art/11bgsa.png"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+<div class="w-14 h-14 rounded-full bg-purple-500 text-white comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+<i class="fa-solid fa-expand text-xl"></i>
+</div>
+</div>
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-purple-600 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            Background Art
+                        </span>
+<span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            LAYOUT
+                        </span>
+</div>
+<div class="flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors px-4 py-3 min-h-0 overflow-hidden" style="flex: 0 0 20%;">
+<div>
+<span class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider block mb-1">Background Art</span>
+<h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">Classroom Interior Background</h3>
+<p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Anime-inspired school classroom layout with detailed desks, windows, and warm sunlit atmosphere.</p>
+</div>
+<div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-purple-600 dark:text-purple-400">
+<span class="flex items-center gap-1.5 cursor-pointer" onclick="openLightbox('Classroom Interior Background', 'Anime-inspired school classroom layout with detailed desks, windows, and warm sunlit atmosphere.', 'Background Art', './Thumbnail%20and%20Bg%20art/Bg%20art/11bgsa.png')"><i class="fa-solid fa-image"></i> Inspect Full Res</span>
+<span class="text-slate-400 dark:text-slate-500 font-normal">Environment Art</span>
+</div>
+</div>
+</article>
+<!-- Card: Classroom Confrontation Scene -->
+<article class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300" data-categories="bg-art">
+<div aria-label="Preview image: Classroom Confrontation Scene" class="relative bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb w-full min-h-0 relative" onclick="openLightbox('Classroom Confrontation Scene', 'Animated sequence background showing dynamic classroom scene staging and character positions.', 'Background Art', './Thumbnail%20and%20Bg%20art/Bg%20art/1sir-vs-me-marthi.gif')" role="button" style="flex: 0 0 80%;" tabindex="0">
+<img alt="Classroom Confrontation Scene" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300" loading="lazy" src="./Thumbnail%20and%20Bg%20art/Bg%20art/1sir-vs-me-marthi.gif"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+<div class="w-14 h-14 rounded-full bg-purple-500 text-white comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+<i class="fa-solid fa-expand text-xl"></i>
+</div>
+</div>
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-purple-600 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            Background Art
+                        </span>
+<span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            LAYOUT
+                        </span>
+</div>
+<div class="flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors px-4 py-3 min-h-0 overflow-hidden" style="flex: 0 0 20%;">
+<div>
+<span class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider block mb-1">Background Art</span>
+<h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">Classroom Confrontation Scene</h3>
+<p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Animated sequence background showing dynamic classroom scene staging and character positions.</p>
+</div>
+<div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-purple-600 dark:text-purple-400">
+<span class="flex items-center gap-1.5 cursor-pointer" onclick="openLightbox('Classroom Confrontation Scene', 'Animated sequence background showing dynamic classroom scene staging and character positions.', 'Background Art', './Thumbnail%20and%20Bg%20art/Bg%20art/1sir-vs-me-marthi.gif')"><i class="fa-solid fa-image"></i> Inspect Full Res</span>
+<span class="text-slate-400 dark:text-slate-500 font-normal">Environment Art</span>
+</div>
+</div>
+</article>
+<!-- Card: Indian Kitchen Layout & Utensils -->
+<article class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300" data-categories="bg-art">
+<div aria-label="Preview image: Indian Kitchen Layout &amp; Utensils" class="relative bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb w-full min-h-0 relative" onclick="openLightbox('Indian Kitchen Layout &amp; Utensils', 'Intricately detailed kitchen background with traditional Indian cookware, spices, and domestic warmth.', 'Background Art', './Thumbnail%20and%20Bg%20art/Bg%20art/compo%20kitchen.png')" role="button" style="flex: 0 0 80%;" tabindex="0">
+<img alt="Indian Kitchen Layout &amp; Utensils" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300" loading="lazy" src="./Thumbnail%20and%20Bg%20art/Bg%20art/compo%20kitchen.png"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+<div class="w-14 h-14 rounded-full bg-purple-500 text-white comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+<i class="fa-solid fa-expand text-xl"></i>
+</div>
+</div>
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-purple-600 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            Background Art
+                        </span>
+<span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            LAYOUT
+                        </span>
+</div>
+<div class="flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors px-4 py-3 min-h-0 overflow-hidden" style="flex: 0 0 20%;">
+<div>
+<span class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider block mb-1">Background Art</span>
+<h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">Indian Kitchen Layout &amp; Utensils</h3>
+<p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Intricately detailed kitchen background with traditional Indian cookware, spices, and domestic warmth.</p>
+</div>
+<div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-purple-600 dark:text-purple-400">
+<span class="flex items-center gap-1.5 cursor-pointer" onclick="openLightbox('Indian Kitchen Layout &amp; Utensils', 'Intricately detailed kitchen background with traditional Indian cookware, spices, and domestic warmth.', 'Background Art', './Thumbnail%20and%20Bg%20art/Bg%20art/compo%20kitchen.png')"><i class="fa-solid fa-image"></i> Inspect Full Res</span>
+<span class="text-slate-400 dark:text-slate-500 font-normal">Environment Art</span>
+</div>
+</div>
+</article>
+<!-- Card: Kitchen Angle & Depth Pass -->
+<article class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300" data-categories="bg-art">
+<div aria-label="Preview image: Kitchen Angle &amp; Depth Pass" class="relative bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb w-full min-h-0 relative" onclick="openLightbox('Kitchen Angle &amp; Depth Pass', 'Cinematic medium background perspective with realistic atmospheric perspective and depth layers.', 'Background Art', './Thumbnail%20and%20Bg%20art/Bg%20art/kitchensceneclse.png')" role="button" style="flex: 0 0 80%;" tabindex="0">
+<img alt="Kitchen Angle &amp; Depth Pass" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300" loading="lazy" src="./Thumbnail%20and%20Bg%20art/Bg%20art/kitchensceneclse.png"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+<div class="w-14 h-14 rounded-full bg-purple-500 text-white comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+<i class="fa-solid fa-expand text-xl"></i>
+</div>
+</div>
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-purple-600 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            Background Art
+                        </span>
+<span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            LAYOUT
+                        </span>
+</div>
+<div class="flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors px-4 py-3 min-h-0 overflow-hidden" style="flex: 0 0 20%;">
+<div>
+<span class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider block mb-1">Background Art</span>
+<h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">Kitchen Angle &amp; Depth Pass</h3>
+<p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Cinematic medium background perspective with realistic atmospheric perspective and depth layers.</p>
+</div>
+<div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-purple-600 dark:text-purple-400">
+<span class="flex items-center gap-1.5 cursor-pointer" onclick="openLightbox('Kitchen Angle &amp; Depth Pass', 'Cinematic medium background perspective with realistic atmospheric perspective and depth layers.', 'Background Art', './Thumbnail%20and%20Bg%20art/Bg%20art/kitchensceneclse.png')"><i class="fa-solid fa-image"></i> Inspect Full Res</span>
+<span class="text-slate-400 dark:text-slate-500 font-normal">Environment Art</span>
+</div>
+</div>
+</article>
+<!-- Card: Village Cottage Landscape -->
+<article class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300" data-categories="bg-art">
+<div aria-label="Preview image: Village Cottage Landscape" class="relative bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb w-full min-h-0 relative" onclick="openLightbox('Village Cottage Landscape', 'Rural rustic village landscape featuring traditional clay tile roofs and natural flora composition.', 'Background Art', './Thumbnail%20and%20Bg%20art/Bg%20art/scene1vlgghouse.png')" role="button" style="flex: 0 0 80%;" tabindex="0">
+<img alt="Village Cottage Landscape" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300" loading="lazy" src="./Thumbnail%20and%20Bg%20art/Bg%20art/scene1vlgghouse.png"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+<div class="w-14 h-14 rounded-full bg-purple-500 text-white comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+<i class="fa-solid fa-expand text-xl"></i>
+</div>
+</div>
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-purple-600 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            Background Art
+                        </span>
+<span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            LAYOUT
+                        </span>
+</div>
+<div class="flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors px-4 py-3 min-h-0 overflow-hidden" style="flex: 0 0 20%;">
+<div>
+<span class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider block mb-1">Background Art</span>
+<h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">Village Cottage Landscape</h3>
+<p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Rural rustic village landscape featuring traditional clay tile roofs and natural flora composition.</p>
+</div>
+<div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-purple-600 dark:text-purple-400">
+<span class="flex items-center gap-1.5 cursor-pointer" onclick="openLightbox('Village Cottage Landscape', 'Rural rustic village landscape featuring traditional clay tile roofs and natural flora composition.', 'Background Art', './Thumbnail%20and%20Bg%20art/Bg%20art/scene1vlgghouse.png')"><i class="fa-solid fa-image"></i> Inspect Full Res</span>
+<span class="text-slate-400 dark:text-slate-500 font-normal">Environment Art</span>
+</div>
+</div>
+</article>
+<!-- Thumbnail Card: 81lHPY0KEto-HD -->
+<article class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300" data-categories="thumbnails">
+<div aria-label="Preview image: 81lHPY0KEto-HD" class="relative bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb w-full min-h-0 relative" onclick="openLightbox('81lHPY0KEto-HD', 'High-CTR illustrated thumbnail designed for viral audience conversion.', 'YouTube Thumbnail', './Thumbnail%20and%20Bg%20art/81lHPY0KEto-HD.jpg')" role="button" style="flex: 0 0 80%;" tabindex="0">
+<img alt="81lHPY0KEto-HD" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300" loading="lazy" src="./Thumbnail%20and%20Bg%20art/81lHPY0KEto-HD.jpg"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+<div class="w-14 h-14 rounded-full bg-purple-500 text-white comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+<i class="fa-solid fa-expand text-xl"></i>
+</div>
+</div>
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-rose-600 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            YouTube Thumbnail
+                        </span>
+<span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            YOUTUBE
+                        </span>
+</div>
+<div class="flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors px-4 py-3 min-h-0 overflow-hidden" style="flex: 0 0 20%;">
+<div>
+<span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wider block mb-1">YouTube Thumbnail</span>
+<h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">81lHPY0KEto-HD</h3>
+<p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">High-CTR illustrated thumbnail designed for viral audience conversion.</p>
+</div>
+<div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-red-600 dark:text-red-400">
 
-            <!-- ILLUSTRATION PROJECTS GRID -->
-            <div id="grid-illu" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Card: Classroom Interior Background -->
-                <article data-categories="bg-art" class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
-                    <div onclick="openLightbox('Classroom Interior Background', 'Anime-inspired school classroom layout with detailed desks, windows, and warm sunlit atmosphere.', 'Background Art', './Thumbnail%20and%20Bg%20art/Bg%20art/11bgsa.png')" class="relative aspect-square bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
-                        <img src="./Thumbnail%20and%20Bg%20art/Bg%20art/11bgsa.png" alt="Classroom Interior Background" loading="lazy" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
-                            <div class="w-14 h-14 rounded-full bg-purple-500 text-white comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
-                                <i class="fa-solid fa-expand text-xl"></i>
-                            </div>
-                        </div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-purple-600 text-white font-bold text-[10px] uppercase comic-border-thin">
-                            Background Art
-                        </span>
-                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
-                            LAYOUT
-                        </span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
-                        <div>
-                            <span class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider block mb-1">Background Art</span>
-                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">Classroom Interior Background</h3>
-                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Anime-inspired school classroom layout with detailed desks, windows, and warm sunlit atmosphere.</p>
-                        </div>
-                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-purple-600 dark:text-purple-400">
-                            <span class="flex items-center gap-1.5 cursor-pointer" onclick="openLightbox('Classroom Interior Background', 'Anime-inspired school classroom layout with detailed desks, windows, and warm sunlit atmosphere.', 'Background Art', './Thumbnail%20and%20Bg%20art/Bg%20art/11bgsa.png')"><i class="fa-solid fa-image"></i> Inspect Full Res</span>
-                            <span class="text-slate-400 dark:text-slate-500 font-normal">Environment Art</span>
-                        </div>
-                    </div>
-                </article>
-                <!-- Card: Classroom Confrontation Scene -->
-                <article data-categories="bg-art" class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
-                    <div onclick="openLightbox('Classroom Confrontation Scene', 'Animated sequence background showing dynamic classroom scene staging and character positions.', 'Background Art', './Thumbnail%20and%20Bg%20art/Bg%20art/1sir-vs-me-marthi.gif')" class="relative aspect-square bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
-                        <img src="./Thumbnail%20and%20Bg%20art/Bg%20art/1sir-vs-me-marthi.gif" alt="Classroom Confrontation Scene" loading="lazy" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
-                            <div class="w-14 h-14 rounded-full bg-purple-500 text-white comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
-                                <i class="fa-solid fa-expand text-xl"></i>
-                            </div>
-                        </div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-purple-600 text-white font-bold text-[10px] uppercase comic-border-thin">
-                            Background Art
-                        </span>
-                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
-                            LAYOUT
-                        </span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
-                        <div>
-                            <span class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider block mb-1">Background Art</span>
-                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">Classroom Confrontation Scene</h3>
-                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Animated sequence background showing dynamic classroom scene staging and character positions.</p>
-                        </div>
-                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-purple-600 dark:text-purple-400">
-                            <span class="flex items-center gap-1.5 cursor-pointer" onclick="openLightbox('Classroom Confrontation Scene', 'Animated sequence background showing dynamic classroom scene staging and character positions.', 'Background Art', './Thumbnail%20and%20Bg%20art/Bg%20art/1sir-vs-me-marthi.gif')"><i class="fa-solid fa-image"></i> Inspect Full Res</span>
-                            <span class="text-slate-400 dark:text-slate-500 font-normal">Environment Art</span>
-                        </div>
-                    </div>
-                </article>
-                <!-- Card: Indian Kitchen Layout & Utensils -->
-                <article data-categories="bg-art" class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
-                    <div onclick="openLightbox('Indian Kitchen Layout & Utensils', 'Intricately detailed kitchen background with traditional Indian cookware, spices, and domestic warmth.', 'Background Art', './Thumbnail%20and%20Bg%20art/Bg%20art/compo%20kitchen.png')" class="relative aspect-square bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
-                        <img src="./Thumbnail%20and%20Bg%20art/Bg%20art/compo%20kitchen.png" alt="Indian Kitchen Layout & Utensils" loading="lazy" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
-                            <div class="w-14 h-14 rounded-full bg-purple-500 text-white comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
-                                <i class="fa-solid fa-expand text-xl"></i>
-                            </div>
-                        </div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-purple-600 text-white font-bold text-[10px] uppercase comic-border-thin">
-                            Background Art
-                        </span>
-                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
-                            LAYOUT
-                        </span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
-                        <div>
-                            <span class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider block mb-1">Background Art</span>
-                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">Indian Kitchen Layout & Utensils</h3>
-                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Intricately detailed kitchen background with traditional Indian cookware, spices, and domestic warmth.</p>
-                        </div>
-                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-purple-600 dark:text-purple-400">
-                            <span class="flex items-center gap-1.5 cursor-pointer" onclick="openLightbox('Indian Kitchen Layout & Utensils', 'Intricately detailed kitchen background with traditional Indian cookware, spices, and domestic warmth.', 'Background Art', './Thumbnail%20and%20Bg%20art/Bg%20art/compo%20kitchen.png')"><i class="fa-solid fa-image"></i> Inspect Full Res</span>
-                            <span class="text-slate-400 dark:text-slate-500 font-normal">Environment Art</span>
-                        </div>
-                    </div>
-                </article>
-                <!-- Card: Kitchen Angle & Depth Pass -->
-                <article data-categories="bg-art" class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
-                    <div onclick="openLightbox('Kitchen Angle & Depth Pass', 'Cinematic medium background perspective with realistic atmospheric perspective and depth layers.', 'Background Art', './Thumbnail%20and%20Bg%20art/Bg%20art/kitchensceneclse.png')" class="relative aspect-square bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
-                        <img src="./Thumbnail%20and%20Bg%20art/Bg%20art/kitchensceneclse.png" alt="Kitchen Angle & Depth Pass" loading="lazy" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
-                            <div class="w-14 h-14 rounded-full bg-purple-500 text-white comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
-                                <i class="fa-solid fa-expand text-xl"></i>
-                            </div>
-                        </div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-purple-600 text-white font-bold text-[10px] uppercase comic-border-thin">
-                            Background Art
-                        </span>
-                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
-                            LAYOUT
-                        </span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
-                        <div>
-                            <span class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider block mb-1">Background Art</span>
-                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">Kitchen Angle & Depth Pass</h3>
-                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Cinematic medium background perspective with realistic atmospheric perspective and depth layers.</p>
-                        </div>
-                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-purple-600 dark:text-purple-400">
-                            <span class="flex items-center gap-1.5 cursor-pointer" onclick="openLightbox('Kitchen Angle & Depth Pass', 'Cinematic medium background perspective with realistic atmospheric perspective and depth layers.', 'Background Art', './Thumbnail%20and%20Bg%20art/Bg%20art/kitchensceneclse.png')"><i class="fa-solid fa-image"></i> Inspect Full Res</span>
-                            <span class="text-slate-400 dark:text-slate-500 font-normal">Environment Art</span>
-                        </div>
-                    </div>
-                </article>
-                <!-- Card: Village Cottage Landscape -->
-                <article data-categories="bg-art" class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
-                    <div onclick="openLightbox('Village Cottage Landscape', 'Rural rustic village landscape featuring traditional clay tile roofs and natural flora composition.', 'Background Art', './Thumbnail%20and%20Bg%20art/Bg%20art/scene1vlgghouse.png')" class="relative aspect-square bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
-                        <img src="./Thumbnail%20and%20Bg%20art/Bg%20art/scene1vlgghouse.png" alt="Village Cottage Landscape" loading="lazy" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
-                            <div class="w-14 h-14 rounded-full bg-purple-500 text-white comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
-                                <i class="fa-solid fa-expand text-xl"></i>
-                            </div>
-                        </div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-purple-600 text-white font-bold text-[10px] uppercase comic-border-thin">
-                            Background Art
-                        </span>
-                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
-                            LAYOUT
-                        </span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
-                        <div>
-                            <span class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider block mb-1">Background Art</span>
-                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">Village Cottage Landscape</h3>
-                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Rural rustic village landscape featuring traditional clay tile roofs and natural flora composition.</p>
-                        </div>
-                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-purple-600 dark:text-purple-400">
-                            <span class="flex items-center gap-1.5 cursor-pointer" onclick="openLightbox('Village Cottage Landscape', 'Rural rustic village landscape featuring traditional clay tile roofs and natural flora composition.', 'Background Art', './Thumbnail%20and%20Bg%20art/Bg%20art/scene1vlgghouse.png')"><i class="fa-solid fa-image"></i> Inspect Full Res</span>
-                            <span class="text-slate-400 dark:text-slate-500 font-normal">Environment Art</span>
-                        </div>
-                    </div>
-                </article>
-                <!-- Thumbnail Card: 81lHPY0KEto-HD -->
-                <article data-categories="thumbnails" class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
-                    <div onclick="openYouTubeModal('LwglxQbEiZ8', '81lHPY0KEto-HD')" class="relative aspect-square bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
-                        <img src="./Thumbnail%20and%20Bg%20art/81lHPY0KEto-HD.jpg" alt="81lHPY0KEto-HD" loading="lazy" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
-                            <div class="w-14 h-14 rounded-full bg-red-600 text-white comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
-                                <i class="fa-brands fa-youtube text-2xl"></i>
-                            </div>
-                        </div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-rose-600 text-white font-bold text-[10px] uppercase comic-border-thin">
-                            YouTube Thumbnail
-                        </span>
-                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
-                            YOUTUBE
-                        </span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
-                        <div>
-                            <span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wider block mb-1">YouTube Thumbnail</span>
-                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">81lHPY0KEto-HD</h3>
-                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">High-CTR illustrated thumbnail designed for viral audience conversion.</p>
-                        </div>
-                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-red-600 dark:text-red-400">
-                            <button onclick="openYouTubeModal('LwglxQbEiZ8', '81lHPY0KEto-HD')" class="flex items-center gap-1.5 hover:underline">
-                                <i class="fa-solid fa-play"></i> Watch on YouTube
-                            </button>
-                            <button onclick="openLightbox('81lHPY0KEto-HD', 'High-CTR illustrated thumbnail designed for viral audience conversion.', 'YouTube Thumbnail', './Thumbnail%20and%20Bg%20art/81lHPY0KEto-HD.jpg')" class="text-slate-400 dark:text-slate-500 font-normal hover:text-comical-hair dark:hover:text-white">
-                                View Still
-                            </button>
-                        </div>
-                    </div>
-                </article>
-                <!-- Thumbnail Card: AWBmGpWozvw-HD -->
-                <article data-categories="thumbnails" class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
-                    <div onclick="openYouTubeModal('LwglxQbEiZ8', 'AWBmGpWozvw-HD')" class="relative aspect-square bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
-                        <img src="./Thumbnail%20and%20Bg%20art/AWBmGpWozvw-HD.jpg" alt="AWBmGpWozvw-HD" loading="lazy" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
-                            <div class="w-14 h-14 rounded-full bg-red-600 text-white comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
-                                <i class="fa-brands fa-youtube text-2xl"></i>
-                            </div>
-                        </div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-rose-600 text-white font-bold text-[10px] uppercase comic-border-thin">
-                            YouTube Thumbnail
-                        </span>
-                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
-                            YOUTUBE
-                        </span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
-                        <div>
-                            <span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wider block mb-1">YouTube Thumbnail</span>
-                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">AWBmGpWozvw-HD</h3>
-                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">High-CTR illustrated thumbnail designed for viral audience conversion.</p>
-                        </div>
-                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-red-600 dark:text-red-400">
-                            <button onclick="openYouTubeModal('LwglxQbEiZ8', 'AWBmGpWozvw-HD')" class="flex items-center gap-1.5 hover:underline">
-                                <i class="fa-solid fa-play"></i> Watch on YouTube
-                            </button>
-                            <button onclick="openLightbox('AWBmGpWozvw-HD', 'High-CTR illustrated thumbnail designed for viral audience conversion.', 'YouTube Thumbnail', './Thumbnail%20and%20Bg%20art/AWBmGpWozvw-HD.jpg')" class="text-slate-400 dark:text-slate-500 font-normal hover:text-comical-hair dark:hover:text-white">
-                                View Still
-                            </button>
-                        </div>
-                    </div>
-                </article>
-                <!-- Thumbnail Card: Eka5RRjPN2U-HD -->
-                <article data-categories="thumbnails" class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
-                    <div onclick="openYouTubeModal('LwglxQbEiZ8', 'Eka5RRjPN2U-HD')" class="relative aspect-square bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
-                        <img src="./Thumbnail%20and%20Bg%20art/Eka5RRjPN2U-HD.jpg" alt="Eka5RRjPN2U-HD" loading="lazy" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
-                            <div class="w-14 h-14 rounded-full bg-red-600 text-white comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
-                                <i class="fa-brands fa-youtube text-2xl"></i>
-                            </div>
-                        </div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-rose-600 text-white font-bold text-[10px] uppercase comic-border-thin">
-                            YouTube Thumbnail
-                        </span>
-                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
-                            YOUTUBE
-                        </span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
-                        <div>
-                            <span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wider block mb-1">YouTube Thumbnail</span>
-                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">Eka5RRjPN2U-HD</h3>
-                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">High-CTR illustrated thumbnail designed for viral audience conversion.</p>
-                        </div>
-                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-red-600 dark:text-red-400">
-                            <button onclick="openYouTubeModal('LwglxQbEiZ8', 'Eka5RRjPN2U-HD')" class="flex items-center gap-1.5 hover:underline">
-                                <i class="fa-solid fa-play"></i> Watch on YouTube
-                            </button>
-                            <button onclick="openLightbox('Eka5RRjPN2U-HD', 'High-CTR illustrated thumbnail designed for viral audience conversion.', 'YouTube Thumbnail', './Thumbnail%20and%20Bg%20art/Eka5RRjPN2U-HD.jpg')" class="text-slate-400 dark:text-slate-500 font-normal hover:text-comical-hair dark:hover:text-white">
-                                View Still
-                            </button>
-                        </div>
-                    </div>
-                </article>
-                <!-- Thumbnail Card: LwglxQbEiZ8-HD -->
-                <article data-categories="thumbnails" class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
-                    <div onclick="openYouTubeModal('LwglxQbEiZ8', 'LwglxQbEiZ8-HD')" class="relative aspect-square bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
-                        <img src="./Thumbnail%20and%20Bg%20art/LwglxQbEiZ8-HD.jpg" alt="LwglxQbEiZ8-HD" loading="lazy" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
-                            <div class="w-14 h-14 rounded-full bg-red-600 text-white comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
-                                <i class="fa-brands fa-youtube text-2xl"></i>
-                            </div>
-                        </div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-rose-600 text-white font-bold text-[10px] uppercase comic-border-thin">
-                            YouTube Thumbnail
-                        </span>
-                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
-                            YOUTUBE
-                        </span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
-                        <div>
-                            <span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wider block mb-1">YouTube Thumbnail</span>
-                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">LwglxQbEiZ8-HD</h3>
-                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">High-CTR illustrated thumbnail designed for viral audience conversion.</p>
-                        </div>
-                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-red-600 dark:text-red-400">
-                            <button onclick="openYouTubeModal('LwglxQbEiZ8', 'LwglxQbEiZ8-HD')" class="flex items-center gap-1.5 hover:underline">
-                                <i class="fa-solid fa-play"></i> Watch on YouTube
-                            </button>
-                            <button onclick="openLightbox('LwglxQbEiZ8-HD', 'High-CTR illustrated thumbnail designed for viral audience conversion.', 'YouTube Thumbnail', './Thumbnail%20and%20Bg%20art/LwglxQbEiZ8-HD.jpg')" class="text-slate-400 dark:text-slate-500 font-normal hover:text-comical-hair dark:hover:text-white">
-                                View Still
-                            </button>
-                        </div>
-                    </div>
-                </article>
-                <!-- Thumbnail Card: NxF9QU0oFrI-HD -->
-                <article data-categories="thumbnails" class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
-                    <div onclick="openYouTubeModal('LwglxQbEiZ8', 'NxF9QU0oFrI-HD')" class="relative aspect-square bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
-                        <img src="./Thumbnail%20and%20Bg%20art/NxF9QU0oFrI-HD.jpg" alt="NxF9QU0oFrI-HD" loading="lazy" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
-                            <div class="w-14 h-14 rounded-full bg-red-600 text-white comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
-                                <i class="fa-brands fa-youtube text-2xl"></i>
-                            </div>
-                        </div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-rose-600 text-white font-bold text-[10px] uppercase comic-border-thin">
-                            YouTube Thumbnail
-                        </span>
-                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
-                            YOUTUBE
-                        </span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
-                        <div>
-                            <span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wider block mb-1">YouTube Thumbnail</span>
-                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">NxF9QU0oFrI-HD</h3>
-                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">High-CTR illustrated thumbnail designed for viral audience conversion.</p>
-                        </div>
-                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-red-600 dark:text-red-400">
-                            <button onclick="openYouTubeModal('LwglxQbEiZ8', 'NxF9QU0oFrI-HD')" class="flex items-center gap-1.5 hover:underline">
-                                <i class="fa-solid fa-play"></i> Watch on YouTube
-                            </button>
-                            <button onclick="openLightbox('NxF9QU0oFrI-HD', 'High-CTR illustrated thumbnail designed for viral audience conversion.', 'YouTube Thumbnail', './Thumbnail%20and%20Bg%20art/NxF9QU0oFrI-HD.jpg')" class="text-slate-400 dark:text-slate-500 font-normal hover:text-comical-hair dark:hover:text-white">
-                                View Still
-                            </button>
-                        </div>
-                    </div>
-                </article>
-                <!-- Thumbnail Card: zelvMsPGXRM-HD -->
-                <article data-categories="thumbnails" class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300">
-                    <div onclick="openYouTubeModal('LwglxQbEiZ8', 'zelvMsPGXRM-HD')" class="relative aspect-square bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb">
-                        <img src="./Thumbnail%20and%20Bg%20art/zelvMsPGXRM-HD.jpg" alt="zelvMsPGXRM-HD" loading="lazy" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
-                            <div class="w-14 h-14 rounded-full bg-red-600 text-white comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
-                                <i class="fa-brands fa-youtube text-2xl"></i>
-                            </div>
-                        </div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-rose-600 text-white font-bold text-[10px] uppercase comic-border-thin">
-                            YouTube Thumbnail
-                        </span>
-                        <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
-                            YOUTUBE
-                        </span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors">
-                        <div>
-                            <span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wider block mb-1">YouTube Thumbnail</span>
-                            <h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">zelvMsPGXRM-HD</h3>
-                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">High-CTR illustrated thumbnail designed for viral audience conversion.</p>
-                        </div>
-                        <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-red-600 dark:text-red-400">
-                            <button onclick="openYouTubeModal('LwglxQbEiZ8', 'zelvMsPGXRM-HD')" class="flex items-center gap-1.5 hover:underline">
-                                <i class="fa-solid fa-play"></i> Watch on YouTube
-                            </button>
-                            <button onclick="openLightbox('zelvMsPGXRM-HD', 'High-CTR illustrated thumbnail designed for viral audience conversion.', 'YouTube Thumbnail', './Thumbnail%20and%20Bg%20art/zelvMsPGXRM-HD.jpg')" class="text-slate-400 dark:text-slate-500 font-normal hover:text-comical-hair dark:hover:text-white">
-                                View Still
-                            </button>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
 
-    <!-- Lightbox Modal -->
-    <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex-col items-center justify-center p-4">
-        <div class="relative max-w-4xl w-full flex flex-col items-center">
-            <div class="w-full flex justify-between items-center text-white mb-3 px-2">
-                <div>
-                    <span id="lb-badge" class="px-2.5 py-1 rounded-lg bg-purple-500 text-white font-bold text-xs uppercase mr-2 comic-border-thin">PREVIEW</span>
-                    <h3 id="lb-title" class="inline font-display text-2xl tracking-wide">Image Preview</h3>
-                    <p id="lb-desc" class="text-xs text-slate-300 mt-1"></p>
-                </div>
-                <button onclick="closeLightbox()" class="text-slate-400 hover:text-white text-3xl font-bold p-2 transition">&times;</button>
-            </div>
-            <div class="relative bg-black rounded-2xl comic-border overflow-hidden max-h-[75vh] flex items-center justify-center shadow-comic-lg">
-                <img id="lb-image" src="" alt="Full view" class="max-h-[75vh] w-auto max-w-full object-contain">
-            </div>
-        </div>
-    </div>
+</div>
+</div>
+</article>
+<!-- Thumbnail Card: AWBmGpWozvw-HD -->
+<article class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300" data-categories="thumbnails">
+<div aria-label="Preview image: AWBmGpWozvw-HD" class="relative bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb w-full min-h-0 relative" onclick="openLightbox('AWBmGpWozvw-HD', 'High-CTR illustrated thumbnail designed for viral audience conversion.', 'YouTube Thumbnail', './Thumbnail%20and%20Bg%20art/AWBmGpWozvw-HD.jpg')" role="button" style="flex: 0 0 80%;" tabindex="0">
+<img alt="AWBmGpWozvw-HD" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300" loading="lazy" src="./Thumbnail%20and%20Bg%20art/AWBmGpWozvw-HD.jpg"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+<div class="w-14 h-14 rounded-full bg-purple-500 text-white comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+<i class="fa-solid fa-expand text-xl"></i>
+</div>
+</div>
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-rose-600 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            YouTube Thumbnail
+                        </span>
+<span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            YOUTUBE
+                        </span>
+</div>
+<div class="flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors px-4 py-3 min-h-0 overflow-hidden" style="flex: 0 0 20%;">
+<div>
+<span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wider block mb-1">YouTube Thumbnail</span>
+<h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">AWBmGpWozvw-HD</h3>
+<p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">High-CTR illustrated thumbnail designed for viral audience conversion.</p>
+</div>
+<div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-red-600 dark:text-red-400">
 
-    <!-- YouTube Modal Player -->
-    <div id="youtube-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex-col items-center justify-center p-4">
-        <div class="relative max-w-4xl w-full flex flex-col items-center">
-            <div class="w-full flex justify-between items-center text-white mb-3 px-2">
-                <div>
-                    <span class="px-2.5 py-1 rounded-lg bg-red-600 text-white font-bold text-xs uppercase mr-2 comic-border-thin">YOUTUBE</span>
-                    <h3 id="yt-title" class="inline font-display text-2xl tracking-wide">YouTube Video</h3>
-                </div>
-                <button onclick="closeYouTubeModal()" class="text-slate-400 hover:text-white text-3xl font-bold p-2 transition">&times;</button>
-            </div>
-            <div class="relative w-full aspect-video bg-black rounded-2xl comic-border overflow-hidden shadow-comic-lg">
-                <iframe id="yt-iframe" class="w-full h-full" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
 
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="py-12 bg-comical-hair text-white border-t-3 border-comical-hair">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-700">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl bg-purple-500 text-white comic-border-thin flex items-center justify-center font-display text-xl">
+</div>
+</div>
+</article>
+<!-- Thumbnail Card: Eka5RRjPN2U-HD -->
+<article class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300" data-categories="thumbnails">
+<div aria-label="Preview image: Eka5RRjPN2U-HD" class="relative bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb w-full min-h-0 relative" onclick="openLightbox('Eka5RRjPN2U-HD', 'High-CTR illustrated thumbnail designed for viral audience conversion.', 'YouTube Thumbnail', './Thumbnail%20and%20Bg%20art/Eka5RRjPN2U-HD.jpg')" role="button" style="flex: 0 0 80%;" tabindex="0">
+<img alt="Eka5RRjPN2U-HD" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300" loading="lazy" src="./Thumbnail%20and%20Bg%20art/Eka5RRjPN2U-HD.jpg"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+<div class="w-14 h-14 rounded-full bg-purple-500 text-white comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+<i class="fa-solid fa-expand text-xl"></i>
+</div>
+</div>
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-rose-600 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            YouTube Thumbnail
+                        </span>
+<span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            YOUTUBE
+                        </span>
+</div>
+<div class="flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors px-4 py-3 min-h-0 overflow-hidden" style="flex: 0 0 20%;">
+<div>
+<span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wider block mb-1">YouTube Thumbnail</span>
+<h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">Eka5RRjPN2U-HD</h3>
+<p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">High-CTR illustrated thumbnail designed for viral audience conversion.</p>
+</div>
+<div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-red-600 dark:text-red-400">
+
+
+</div>
+</div>
+</article>
+<!-- Thumbnail Card: LwglxQbEiZ8-HD -->
+<article class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300" data-categories="thumbnails">
+<div aria-label="Preview image: LwglxQbEiZ8-HD" class="relative bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb w-full min-h-0 relative" onclick="openLightbox('LwglxQbEiZ8-HD', 'High-CTR illustrated thumbnail designed for viral audience conversion.', 'YouTube Thumbnail', './Thumbnail%20and%20Bg%20art/LwglxQbEiZ8-HD.jpg')" role="button" style="flex: 0 0 80%;" tabindex="0">
+<img alt="LwglxQbEiZ8-HD" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300" loading="lazy" src="./Thumbnail%20and%20Bg%20art/LwglxQbEiZ8-HD.jpg"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+<div class="w-14 h-14 rounded-full bg-purple-500 text-white comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+<i class="fa-solid fa-expand text-xl"></i>
+</div>
+</div>
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-rose-600 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            YouTube Thumbnail
+                        </span>
+<span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            YOUTUBE
+                        </span>
+</div>
+<div class="flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors px-4 py-3 min-h-0 overflow-hidden" style="flex: 0 0 20%;">
+<div>
+<span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wider block mb-1">YouTube Thumbnail</span>
+<h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">LwglxQbEiZ8-HD</h3>
+<p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">High-CTR illustrated thumbnail designed for viral audience conversion.</p>
+</div>
+<div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-red-600 dark:text-red-400">
+
+
+</div>
+</div>
+</article>
+<!-- Thumbnail Card: NxF9QU0oFrI-HD -->
+<article class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300" data-categories="thumbnails">
+<div aria-label="Preview image: NxF9QU0oFrI-HD" class="relative bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb w-full min-h-0 relative" onclick="openLightbox('NxF9QU0oFrI-HD', 'High-CTR illustrated thumbnail designed for viral audience conversion.', 'YouTube Thumbnail', './Thumbnail%20and%20Bg%20art/NxF9QU0oFrI-HD.jpg')" role="button" style="flex: 0 0 80%;" tabindex="0">
+<img alt="NxF9QU0oFrI-HD" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300" loading="lazy" src="./Thumbnail%20and%20Bg%20art/NxF9QU0oFrI-HD.jpg"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+<div class="w-14 h-14 rounded-full bg-purple-500 text-white comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+<i class="fa-solid fa-expand text-xl"></i>
+</div>
+</div>
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-rose-600 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            YouTube Thumbnail
+                        </span>
+<span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            YOUTUBE
+                        </span>
+</div>
+<div class="flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors px-4 py-3 min-h-0 overflow-hidden" style="flex: 0 0 20%;">
+<div>
+<span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wider block mb-1">YouTube Thumbnail</span>
+<h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">NxF9QU0oFrI-HD</h3>
+<p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">High-CTR illustrated thumbnail designed for viral audience conversion.</p>
+</div>
+<div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-red-600 dark:text-red-400">
+
+
+</div>
+</div>
+</article>
+<!-- Thumbnail Card: zelvMsPGXRM-HD -->
+<article class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300" data-categories="thumbnails">
+<div aria-label="Preview image: zelvMsPGXRM-HD" class="relative bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb w-full min-h-0 relative" onclick="openLightbox('zelvMsPGXRM-HD', 'High-CTR illustrated thumbnail designed for viral audience conversion.', 'YouTube Thumbnail', './Thumbnail%20and%20Bg%20art/zelvMsPGXRM-HD.jpg')" role="button" style="flex: 0 0 80%;" tabindex="0">
+<img alt="zelvMsPGXRM-HD" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300" loading="lazy" src="./Thumbnail%20and%20Bg%20art/zelvMsPGXRM-HD.jpg"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+<div class="w-14 h-14 rounded-full bg-purple-500 text-white comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
+<i class="fa-solid fa-expand text-xl"></i>
+</div>
+</div>
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-rose-600 text-white font-bold text-[10px] uppercase comic-border-thin">
+                            YouTube Thumbnail
+                        </span>
+<span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
+                            YOUTUBE
+                        </span>
+</div>
+<div class="flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors px-4 py-3 min-h-0 overflow-hidden" style="flex: 0 0 20%;">
+<div>
+<span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wider block mb-1">YouTube Thumbnail</span>
+<h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">zelvMsPGXRM-HD</h3>
+<p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">High-CTR illustrated thumbnail designed for viral audience conversion.</p>
+</div>
+<div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-red-600 dark:text-red-400">
+
+
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- Lightbox Modal -->
+<div class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex-col items-center justify-center p-4" id="lightbox-modal">
+<div class="relative max-w-4xl w-full flex flex-col items-center">
+<div class="w-full flex justify-between items-center text-white mb-3 px-2">
+<div>
+<span class="px-2.5 py-1 rounded-lg bg-purple-500 text-white font-bold text-xs uppercase mr-2 comic-border-thin" id="lb-badge">PREVIEW</span>
+<h3 class="inline font-display text-2xl tracking-wide" id="lb-title">Image Preview</h3>
+<p class="text-xs text-slate-300 mt-1" id="lb-desc"></p>
+</div>
+<button class="text-slate-400 hover:text-white text-3xl font-bold p-2 transition" onclick="closeLightbox()">×</button>
+</div>
+<div class="relative bg-black rounded-2xl comic-border overflow-hidden max-h-[75vh] flex items-center justify-center shadow-comic-lg">
+<img alt="Full view" class="max-h-[75vh] w-auto max-w-full object-contain" id="lb-image" src=""/>
+</div>
+</div>
+</div>
+<!-- YouTube Modal Player -->
+<div class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex-col items-center justify-center p-4" id="youtube-modal">
+<div class="relative max-w-4xl w-full flex flex-col items-center">
+<div class="w-full flex justify-between items-center text-white mb-3 px-2">
+<div>
+<span class="px-2.5 py-1 rounded-lg bg-red-600 text-white font-bold text-xs uppercase mr-2 comic-border-thin">YOUTUBE</span>
+<h3 class="inline font-display text-2xl tracking-wide" id="yt-title">YouTube Video</h3>
+</div>
+<button class="text-slate-400 hover:text-white text-3xl font-bold p-2 transition" onclick="closeYouTubeModal()">×</button>
+</div>
+<div class="relative w-full aspect-video bg-black rounded-2xl comic-border overflow-hidden shadow-comic-lg">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="w-full h-full" frameborder="0" id="yt-iframe" src="" title="YouTube video player"></iframe>
+</div>
+</div>
+</div>
+<!-- ==================== FOOTER ==================== -->
+<footer class="py-12 bg-comical-hair text-white border-t-3 border-comical-hair">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col sm:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-700">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-purple-500 text-white comic-border-thin flex items-center justify-center font-display text-xl">
                         C!
                     </div>
-                    <span class="font-display font-bold text-2xl tracking-wide">COMICAL</span>
-                </div>
-
-                <div class="flex items-center gap-4 text-sm font-semibold">
-                    <a href="index.html" class="hover:text-purple-300 transition">Home</a>
-                    <span>&bull;</span>
-                    <a href="2d.html" class="hover:text-amber-300 transition">2D Work</a>
-                    <span>&bull;</span>
-                    <a href="3d.html" class="hover:text-sky-300 transition">3D Work</a>
-                    <span>&bull;</span>
-                    <a href="illustration.html" class="text-purple-400 font-bold">Illustration</a>
-                </div>
-
-                <div class="flex items-center gap-3">
-                    <a href="https://www.youtube.com/@iamcomical5050" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-rose-600 flex items-center justify-center text-white transition">
-                        <i class="fa-brands fa-youtube"></i>
-                    </a>
-                    <a href="https://www.instagram.com/rp.comical/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-pink-600 flex items-center justify-center text-white transition">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                    <a href="mailto:backupu795@gmail.com" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-amber-400 hover:text-slate-900 flex items-center justify-center text-white transition">
-                        <i class="fa-solid fa-envelope"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-                <p>&copy; 2026 COMICAL STUDIO. Illustration &amp; YouTube Thumbnails Portfolio.</p>
-                <p>Email: <a href="mailto:backupu795@gmail.com" class="hover:text-purple-400 font-semibold underline">backupu795@gmail.com</a></p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- ==================== JAVASCRIPT CONTROLLERS ==================== -->
-    <script>
+<span class="font-display font-bold text-2xl tracking-wide">COMICAL</span>
+</div>
+<div class="footer-mobile-nav flex items-center gap-4 text-sm font-semibold">
+<a class="hover:text-purple-300 transition" href="index.html">Home</a>
+<span>•</span>
+<a class="hover:text-amber-300 transition" href="2d.html">2D Work</a>
+<span>•</span>
+<a class="hover:text-sky-300 transition" href="3d.html">3D Work</a>
+<span>•</span>
+<a class="text-purple-400 font-bold" href="illustration.html">Illustration</a>
+</div>
+<div class="flex items-center gap-3">
+<a class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-rose-600 flex items-center justify-center text-white transition" href="https://www.youtube.com/@iamcomical5050" rel="noopener noreferrer" target="_blank">
+<i class="fa-brands fa-youtube"></i>
+</a>
+<a class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-pink-600 flex items-center justify-center text-white transition" href="https://www.instagram.com/rp.comical/" rel="noopener noreferrer" target="_blank">
+<i class="fa-brands fa-instagram"></i>
+</a>
+<a class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-amber-400 hover:text-slate-900 flex items-center justify-center text-white transition" href="mailto:backupu795@gmail.com">
+<i class="fa-solid fa-envelope"></i>
+</a>
+</div>
+</div>
+<div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+<p>© 2026 COMICAL STUDIO. Illustration &amp; YouTube Thumbnails Portfolio.</p>
+<p>Email: <a class="hover:text-purple-400 font-semibold underline" href="mailto:backupu795@gmail.com">backupu795@gmail.com</a></p>
+</div>
+</div>
+</footer>
+<!-- ==================== JAVASCRIPT CONTROLLERS ==================== -->
+<script>
         // ==================== DARK MODE TOGGLE CONTROLLER ====================
         function initTheme() {
             var theme = localStorage.getItem('comical_theme');
@@ -925,5 +986,52 @@
             }
         });
     </script>
-</body>
+<script>
+(function(){
+  var header=document.getElementById('main-header');
+  if(!header) return;
+  var ticking=false;
+  function update(){header.classList.toggle('is-scrolled',window.scrollY>28);ticking=false;}
+  window.addEventListener('scroll',function(){if(!ticking){window.requestAnimationFrame(update);ticking=true;}},{passive:true});
+  update();
+})();
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  if(!window.matchMedia('(max-width:767px)').matches) return;
+  var selector = document.querySelector('#grid-3d') ? '#grid-3d .project-card-3d' : '#grid-illu .project-card-illu';
+  document.querySelectorAll(selector).forEach(function(card){
+    var info=card.querySelector(':scope > div:last-child');
+    if(!info) return;
+    var main=info.querySelector(':scope > div:first-child');
+    if(!main) return;
+    var title=main.querySelector('h3');
+    var description=main.querySelector('p');
+    if(!title || !description) return;
+    var row=document.createElement('div');row.className='mobile-title-row';
+    title.parentNode.insertBefore(row,title);row.appendChild(title);
+    var toggle=document.createElement('button');
+    toggle.type='button';toggle.className='mobile-description-toggle';
+    toggle.setAttribute('aria-label','Show project description');toggle.setAttribute('aria-expanded','false');
+    toggle.innerHTML='<i class="fa-solid fa-chevron-down" aria-hidden="true"></i>';
+    toggle.addEventListener('click',function(e){
+      e.stopPropagation();
+      var open=card.classList.toggle('mobile-description-open');
+      toggle.setAttribute('aria-expanded',String(open));
+      toggle.setAttribute('aria-label',open?'Hide project description':'Show project description');
+      toggle.innerHTML=open?'<i class="fa-solid fa-chevron-up" aria-hidden="true"></i>':'<i class="fa-solid fa-chevron-down" aria-hidden="true"></i>';
+    });
+    row.appendChild(toggle);
+  });
+});
+</script>
+<script>
+document.addEventListener('keydown', function(e) {
+  var thumb = e.target.closest && e.target.closest('#grid-illu .project-card-illu > div:first-child[role="button"]');
+  if (thumb && (e.key === 'Enter' || e.key === ' ')) {
+    e.preventDefault();
+    thumb.click();
+  }
+});
+</script></body>
 </html>
