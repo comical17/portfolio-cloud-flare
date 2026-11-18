@@ -254,6 +254,43 @@
   #grid-illu .project-card-illu > div:last-child { padding: 7px 9px !important; }
   #grid-illu .project-card-illu h3 { font-size: 11px !important; }
 }
+
+/* Compact image-only cards for the supplied illustration PNG gallery */
+#grid-illu .compact-illustration-png {
+  height: auto !important;
+  min-height: 0 !important;
+  border-width: 2px !important;
+  border-radius: 16px !important;
+  cursor: pointer;
+}
+#grid-illu .compact-illustration-png .compact-image-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  min-height: 0;
+  overflow: hidden;
+  background: #0f172a;
+}
+#grid-illu .compact-illustration-png img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .3s ease;
+}
+#grid-illu .compact-illustration-png:hover img { transform: scale(1.04); }
+#grid-illu .compact-illustration-png .compact-filename {
+  padding: 7px 9px;
+  font-size: 11px;
+  line-height: 1.25;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  #grid-illu .compact-illustration-png { border-radius: 12px !important; }
+  #grid-illu .compact-illustration-png .compact-filename { padding: 6px 5px; font-size: 9px; }
+}
+
 </style></head>
 <body class="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 font-sans selection:bg-purple-300 selection:text-comical-hair transition-colors duration-200">
 <!-- Custom Cursor -->
@@ -403,8 +440,8 @@
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="grid-illu">
 <!-- Card: Classroom Interior Background -->
 <article class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300" data-categories="bg-art">
-<div aria-label="Preview image: Classroom Interior Background" class="relative bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb w-full min-h-0 relative" onclick="openLightbox('Classroom Interior Background', 'Anime-inspired school classroom layout with detailed desks, windows, and warm sunlit atmosphere.', 'Background Art', './Thumbnail%20and%20Bg%20art/Bg%20art/11bgsa.png')" role="button" style="flex: 0 0 80%;" tabindex="0">
-<img alt="Classroom Interior Background" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300" loading="lazy" src="./Thumbnail%20and%20Bg%20art/Bg%20art/11bgsa.png"/>
+<div aria-label="Preview image: Classroom Interior Background" class="relative bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb w-full min-h-0 relative" onclick="openLightbox('Classroom Interior Background', 'Anime-inspired school classroom layout with detailed desks, windows, and warm sunlit atmosphere.', 'Background Art', './Thumbnail%20and%20Bg%20art/Bg%20art/classroom.png')" role="button" style="flex: 0 0 80%;" tabindex="0">
+<img alt="Classroom Interior Background" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300" loading="lazy" src="./Thumbnail%20and%20Bg%20art/Bg%20art/classroom.png"/>
 <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
 <div class="w-14 h-14 rounded-full bg-purple-500 text-white comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
 <i class="fa-solid fa-expand text-xl"></i>
@@ -424,39 +461,12 @@
 <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Anime-inspired school classroom layout with detailed desks, windows, and warm sunlit atmosphere.</p>
 </div>
 <div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-purple-600 dark:text-purple-400">
-<span class="flex items-center gap-1.5 cursor-pointer" onclick="openLightbox('Classroom Interior Background', 'Anime-inspired school classroom layout with detailed desks, windows, and warm sunlit atmosphere.', 'Background Art', './Thumbnail%20and%20Bg%20art/Bg%20art/11bgsa.png')"><i class="fa-solid fa-image"></i> Inspect Full Res</span>
+<span class="flex items-center gap-1.5 cursor-pointer" onclick="openLightbox('Classroom Interior Background', 'Anime-inspired school classroom layout with detailed desks, windows, and warm sunlit atmosphere.', 'Background Art', './Thumbnail%20and%20Bg%20art/Bg%20art/classroom.png')"><i class="fa-solid fa-image"></i> Inspect Full Res</span>
 <span class="text-slate-400 dark:text-slate-500 font-normal">Environment Art</span>
 </div>
 </div>
 </article>
-<!-- Card: Classroom Confrontation Scene -->
-<article class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300" data-categories="bg-art">
-<div aria-label="Preview image: Classroom Confrontation Scene" class="relative bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb w-full min-h-0 relative" onclick="openLightbox('Classroom Confrontation Scene', 'Animated sequence background showing dynamic classroom scene staging and character positions.', 'Background Art', './Thumbnail%20and%20Bg%20art/Bg%20art/1sir-vs-me-marthi.gif')" role="button" style="flex: 0 0 80%;" tabindex="0">
-<img alt="Classroom Confrontation Scene" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300" loading="lazy" src="./Thumbnail%20and%20Bg%20art/Bg%20art/1sir-vs-me-marthi.gif"/>
-<div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
-<div class="w-14 h-14 rounded-full bg-purple-500 text-white comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
-<i class="fa-solid fa-expand text-xl"></i>
-</div>
-</div>
-<span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-purple-600 text-white font-bold text-[10px] uppercase comic-border-thin">
-                            Background Art
-                        </span>
-<span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
-                            LAYOUT
-                        </span>
-</div>
-<div class="flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors px-4 py-3 min-h-0 overflow-hidden" style="flex: 0 0 20%;">
-<div>
-<span class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider block mb-1">Background Art</span>
-<h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">Classroom Confrontation Scene</h3>
-<p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Animated sequence background showing dynamic classroom scene staging and character positions.</p>
-</div>
-<div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-purple-600 dark:text-purple-400">
-<span class="flex items-center gap-1.5 cursor-pointer" onclick="openLightbox('Classroom Confrontation Scene', 'Animated sequence background showing dynamic classroom scene staging and character positions.', 'Background Art', './Thumbnail%20and%20Bg%20art/Bg%20art/1sir-vs-me-marthi.gif')"><i class="fa-solid fa-image"></i> Inspect Full Res</span>
-<span class="text-slate-400 dark:text-slate-500 font-normal">Environment Art</span>
-</div>
-</div>
-</article>
+
 <!-- Card: Indian Kitchen Layout & Utensils -->
 <article class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300" data-categories="bg-art">
 <div aria-label="Preview image: Indian Kitchen Layout &amp; Utensils" class="relative bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb w-full min-h-0 relative" onclick="openLightbox('Indian Kitchen Layout &amp; Utensils', 'Intricately detailed kitchen background with traditional Indian cookware, spices, and domestic warmth.', 'Background Art', './Thumbnail%20and%20Bg%20art/Bg%20art/compo%20kitchen.png')" role="button" style="flex: 0 0 80%;" tabindex="0">
@@ -541,171 +551,31 @@
 </div>
 </div>
 </article>
-<!-- Thumbnail Card: 81lHPY0KEto-HD -->
-<article class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300" data-categories="thumbnails">
-<div aria-label="Preview image: 81lHPY0KEto-HD" class="relative bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb w-full min-h-0 relative" onclick="openLightbox('81lHPY0KEto-HD', 'High-CTR illustrated thumbnail designed for viral audience conversion.', 'YouTube Thumbnail', './Thumbnail%20and%20Bg%20art/81lHPY0KEto-HD.jpg')" role="button" style="flex: 0 0 80%;" tabindex="0">
-<img alt="81lHPY0KEto-HD" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300" loading="lazy" src="./Thumbnail%20and%20Bg%20art/81lHPY0KEto-HD.jpg"/>
+<!-- Card: Classroom Scene Establishing Art -->
+<article class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300" data-categories="bg-art">
+<div aria-label="Preview image: Classroom Scene Establishing Art" class="relative bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb w-full min-h-0 relative" onclick="openLightbox('Classroom Scene Establishing Art', 'Anime classroom layout composition with warm sunlight and architectural perspective.', 'Background Art', './Thumbnail%20and%20Bg%20art/Bg%20art/11bgsa.png')" role="button" style="flex: 0 0 80%;" tabindex="0">
+<img alt="Classroom Scene Establishing Art" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300" loading="lazy" src="./Thumbnail%20and%20Bg%20art/Bg%20art/11bgsa.png"/>
 <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
 <div class="w-14 h-14 rounded-full bg-purple-500 text-white comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
 <i class="fa-solid fa-expand text-xl"></i>
 </div>
 </div>
-<span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-rose-600 text-white font-bold text-[10px] uppercase comic-border-thin">
-                            YouTube Thumbnail
-                        </span>
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-purple-600 text-white font-bold text-[10px] uppercase comic-border-thin">
+Background Art
+</span>
 <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
-                            YOUTUBE
-                        </span>
+LAYOUT
+</span>
 </div>
 <div class="flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors px-4 py-3 min-h-0 overflow-hidden" style="flex: 0 0 20%;">
 <div>
-<span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wider block mb-1">YouTube Thumbnail</span>
-<h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">81lHPY0KEto-HD</h3>
-<p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">High-CTR illustrated thumbnail designed for viral audience conversion.</p>
+<span class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider block mb-1">Background Art</span>
+<h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">Classroom Scene Establishing Art</h3>
+<p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">Anime classroom layout composition with warm sunlight and architectural perspective.</p>
 </div>
-<div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-red-600 dark:text-red-400">
-
-
-</div>
-</div>
-</article>
-<!-- Thumbnail Card: AWBmGpWozvw-HD -->
-<article class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300" data-categories="thumbnails">
-<div aria-label="Preview image: AWBmGpWozvw-HD" class="relative bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb w-full min-h-0 relative" onclick="openLightbox('AWBmGpWozvw-HD', 'High-CTR illustrated thumbnail designed for viral audience conversion.', 'YouTube Thumbnail', './Thumbnail%20and%20Bg%20art/AWBmGpWozvw-HD.jpg')" role="button" style="flex: 0 0 80%;" tabindex="0">
-<img alt="AWBmGpWozvw-HD" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300" loading="lazy" src="./Thumbnail%20and%20Bg%20art/AWBmGpWozvw-HD.jpg"/>
-<div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
-<div class="w-14 h-14 rounded-full bg-purple-500 text-white comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
-<i class="fa-solid fa-expand text-xl"></i>
-</div>
-</div>
-<span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-rose-600 text-white font-bold text-[10px] uppercase comic-border-thin">
-                            YouTube Thumbnail
-                        </span>
-<span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
-                            YOUTUBE
-                        </span>
-</div>
-<div class="flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors px-4 py-3 min-h-0 overflow-hidden" style="flex: 0 0 20%;">
-<div>
-<span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wider block mb-1">YouTube Thumbnail</span>
-<h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">AWBmGpWozvw-HD</h3>
-<p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">High-CTR illustrated thumbnail designed for viral audience conversion.</p>
-</div>
-<div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-red-600 dark:text-red-400">
-
-
-</div>
-</div>
-</article>
-<!-- Thumbnail Card: Eka5RRjPN2U-HD -->
-<article class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300" data-categories="thumbnails">
-<div aria-label="Preview image: Eka5RRjPN2U-HD" class="relative bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb w-full min-h-0 relative" onclick="openLightbox('Eka5RRjPN2U-HD', 'High-CTR illustrated thumbnail designed for viral audience conversion.', 'YouTube Thumbnail', './Thumbnail%20and%20Bg%20art/Eka5RRjPN2U-HD.jpg')" role="button" style="flex: 0 0 80%;" tabindex="0">
-<img alt="Eka5RRjPN2U-HD" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300" loading="lazy" src="./Thumbnail%20and%20Bg%20art/Eka5RRjPN2U-HD.jpg"/>
-<div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
-<div class="w-14 h-14 rounded-full bg-purple-500 text-white comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
-<i class="fa-solid fa-expand text-xl"></i>
-</div>
-</div>
-<span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-rose-600 text-white font-bold text-[10px] uppercase comic-border-thin">
-                            YouTube Thumbnail
-                        </span>
-<span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
-                            YOUTUBE
-                        </span>
-</div>
-<div class="flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors px-4 py-3 min-h-0 overflow-hidden" style="flex: 0 0 20%;">
-<div>
-<span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wider block mb-1">YouTube Thumbnail</span>
-<h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">Eka5RRjPN2U-HD</h3>
-<p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">High-CTR illustrated thumbnail designed for viral audience conversion.</p>
-</div>
-<div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-red-600 dark:text-red-400">
-
-
-</div>
-</div>
-</article>
-<!-- Thumbnail Card: LwglxQbEiZ8-HD -->
-<article class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300" data-categories="thumbnails">
-<div aria-label="Preview image: LwglxQbEiZ8-HD" class="relative bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb w-full min-h-0 relative" onclick="openLightbox('LwglxQbEiZ8-HD', 'High-CTR illustrated thumbnail designed for viral audience conversion.', 'YouTube Thumbnail', './Thumbnail%20and%20Bg%20art/LwglxQbEiZ8-HD.jpg')" role="button" style="flex: 0 0 80%;" tabindex="0">
-<img alt="LwglxQbEiZ8-HD" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300" loading="lazy" src="./Thumbnail%20and%20Bg%20art/LwglxQbEiZ8-HD.jpg"/>
-<div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
-<div class="w-14 h-14 rounded-full bg-purple-500 text-white comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
-<i class="fa-solid fa-expand text-xl"></i>
-</div>
-</div>
-<span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-rose-600 text-white font-bold text-[10px] uppercase comic-border-thin">
-                            YouTube Thumbnail
-                        </span>
-<span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
-                            YOUTUBE
-                        </span>
-</div>
-<div class="flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors px-4 py-3 min-h-0 overflow-hidden" style="flex: 0 0 20%;">
-<div>
-<span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wider block mb-1">YouTube Thumbnail</span>
-<h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">LwglxQbEiZ8-HD</h3>
-<p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">High-CTR illustrated thumbnail designed for viral audience conversion.</p>
-</div>
-<div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-red-600 dark:text-red-400">
-
-
-</div>
-</div>
-</article>
-<!-- Thumbnail Card: NxF9QU0oFrI-HD -->
-<article class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300" data-categories="thumbnails">
-<div aria-label="Preview image: NxF9QU0oFrI-HD" class="relative bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb w-full min-h-0 relative" onclick="openLightbox('NxF9QU0oFrI-HD', 'High-CTR illustrated thumbnail designed for viral audience conversion.', 'YouTube Thumbnail', './Thumbnail%20and%20Bg%20art/NxF9QU0oFrI-HD.jpg')" role="button" style="flex: 0 0 80%;" tabindex="0">
-<img alt="NxF9QU0oFrI-HD" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300" loading="lazy" src="./Thumbnail%20and%20Bg%20art/NxF9QU0oFrI-HD.jpg"/>
-<div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
-<div class="w-14 h-14 rounded-full bg-purple-500 text-white comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
-<i class="fa-solid fa-expand text-xl"></i>
-</div>
-</div>
-<span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-rose-600 text-white font-bold text-[10px] uppercase comic-border-thin">
-                            YouTube Thumbnail
-                        </span>
-<span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
-                            YOUTUBE
-                        </span>
-</div>
-<div class="flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors px-4 py-3 min-h-0 overflow-hidden" style="flex: 0 0 20%;">
-<div>
-<span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wider block mb-1">YouTube Thumbnail</span>
-<h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">NxF9QU0oFrI-HD</h3>
-<p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">High-CTR illustrated thumbnail designed for viral audience conversion.</p>
-</div>
-<div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-red-600 dark:text-red-400">
-
-
-</div>
-</div>
-</article>
-<!-- Thumbnail Card: zelvMsPGXRM-HD -->
-<article class="project-card-illu group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300" data-categories="thumbnails">
-<div aria-label="Preview image: zelvMsPGXRM-HD" class="relative bg-slate-900 flex items-center justify-center overflow-hidden cursor-pointer group/thumb w-full min-h-0 relative" onclick="openLightbox('zelvMsPGXRM-HD', 'High-CTR illustrated thumbnail designed for viral audience conversion.', 'YouTube Thumbnail', './Thumbnail%20and%20Bg%20art/zelvMsPGXRM-HD.jpg')" role="button" style="flex: 0 0 80%;" tabindex="0">
-<img alt="zelvMsPGXRM-HD" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300" loading="lazy" src="./Thumbnail%20and%20Bg%20art/zelvMsPGXRM-HD.jpg"/>
-<div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
-<div class="w-14 h-14 rounded-full bg-purple-500 text-white comic-border-thin flex items-center justify-center shadow-comic-sm transform scale-90 group-hover/thumb:scale-100 transition-transform">
-<i class="fa-solid fa-expand text-xl"></i>
-</div>
-</div>
-<span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-rose-600 text-white font-bold text-[10px] uppercase comic-border-thin">
-                            YouTube Thumbnail
-                        </span>
-<span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/70 text-white font-mono text-[10px]">
-                            YOUTUBE
-                        </span>
-</div>
-<div class="flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 transition-colors px-4 py-3 min-h-0 overflow-hidden" style="flex: 0 0 20%;">
-<div>
-<span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wider block mb-1">YouTube Thumbnail</span>
-<h3 class="font-display font-bold text-xl text-comical-hair dark:text-white leading-snug">zelvMsPGXRM-HD</h3>
-<p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">High-CTR illustrated thumbnail designed for viral audience conversion.</p>
-</div>
-<div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-red-600 dark:text-red-400">
-
-
+<div class="pt-4 mt-4 border-t-2 border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-bold text-purple-600 dark:text-purple-400">
+<span class="flex items-center gap-1.5 cursor-pointer" onclick="openLightbox('Classroom Scene Establishing Art', 'Anime classroom layout composition with warm sunlight and architectural perspective.', 'Background Art', './Thumbnail%20and%20Bg%20art/Bg%20art/11bgsa.png')"><i class="fa-solid fa-image"></i> Inspect Full Res</span>
+<span class="text-slate-400 dark:text-slate-500 font-normal">Environment Art</span>
 </div>
 </div>
 </article>
@@ -876,42 +746,55 @@
 
         function setFilterIllu(category) {
             currentFilterIllu = category;
-            var cards = document.querySelectorAll('.project-card-illu');
+            var cards = document.querySelectorAll('#grid-illu .project-card-illu');
             var visibleCount = 0;
 
             cards.forEach(function(card) {
-                var cats = (card.getAttribute('data-categories') || card.getAttribute('data-category') || '').split(' ');
-                if (category === 'all' || cats.indexOf(category) !== -1) {
-                    card.style.display = 'flex';
-                    visibleCount++;
-                } else {
-                    card.style.display = 'none';
-                }
+                var cats = (card.getAttribute('data-categories') || card.getAttribute('data-category') || '')
+                    .toLowerCase().trim().split(/\s+/);
+                var show = category === 'all' || cats.indexOf(category) !== -1;
+
+                // !important prevents gallery/layout CSS from accidentally overriding the active filter.
+                card.style.setProperty('display', show ? 'flex' : 'none', 'important');
+                card.setAttribute('aria-hidden', show ? 'false' : 'true');
+                if (show) visibleCount++;
             });
 
-            // Update button styles
             var filterIds = ['all', 'bg-art', 'thumbnails'];
             filterIds.forEach(function(id) {
                 var btn = document.getElementById('filter-btn-' + id);
-                if (btn) {
-                    if (id === category) {
-                        btn.className = 'filter-btn-illu px-4 py-2.5 rounded-xl font-display font-bold text-sm bg-purple-600 text-white comic-border-thin shadow-comic-sm transition';
-                    } else {
-                        btn.className = 'filter-btn-illu px-4 py-2.5 rounded-xl font-display font-bold text-sm bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 comic-border-thin shadow-comic-sm hover:bg-slate-100 dark:hover:bg-slate-700 transition';
-                    }
+                if (!btn) return;
+                if (id === category) {
+                    btn.className = 'filter-btn-illu px-4 py-2.5 rounded-xl font-display font-bold text-sm bg-purple-600 text-white comic-border-thin shadow-comic-sm transition';
+                    btn.setAttribute('aria-pressed', 'true');
+                } else {
+                    btn.className = 'filter-btn-illu px-4 py-2.5 rounded-xl font-display font-bold text-sm bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 comic-border-thin shadow-comic-sm hover:bg-slate-100 dark:hover:bg-slate-700 transition';
+                    btn.setAttribute('aria-pressed', 'false');
                 }
             });
 
             var countEl = document.getElementById('filter-count-illu');
-            if (countEl) {
-                countEl.textContent = 'Showing ' + visibleCount + ' Artworks';
-            }
+            if (countEl) countEl.textContent = 'Showing ' + visibleCount + ' Artworks';
         }
 
         // Backward compatibility
         function resetAllFilters() { setFilterIllu('all'); }
 
         // Modal Controls
+        // Thumbnail cards open only the image lightbox. The displayed title is the
+        // actual image filename (including extension), not a YouTube/video ID.
+        function openThumbnailFromCard(card) {
+            var img = card.querySelector('img');
+            if (!img) return;
+            var src = img.currentSrc || img.src;
+            var filename = decodeURIComponent(src.split('/').pop().split('?')[0]);
+            var title = card.querySelector('h3');
+            if (title) title.textContent = filename;
+            img.alt = filename;
+            card.setAttribute('aria-label', 'Preview image: ' + filename);
+            openLightbox(filename, 'Image preview', 'Thumbnail', src);
+        }
+
         function openLightbox(title, desc, badge, src) {
             document.getElementById('lb-title').textContent = title;
             document.getElementById('lb-desc').textContent = desc;
@@ -972,10 +855,79 @@
             });
         }
 
+
+        // Build a compact PNG-only Illustration gallery from:
+        // ./Thumbnail and Bg art/
+        // Thumbnail cards open the image lightbox only (not YouTube).
+        function buildCompactIllustrationPngGallery() {
+            var grid = document.getElementById('grid-illu');
+            if (!grid) return;
+
+            grid.querySelectorAll('.project-card-illu[data-categories~="thumbnails"]').forEach(function(card) {
+                card.remove();
+            });
+
+            var files = [
+                'I am comical (1).png',
+                'I am comical (2).png',
+                'krishnatoon (2).png',
+                'krishnatoon (4).png',
+                'krishnatoon (6).png',
+                'Wispy.png'
+            ];
+
+            files.forEach(function(fileName) {
+                var path = './Thumbnail%20and%20Bg%20art/' + encodeURIComponent(fileName);
+                var card = document.createElement('article');
+                card.className = 'project-card-illu compact-illustration-png group bg-white dark:bg-slate-800 rounded-2xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300';
+                card.setAttribute('data-categories', 'thumbnails');
+                card.setAttribute('role', 'button');
+                card.setAttribute('tabindex', '0');
+                card.setAttribute('aria-label', 'Preview image: ' + fileName);
+                card.addEventListener('click', function() {
+                    openLightbox(fileName, 'High-CTR illustrated YouTube thumbnail.', 'YouTube Thumbnail', path);
+                });
+                card.addEventListener('keydown', function(event) {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        openLightbox(fileName, 'High-CTR illustrated YouTube thumbnail.', 'YouTube Thumbnail', path);
+                    }
+                });
+
+                var wrap = document.createElement('div');
+                wrap.className = 'compact-image-wrap relative';
+                var badge = document.createElement('span');
+                badge.className = 'absolute top-3 left-3 z-10 px-2.5 py-1 rounded-lg bg-rose-600 text-white font-bold text-[10px] uppercase comic-border-thin';
+                badge.textContent = 'YOUTUBE THUMBNAIL';
+                var img = document.createElement('img');
+                img.src = path;
+                img.alt = fileName;
+                img.loading = 'lazy';
+                img.onerror = function() {
+                    console.warn('Illustration PNG not found:', path);
+                    card.remove();
+                    if (currentFilterIllu === 'thumbnails' || currentFilterIllu === 'all') {
+                        setFilterIllu(currentFilterIllu);
+                    }
+                };
+                wrap.appendChild(img);
+                wrap.appendChild(badge);
+
+                var caption = document.createElement('div');
+                caption.className = 'compact-filename text-comical-hair dark:text-white';
+                caption.textContent = fileName;
+
+                card.appendChild(wrap);
+                card.appendChild(caption);
+                grid.appendChild(card);
+            });
+        }
+
         // Initialize on DOM load
         window.addEventListener('DOMContentLoaded', function() {
             initTheme();
             initSound();
+            buildCompactIllustrationPngGallery();
 
             var params = new URLSearchParams(window.location.search);
             var reqFilter = params.get('filter');

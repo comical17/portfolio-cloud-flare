@@ -938,6 +938,88 @@ Toon Shading
             }
         }
 
+
+        // PNG-only gallery for the user's 3D RENDER folder.
+        // The page is at the project root; keep this path relative so it works locally and on GitHub Pages/Cloudflare.
+        var render3DImageFiles = [
+            'airpod.png',
+            'Bulbs FM.png',
+            'COB FM (1).png',
+            'COB-FM.png',
+            'FM RENDER (1).png',
+            'FM RENDER (5).png',
+            'Fm render.png',
+            'FM-Panel light.png',
+            'mouser1.png',
+            'Pannel light.png',
+            'Pannel lightday.png',
+            'render cushion.png',
+            'RENDERS (1).png',
+            'RENDERS (2).png',
+            'RENDERS (3).png',
+            'RENDERS (10).png',
+            'RENDERS (11).png',
+            'RENDERS (17).png',
+            'SCIFIMOUSE.png',
+            'Spike Guard.png',
+            'switch plates.png',
+            'wall light fm.png',
+            'widlstone (1).png',
+            'widlstone (2).png'
+        ];
+
+        function render3DRenderGallery() {
+            var grid = document.getElementById('grid-3d');
+            if (!grid) return;
+
+            render3DImageFiles.forEach(function(fileName) {
+                var card = document.createElement('a');
+                var imagePath = './3d%20Animation/3D%20RENDER/' + encodeURIComponent(fileName);
+                card.href = imagePath;
+                card.className = 'project-card-3d group bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic overflow-hidden flex flex-col transition-all duration-300 no-underline';
+                card.setAttribute('data-categories', 'render');
+                card.setAttribute('aria-label', 'Preview 3D render ' + fileName);
+                card.setAttribute('role', 'button');
+                card.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    openLightbox(fileName, '3D Render', '3D RENDER', imagePath);
+                });
+
+                var imageWrap = document.createElement('div');
+                imageWrap.className = 'relative bg-slate-100 dark:bg-slate-900 overflow-hidden w-full aspect-square';
+                imageWrap.style.aspectRatio = '1 / 1';
+
+                var img = document.createElement('img');
+                img.src = imagePath;
+                img.alt = fileName;
+                img.loading = 'lazy';
+                img.className = 'w-full h-full object-cover group-hover:scale-105 transition-transform duration-300';
+                img.onerror = function() {
+                    console.warn('3D render image not found:', imagePath);
+                    card.remove();
+                    if (currentFilter3D === 'render' || currentFilter3D === 'all') setFilter3D(currentFilter3D);
+                };
+
+                var badge = document.createElement('span');
+                badge.className = 'absolute top-3 left-3 px-2.5 py-1 rounded-lg font-bold text-[10px] uppercase comic-border-thin bg-sky-400 text-slate-950';
+                badge.textContent = '3D RENDER';
+
+                imageWrap.appendChild(img);
+                imageWrap.appendChild(badge);
+                card.appendChild(imageWrap);
+
+                var details = document.createElement('div');
+                details.className = 'flex-1 flex flex-col justify-center bg-white dark:bg-slate-800 px-5 py-3';
+                var title = document.createElement('h3');
+                title.className = 'font-display font-bold text-base sm:text-lg text-comical-hair dark:text-white leading-snug break-words';
+                title.textContent = fileName;
+                details.appendChild(title);
+                card.appendChild(details);
+
+                grid.appendChild(card);
+            });
+        }
+
         // ==================== 3D FILTER SYSTEM (Requirement 5 & 7) ====================
         // Exact sequence: all, zackd, game, character, product, render
         var currentFilter3D = 'all';
@@ -972,7 +1054,7 @@ Toon Shading
 
             var countEl = document.getElementById('filter-count-3d');
             if (countEl) {
-                countEl.textContent = 'Showing ' + visibleCount + ' Videos';
+                countEl.textContent = 'Showing ' + visibleCount + ' Projects';
             }
         }
 
@@ -1048,6 +1130,8 @@ Toon Shading
             initTheme();
             initSound();
             init3DGLBViewer();
+
+            render3DRenderGallery();
 
             var params = new URLSearchParams(window.location.search);
             var reqFilter = params.get('filter');

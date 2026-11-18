@@ -630,6 +630,130 @@
             }
         }
     </style>
+
+<style>
+/* Mobile video viewer: open edge-to-edge, with a compact floating mini-player option. */
+@media (max-width: 767px) {
+  #video-modal {
+    padding: 0 !important;
+    justify-content: center !important;
+    background: #000 !important;
+    backdrop-filter: none !important;
+  }
+  #video-modal .video-player-shell {
+    width: 100vw !important;
+    max-width: none !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    justify-content: center !important;
+    gap: 0 !important;
+  }
+  #video-modal .video-player-header {
+    position: absolute;
+    z-index: 3;
+    top: max(10px, env(safe-area-inset-top));
+    left: 0;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 12px !important;
+    min-height: 46px;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(0,0,0,.72), transparent);
+  }
+  #video-modal #vid-title { font-size: 13px !important; }
+  #video-modal #vid-badge { font-size: 9px !important; }
+  #video-modal .video-player-stage {
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #video-modal #player-video {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    max-width: 100% !important;
+    object-fit: contain;
+  }
+  #video-modal #youtube-frame-wrap {
+    width: 100% !important;
+    height: 100% !important;
+    aspect-ratio: auto !important;
+  }
+  #video-modal #youtube-frame-wrap iframe {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  #video-modal.video-minimized {
+    inset: auto 12px max(12px, env(safe-area-inset-bottom)) auto !important;
+    width: min(46vw, 190px) !important;
+    height: 118px !important;
+    padding: 0 !important;
+    border-radius: 13px !important;
+    overflow: hidden;
+    background: #111 !important;
+    box-shadow: 0 5px 24px rgba(0,0,0,.5);
+    border: 1px solid rgba(255,255,255,.35);
+    justify-content: center !important;
+  }
+  #video-modal.video-minimized .video-player-shell {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  #video-modal.video-minimized .video-player-header {
+    top: 0;
+    min-height: 30px;
+    padding: 2px 5px !important;
+    background: rgba(0,0,0,.65);
+  }
+  #video-modal.video-minimized #vid-title,
+  #video-modal.video-minimized #vid-badge,
+  #video-modal.video-minimized #video-minimize-btn {
+    display: none !important;
+  }
+  #video-modal.video-minimized .video-player-header > div:first-child { display: none; }
+  #video-modal.video-minimized .video-player-header > div:last-child {
+    margin-left: auto;
+  }
+  #video-modal.video-minimized .video-player-header button {
+    width: 25px;
+    height: 25px;
+    font-size: 18px;
+    background: rgba(255,255,255,.15);
+  }
+  #video-modal.video-minimized .video-player-stage {
+    width: 100% !important;
+    height: 100% !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+  }
+  #video-modal.video-minimized #player-video,
+  #video-modal.video-minimized #youtube-frame-wrap {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  #video-modal.video-minimized .video-expand-btn {
+    display: flex !important;
+    position: absolute;
+    z-index: 5;
+    left: 7px;
+    bottom: 7px;
+    width: 29px;
+    height: 29px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    color: white;
+    background: rgba(0,0,0,.72);
+    border: 1px solid rgba(255,255,255,.45);
+  }
+}
+</style>
 </head>
 <body class="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 font-sans selection:bg-amber-300 selection:text-comical-hair transition-colors duration-200">
 <!-- Custom Cursor -->
@@ -772,10 +896,7 @@
 <button class="filter-btn-2d px-4 py-2.5 rounded-xl font-display font-bold text-sm bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 comic-border-thin shadow-comic-sm hover:bg-slate-100 dark:hover:bg-slate-700 transition" id="filter-btn-puppet" onclick="setFilter2D('puppet')">
                             🎭 Puppet Animation
                         </button>
-<!-- 5. 2D Animation (Model Sheets) -->
-<button class="filter-btn-2d px-4 py-2.5 rounded-xl font-display font-bold text-sm bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 comic-border-thin shadow-comic-sm hover:bg-slate-100 dark:hover:bg-slate-700 transition" id="filter-btn-2d-animation" onclick="setFilter2D('2d-animation')">
-                            ✏️ 2D Animation &amp; Sheets
-                        </button>
+
 </div>
 <span class="text-xs font-mono font-bold text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 px-3.5 py-2 rounded-xl comic-border-thin shadow-comic-sm shrink-0 self-start lg:self-auto" id="project-counter-2d">Showing 12 Projects</span>
 </div>
@@ -785,21 +906,25 @@
 </div>
 </section>
 <!-- Video Modal Player -->
-<div class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex-col items-center justify-center p-4" id="video-modal">
-<div class="relative max-w-4xl w-full flex flex-col items-center">
-<div class="w-full flex justify-between items-center text-white mb-3 px-2">
-<div>
+<div class="fixed inset-0 z-50 bg-black/95 backdrop-blur-md hidden flex-col items-center justify-center p-4" id="video-modal">
+<div class="video-player-shell relative max-w-4xl w-full flex flex-col items-center">
+<div class="video-player-header w-full flex justify-between items-center text-white mb-3 px-2">
+<div class="min-w-0 pr-3">
 <span class="px-2.5 py-1 rounded-lg bg-amber-400 text-comical-hair font-bold text-xs uppercase mr-2 comic-border-thin" id="vid-badge">2D VIDEO</span>
 <h3 class="inline font-display text-2xl tracking-wide" id="vid-title">Video Player</h3>
 </div>
-<button class="text-slate-400 hover:text-white text-3xl font-bold p-2 transition" onclick="closeVideoPlayer()">×</button>
+<div class="flex items-center gap-2 shrink-0">
+<button aria-label="Minimize video" class="text-white bg-white/15 hover:bg-white/25 rounded-lg w-10 h-10 flex items-center justify-center text-lg transition" id="video-minimize-btn" onclick="minimizeVideoPlayer()" title="Minimize video"><i class="fa-solid fa-down-left-and-up-right-to-center"></i></button>
+<button aria-label="Close video" class="text-slate-300 hover:text-white text-3xl font-bold w-10 h-10 flex items-center justify-center transition" onclick="closeVideoPlayer()" title="Close video">×</button>
 </div>
-<div class="relative bg-black rounded-2xl comic-border overflow-hidden w-full shadow-comic-lg">
+</div>
+<div class="video-player-stage relative bg-black rounded-2xl comic-border overflow-hidden w-full shadow-comic-lg">
 <video autoplay="" class="hidden max-h-[75vh] w-auto max-w-full mx-auto" controls="" id="player-video" playsinline=""></video>
 <div class="hidden w-full aspect-video bg-black" id="youtube-frame-wrap">
 <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="block w-full h-full" id="youtube-player" referrerpolicy="strict-origin-when-cross-origin" src="" title="YouTube video player"></iframe>
 </div>
 </div>
+<button class="video-expand-btn hidden" id="video-expand-btn" onclick="expandVideoPlayer()" aria-label="Expand video" title="Expand video"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></button>
 </div>
 </div>
 <!-- Lightbox Modal for Model Sheets -->
@@ -1019,6 +1144,17 @@
             modal.classList.remove('hidden');
             modal.classList.add('flex');
             document.body.style.overflow = 'hidden';
+        }
+
+        function minimizeVideoPlayer() {
+            var modal = document.getElementById('video-modal');
+            if (window.matchMedia('(max-width: 767px)').matches) {
+                modal.classList.add('video-minimized');
+            }
+        }
+
+        function expandVideoPlayer() {
+            document.getElementById('video-modal').classList.remove('video-minimized');
         }
 
         function closeVideoPlayer() {
