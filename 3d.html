@@ -309,12 +309,22 @@
 <!-- REQUIREMENT 1: 3D Dancing Comi Model (GLB) - Real Interactive 3D Model with Animations -->
 <div class="lg:col-span-5 flex justify-center">
 <div class="relative w-full max-w-lg bg-white dark:bg-slate-800 rounded-3xl comic-border shadow-comic-lg p-4 overflow-hidden">
-<div class="flex items-center justify-between pb-3 mb-2 border-b border-slate-100 dark:border-slate-700">
+<div class="flex items-center justify-between pb-3 mb-2 border-b border-slate-100 dark:border-slate-700 flex-wrap gap-2">
 <div class="flex items-center gap-2">
 <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse"></span>
 <span class="text-xs font-mono font-bold text-slate-700 dark:text-slate-300">DANCE_COMI.3D_GLB</span>
 </div>
-<span class="text-[10px] uppercase font-bold text-sky-600 dark:text-sky-400 bg-sky-100 dark:bg-sky-900/50 px-2 py-0.5 rounded comic-border-thin">Interactive 3D Model</span>
+<div class="flex items-center gap-2">
+<div class="flex items-center bg-slate-100 dark:bg-slate-700/60 p-0.5 rounded-lg comic-border-thin" id="shading-toggle">
+<button class="shading-btn px-2.5 py-1 rounded-md text-[11px] font-bold bg-sky-500 text-white shadow-sm transition" id="shading-btn-normal" onclick="setShadingMode('normal')" type="button">
+Normal
+</button>
+<button class="shading-btn px-2.5 py-1 rounded-md text-[11px] font-bold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition" id="shading-btn-toon" onclick="setShadingMode('toon')" type="button">
+Toon Shading
+</button>
+</div>
+<span class="text-[10px] uppercase font-bold text-sky-600 dark:text-sky-400 bg-sky-100 dark:bg-sky-900/50 px-2 py-0.5 rounded comic-border-thin hidden sm:inline-block">Interactive 3D</span>
+</div>
 </div>
 <!-- Interactive 3D WebGL Canvas Area -->
 <div class="w-full h-80 sm:h-96 rounded-2xl bg-slate-100 dark:bg-slate-800 relative overflow-hidden flex items-center justify-center cursor-grab active:cursor-grabbing select-none" id="three-container" title="Drag to rotate 3D Dancing Comi!">
@@ -337,8 +347,11 @@
                             </span>
 <div class="flex items-center gap-1.5 flex-wrap" id="dance-anim-controls">
 <button class="anim-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-500 text-white comic-border-thin shadow-comic-sm transition" id="anim-btn-All_Night_Dance" onclick="switchDanceAnimation('All_Night_Dance')" type="button">
-                                    🕺 All Night Dance
-                                </button>
+🕺 All Night Dance
+</button>
+<button class="anim-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-sky-100 comic-border-thin transition" id="anim-btn-Cardio_Dance" onclick="switchDanceAnimation('Cardio_Dance')" type="button">
+⚡ Cardio Dance
+</button>
 </div>
 </div>
 </div>
@@ -650,6 +663,50 @@
         var renderer3D = null;
         var clock3D = null;
         var modelPivot = null;
+        var currentShadingMode = 'normal';
+        var toonGradientMap = null;
+
+        function getToonGradientMap() {
+            if (!toonGradientMap) {
+                // 3-step cartoon cel-shading tones (shadow, midtone, highlight)
+                var colors = new Uint8Array([80, 165, 255]);
+                toonGradientMap = new THREE.DataTexture(colors, colors.length, 1, THREE.LuminanceFormat);
+                toonGradientMap.minFilter = THREE.NearestFilter;
+                toonGradientMap.magFilter = THREE.NearestFilter;
+                toonGradientMap.generateMipmaps = false;
+                toonGradientMap.needsUpdate = true;
+            }
+            return toonGradientMap;
+        }
+
+        function setShadingMode(mode) {
+            currentShadingMode = mode;
+            if (modelPivot) {
+                modelPivot.traverse(function(child) {
+                    if (child.isMesh && child.userData) {
+                        if (mode === 'toon' && child.userData.toonMaterial) {
+                            child.material = child.userData.toonMaterial;
+                            child.material.needsUpdate = true;
+                        } else if (mode === 'normal' && child.userData.originalMaterial) {
+                            child.material = child.userData.originalMaterial;
+                            child.material.needsUpdate = true;
+                        }
+                    }
+                });
+            }
+
+            var btnNormal = document.getElementById('shading-btn-normal');
+            var btnToon = document.getElementById('shading-btn-toon');
+            if (btnNormal && btnToon) {
+                if (mode === 'toon') {
+                    btnNormal.className = 'shading-btn px-2.5 py-1 rounded-md text-[11px] font-bold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition';
+                    btnToon.className = 'shading-btn px-2.5 py-1 rounded-md text-[11px] font-bold bg-sky-500 text-white shadow-sm transition';
+                } else {
+                    btnNormal.className = 'shading-btn px-2.5 py-1 rounded-md text-[11px] font-bold bg-sky-500 text-white shadow-sm transition';
+                    btnToon.className = 'shading-btn px-2.5 py-1 rounded-md text-[11px] font-bold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition';
+                }
+            }
+        }
 
         function init3DGLBViewer() {
             var container = document.getElementById('three-container');
@@ -688,11 +745,17 @@
 
             scene3D.add(pedestalGroup);
 
-            // Soft diffuse illumination: broad, even light with no visible key/fill/rim hotspots
-            var ambientLight = new THREE.AmbientLight(0xffffff, 1.65);
+            // Soft diffuse illumination + gentle directional lighting for clean cel & standard shading
+            var ambientLight = new THREE.AmbientLight(0xffffff, 1.25);
             scene3D.add(ambientLight);
-            var hemiLight = new THREE.HemisphereLight(0xffffff, 0xb8c0cc, 0.75);
+            var hemiLight = new THREE.HemisphereLight(0xffffff, 0xb8c0cc, 0.65);
             scene3D.add(hemiLight);
+            var dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+            dirLight.position.set(1.5, 3.5, 2.5);
+            scene3D.add(dirLight);
+            var fillLight = new THREE.DirectionalLight(0xffffff, 0.35);
+            fillLight.position.set(-2, 2, -1.5);
+            scene3D.add(fillLight);
 
             // Model Root Group for smooth turntable rotation
             modelPivot = new THREE.Group();
@@ -716,6 +779,30 @@
 
                         modelPivot.add(model);
 
+                        // Cache original materials and generate lightweight MeshToonMaterial for each mesh
+                        var toonGrad = getToonGradientMap();
+                        model.traverse(function(child) {
+                            if (child.isMesh) {
+                                child.userData.originalMaterial = child.material;
+                                var origMat = child.material;
+                                var toonMat = new THREE.MeshToonMaterial({
+                                    map: origMat.map || null,
+                                    color: origMat.color ? origMat.color.clone() : new THREE.Color(0xffffff),
+                                    gradientMap: toonGrad,
+                                    skinning: !!origMat.skinning || !!child.isSkinnedMesh,
+                                    morphTargets: !!origMat.morphTargets,
+                                    morphNormals: !!origMat.morphNormals,
+                                    transparent: !!origMat.transparent,
+                                    opacity: origMat.opacity !== undefined ? origMat.opacity : 1.0,
+                                    alphaTest: origMat.alphaTest || 0
+                                });
+                                child.userData.toonMaterial = toonMat;
+                                if (currentShadingMode === 'toon') {
+                                    child.material = toonMat;
+                                }
+                            }
+                        });
+
                         // Setup Animation Clips
                         if (gltf.animations && gltf.animations.length) {
                             mixer = new THREE.AnimationMixer(model);
@@ -726,9 +813,7 @@
                                 actions[clip.name] = act;
                             });
 
-                            // This GLB contains one animation clip: All_Night_Dance.
-                            // Play the first available clip so the page stays compatible
-                            // if the exported clip name changes later.
+                            // This GLB contains All_Night_Dance and Cardio_Dance
                             var defaultClipName = actions['All_Night_Dance']
                                 ? 'All_Night_Dance'
                                 : gltf.animations[0].name;
@@ -845,11 +930,11 @@
 
             // Update UI buttons
             document.querySelectorAll('.anim-btn').forEach(function(b) {
-                b.className = 'anim-btn px-2.5 py-1 rounded-lg text-xs font-bold bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-sky-100 comic-border-thin transition';
+                b.className = 'anim-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-sky-100 comic-border-thin transition';
             });
             var activeBtn = document.getElementById('anim-btn-' + animName);
             if (activeBtn) {
-                activeBtn.className = 'anim-btn px-2.5 py-1 rounded-lg text-xs font-bold bg-sky-500 text-white comic-border-thin shadow-comic-sm transition';
+                activeBtn.className = 'anim-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-500 text-white comic-border-thin shadow-comic-sm transition';
             }
         }
 
