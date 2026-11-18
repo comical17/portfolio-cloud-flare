@@ -2217,13 +2217,18 @@
             var isMobileTablet = window.matchMedia('(max-width: 1024px)').matches;
 
             if (isMobileTablet) {
-                // Mobile and tablet: laser always originates from the bottom of the screen
-                mX = activeLaserSide === 'left'
-                    ? Math.max(16, window.innerWidth * 0.28)
-                    : Math.min(window.innerWidth - 16, window.innerWidth * 0.72);
-                mY = Math.max(24, window.innerHeight - 24);
+                // Mobile/tablet: always launch from the visible puppet's actual gun muzzle.
+                // If the puppet is off-screen, do not draw a beam from an unrelated screen edge.
+                if (!heroIsVisible || !muzzle) {
+                    overlay.innerHTML = '';
+                    updateLaserBadge(false);
+                    return;
+                }
+                var mobileMuzzleRect = muzzle.getBoundingClientRect();
+                mX = mobileMuzzleRect.left + mobileMuzzleRect.width / 2;
+                mY = mobileMuzzleRect.top + mobileMuzzleRect.height / 2;
             } else if (heroIsVisible && muzzle) {
-                // Desktop: beam starts exactly at the visible character's active laser muzzle.
+                // Desktop: preserve the existing exact gun-muzzle launch point.
                 var mRect = muzzle.getBoundingClientRect();
                 mX = mRect.left + mRect.width / 2;
                 mY = mRect.top + mRect.height / 2;
